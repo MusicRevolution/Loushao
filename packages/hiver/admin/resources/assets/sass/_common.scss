@@ -1,0 +1,114 @@
+/* 全局样式 */
+body, h1, h2, h3, h4, h5, .ui.button, .ui.modal > .header .ui.menu, .ui.header, pre {
+  font-family: "Hiragino Sans GB", "open sans", "sans-serif", "Helvetica", "STHeiti", "Arial", "Microsoft YaHei", "simsun";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: normal;
+}
+
+body {
+  font-family: "Helvetica Neue",Helvetica,Tahoma,Arial,"Microsoft Yahei","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+  font-size: $default-size;
+  line-height: $default-line-height;
+  color: $default-color;
+  background-color: $white;
+}
+
+a {
+  color: $default-a-color;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:active,
+a:hover,
+a::visited {
+  outline: 0;
+}
+
+a:focus,
+a:hover {
+  color: $default-a-hover-color;
+  text-decoration: underline;
+}
+
+p {
+  margin: 0 0 11px;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+[class*=animation-] {
+  -webkit-animation-duration: .5s;
+  -o-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+
+.btn-group-vertical>.btn-group:after, .btn-group-vertical>.btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .modal-header:after, .modal-header:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
+  display: table;
+  content: " ";
+}
+
+.btn-group-vertical>.btn-group:after, .btn-toolbar:after, .clearfix:after, .container-fluid:after, .container:after, .dl-horizontal dd:after, .form-horizontal .form-group:after, .modal-footer:after, .modal-header:after, .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after, .pager:after, .panel-body:after, .row:after {
+  clear: both;
+}
+
+.animation-fade {
+  -webkit-animation-name: fade;
+  -o-animation-name: fade;
+  animation-name: fade;
+  -webkit-animation-duration: .8s;
+  -o-animation-duration: .8s;
+  animation-duration: .8s;
+  -webkit-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.padding-0 {
+  padding: 0!important;
+}
+
+/* master样式 */
+.site-menubar-unfold .site-contabs, .site-menubar-unfold .site-footer, .site-menubar-unfold .site-page {
+  margin-left: 220px;
+}
+
+/* copyright样式 */
+.site-footer {
+  height: 40px;
+  padding: 10px 20px;
+  background-color: rgba(0,0,0,.02);
+  border-top: 1px solid #e4eaec;
+}
+
+.site-footer-legal {
+  float: left;
+}
+
+.site-footer-right {
+  float: right;
+}

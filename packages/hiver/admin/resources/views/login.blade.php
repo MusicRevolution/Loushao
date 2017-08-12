@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="{{ admin_asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ admin_asset('css/bootstrap-select.css') }}">
     <link rel="stylesheet" href="{{ admin_asset('css/site.css') }}">
-    <link rel="stylesheet" href="{{ admin_asset('css/login.css') }}">
     <!--[if lte IE 9]>
     <meta http-equiv="refresh" content="0; url='http://www.loushao.net/ie.html'" />
     <![endif]-->

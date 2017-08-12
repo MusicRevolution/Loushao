@@ -12,6 +12,5 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('login.scss', 'publishable/assets/css');
     mix.sass('site.scss', 'publishable/assets/css');
 });

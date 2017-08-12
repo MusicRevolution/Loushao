@@ -1,0 +1,56 @@
+/* 后台正文部分 */
+.page-content {
+  padding: 20px 20px;
+  .site-page .page-container .page {
+    position: relative;
+    min-height: -webkit-calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
+    overflow-x: hidden;
+  }
+}
+
+.animation-slide-left {
+  -webkit-animation-name: slide-left;
+  -o-animation-name: slide-left;
+  animation-name: slide-left;
+}
+
+.vertical-align {
+  font-size: 0;
+}
+
+.vertical-align:before {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  content: "";
+}
+
+.vertical-align-bottom,
+.vertical-align-middle {
+  display: inline-block;
+  max-width: 100%;
+  font-size: 14px;
+}
+
+.vertical-align-middle {
+  vertical-align: middle;
+}
+
+.page-content>:not(script):last-child {
+  margin-bottom: 0!important;
+}
+
+/* 正文布局样式 */
+.site-page {
+  position: relative;
+  background: $page-background-color;
+  .page-container {
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+  .page {
+    min-height: -webkit-calc(100vh - 100px)!important;
+    min-height: calc(100vh - 100px)!important;
+  }
+}
