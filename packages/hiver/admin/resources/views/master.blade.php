@@ -208,9 +208,9 @@
             <a href="http://www.hiver.cc" target="_blank">hiver.cc</a>
         </div>
         <div class="site-footer-right">
-            当前版本：v1.1.0
+            当前版本：v1.0.0
             <a class="margin-left-5" data-toggle="tooltip" title="" href="http://www.hiver.cc/buy" target="_blank" data-original-title="升级">
-                <i class="icon fa-cloud-upload"></i>
+                <i class="icon fa fa-cloud-upload"></i>
             </a>
         </div>
     </footer>
