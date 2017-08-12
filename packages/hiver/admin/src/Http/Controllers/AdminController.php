@@ -13,6 +13,7 @@ namespace Hiver\Admin\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Http\Request;
 
 /**
  * 后台控制器
@@ -40,5 +41,12 @@ class AdminController extends Controller
     public function login()
     {
         return view('admin::login');
+    }
+
+    public function loginValidate(Request $request)
+    {
+        $rules = ['validCode' => 'required|captcha'];
+        $validator = $this->validate($request, $rules);
+        return redirect()->to("/admin");
     }
 }

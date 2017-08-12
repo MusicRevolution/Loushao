@@ -1,0 +1,24 @@
+{
+  "name": "hiver/admin",
+  "description": "hiver",
+  "keywords": ["framework", "laravel", "admin"],
+  "license": "MIT",
+  "type": "package",
+  "authors": [
+    {
+      "name": "delicacylee",
+      "email": "delicacylee@vip.sina.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.5.9",
+    "laravel/framework": "5.1.*",
+    "mews/captcha": "~2.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "Hiver\\Admin": "src/"
+    }
+  }
+}

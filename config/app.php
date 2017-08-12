@@ -146,6 +146,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Dingo\Api\Provider\LaravelServiceProvider::class,
+        Mews\Captcha\CaptchaServiceProvider::class,
 
         Hiver\Admin\AdminServiceProvider::class
 
@@ -197,6 +198,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
     ],
 
 ];
