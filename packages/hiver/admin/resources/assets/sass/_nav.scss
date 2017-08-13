@@ -38,11 +38,6 @@
   color: #fff;
 }
 
-.hamburger {
-  font-size: 20px;
-  vertical-align: middle;
-}
-
 .navbar-toggle-left {
   float: left;
   margin-right: 0;
@@ -187,4 +182,98 @@
 
 .nav-tabs>li .dropdown-menu {
   margin-top: 3px;
+}
+
+.navbar-brand {
+  float: left;
+  height: 60px;
+  padding: 19px 12px;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.navbar-brand {
+  padding: 19px 20px;
+  font-weight: 700;
+}
+
+.navbar-brand-logo {
+  height: 32px;
+  margin-top: -5px;
+}
+
+.hamburger {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.icon {
+  position: relative;
+  display: inline-block;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-transform: translate(0,0);
+  -ms-transform: translate(0,0);
+  -o-transform: translate(0,0);
+  transform: translate(0,0);
+  text-rendering: auto;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hamburger:after, .hamburger:before {
+  content: "";
+}
+
+.hamburger .hamburger-bar,
+.hamburger:after,
+.hamburger:before {
+  display: block;
+  width: 1em;
+  height: .1em;
+  margin: 0;
+  background: #76838f;
+  border-radius: 1px;
+}
+
+.hamburger .hamburger-bar {
+  margin: .2em 0;
+}
+
+.navbar-default .hamburger .hamburger-bar, .navbar-default .hamburger:after, .navbar-default .hamburger:before {
+  background: #76838f;
+}
+
+.site-menubar-unfold [data-toggle=menubar] .hamburger-arrow-left .hamburger-bar {
+  border-radius: .2em;
+}
+
+.navbar-inverse .hamburger .hamburger-bar, .navbar-inverse .hamburger:after, .navbar-inverse .hamburger:before {
+  background: #fff;
+}
+
+.site-menubar-unfold [data-toggle=menubar] .hamburger-arrow-left:before {
+  width: .6em;
+  -webkit-transform: translate3d(.45em,.1em,0) rotate(45deg);
+  transform: translate3d(.45em,.1em,0) rotate(45deg);
+}
+
+.site-menubar-unfold [data-toggle=menubar] .hamburger-arrow-left:after {
+  width: .6em;
+  -webkit-transform: translate3d(.45em,-.1em,0) rotate(-45deg);
+  transform: translate3d(.45em,-.1em,0) rotate(-45deg);
+}
+
+.site-menubar-unfold [data-toggle=menubar] .hamburger-arrow-left {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.navbar-right {
+  float: right!important;
+  margin-right: 12px;
 }

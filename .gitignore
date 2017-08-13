@@ -21,6 +21,3 @@ Homestead.json
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
 !/packages/hiver/admin/publishable/assets/vendor/
-
-.idea/workspace.xml
-.idea/workspace.xml

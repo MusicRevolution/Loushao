@@ -40,6 +40,12 @@
   padding-bottom: 20px;
   overflow-y: hidden;
   font-size: 14px;
+  .site-menu-sub {
+    padding: 5px 0;
+    margin: 0;
+    font-size: 14px;
+    background: 0 0;
+  }
 }
 
 .site-menubar-unfold {
@@ -88,4 +94,118 @@
 .site-menu-item>a {
   white-space: nowrap;
   cursor: pointer;
+}
+
+.site-menu .site-menu-sub .site-menu-item.active {
+  background: rgba(0,0,0,.06);
+}
+
+.site-menu .site-menu-sub .site-menu-item.has-sub {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.site-menu .site-menu-sub .site-menu-item {
+  line-height: 36px;
+  color: rgba(163,175,183,.9);
+  background: 0 0;
+}
+
+.site-menubar-unfold .site-menu-title:first-child {
+  margin-left: 28px;
+}
+
+.site-menubar-unfold .site-menu-title {
+  display: inline-block;
+  max-width: 160px;
+}
+
+.site-menu-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.site-menu-arrow {
+  position: relative;
+  display: inline-block;
+  font-family: "Web Icons";
+  font-style: normal;
+  font-weight: 400;
+  -webkit-transition: -webkit-transform .15s;
+  -o-transition: -o-transform .15s;
+  transition: -webkit-transform .15s;
+  transition: transform .15s,-webkit-transform .15s,-o-transform .15s;
+  -webkit-transform: translate(0,0);
+  -ms-transform: translate(0,0);
+  -o-transform: translate(0,0);
+  transform: translate(0,0);
+  text-rendering: auto;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.site-menubar-unfold .site-menu-item.active>a .site-menu-arrow {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.site-menu-arrow:before {
+  content: "\f17f";
+}
+
+.site-menu-arrow, .site-menu-badge, .site-menu-label {
+  position: absolute;
+  right: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.site-menu-item.active>a {
+  color: #fff;
+}
+
+.site-menu .site-menu-sub .site-menu-item>a {
+  padding: 0 20px;
+}
+
+.site-menu .site-menu-sub .site-menu-item .site-menu-sub a {
+  text-indent: .5em;
+}
+
+.site-menu .site-menu-sub .site-menu-item>a {
+  padding: 0 20px;
+}
+
+.site-menu-item a {
+  display: block;
+  color: rgba(163,175,183,.9);
+}
+
+.site-menu-item>a {
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.site-menubar a {
+  outline: 0;
+}
+
+.site-menubar a:focus,
+.site-menubar a:hover {
+  text-decoration: none;
+}
+
+.site-menu-item:hover>a,
+.site-menu .site-menu-sub .site-menu-item:hover>a {
+  color: rgba(255,255,255,.8);
+  background-color: rgba(255,255,255,.02);
+}
+
+.site-menu .site-menu-sub .site-menu-item.active>a {
+  background-color: transparent;
 }

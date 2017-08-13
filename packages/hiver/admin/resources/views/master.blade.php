@@ -34,6 +34,7 @@
     <!--插件 -->
     <link rel="stylesheet" href="{{ admin_asset('vendor/animsition/css/animsition.css') }}">
     <link rel="stylesheet" href="{{ admin_asset('vendor/toastr/toastr.css') }}">
+    <link rel="stylesheet" href="{{ admin_asset('vendor/metismenu/Metismenu.css') }}">
     <!-- 自定义 -->
     <link rel="stylesheet" href="{{ admin_asset('css/site.css') }}">
     <!--[if lte IE 9]>
@@ -54,7 +55,7 @@
                 <img class="navbar-brand-logo hidden-xs hidden-lg navbar-logo-mini" src="http://cdn.admui.com/demo/1.1.0/images/logo-white-min.svg" title="Hiver">
             </div>
         </div>
-        <div class="navbar-container container-fluid">
+        <div class="navbar-container">
             <div class="collapse navbar-collapse navbar-collapse-toolbar" id="hiver-navbarCollapse">
                 <ul class="nav navbar-toolbar navbar-left">
                     <li class="hidden-float">
@@ -222,10 +223,12 @@
     <script src="{{ admin_asset('vendor/breakpoints.min.js') }}"></script>
     <script src="{{ admin_asset('vendor/template.min.js') }}"></script>
     <script src="{{ admin_asset('vendor/toastr/toastr.min.js') }}"></script>
+    <script src="{{ admin_asset('vendor/metismenu/metisMenu.min.js') }}"></script>
     <script src="{{ admin_asset('vendor/bootbox.min.js') }}"></script>
     <script>
         $(document).ready(function(){
             $('#admui-navMenu').tab('show')
+            $('.site-menu').metisMenu();
         })
     </script>
 </body>
