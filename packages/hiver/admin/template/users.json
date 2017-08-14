@@ -1,0 +1,22 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "email",
+            "type": "email"
+        },
+        {
+            "name": "password",
+            "type": "password"
+        }
+    ],
+    "validations": [
+        {
+            "field": "name",
+            "rules": "required|max:10"
+        }
+    ]
+}

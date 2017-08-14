@@ -148,6 +148,7 @@ return [
         Dingo\Api\Provider\LaravelServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
         Hiver\Admin\AdminServiceProvider::class
 
@@ -199,8 +200,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
-        'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Captcha'   => Mews\Captcha\Facades\Captcha::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Form'      => Collective\Html\FormFacade::class,
+        'Html'      => Collective\Html\HtmlFacade::class,
     ],
 
 ];
