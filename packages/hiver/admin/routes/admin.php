@@ -11,5 +11,5 @@
 */
 
 Route::get('admin', 'AdminController@index');
-Route::get('admin/login', 'AdminController@login');
-Route::post('admin/loginValidate', 'AdminController@loginValidate');
+Route::get('admin/login', 'AdminAuthController@login');
+Route::post('admin/loginValidate', 'AdminAuthController@postLogin');

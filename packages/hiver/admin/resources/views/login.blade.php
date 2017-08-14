@@ -70,8 +70,8 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label class="sr-only" for="username">用户名</label>
-                                <input type="text" class="form-control" id="username" name="loginName" placeholder="请输入用户名">
+                                <label class="sr-only" for="email">用户名</label>
+                                <input type="text" class="form-control" id="username" name="email" placeholder="请输入用户名">
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="password">密码</label>

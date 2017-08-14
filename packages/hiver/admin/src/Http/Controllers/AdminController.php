@@ -32,21 +32,4 @@ class AdminController extends Controller
         //dd(Config::get("admin.message"));
         return view('admin::index');
     }
-
-    /**
-     * 登录页面
-     *
-     * @return Response
-     */
-    public function login()
-    {
-        return view('admin::login');
-    }
-
-    public function loginValidate(Request $request)
-    {
-        $rules = ['validCode' => 'required|captcha'];
-        $validator = $this->validate($request, $rules);
-        return redirect()->to("/admin");
-    }
 }

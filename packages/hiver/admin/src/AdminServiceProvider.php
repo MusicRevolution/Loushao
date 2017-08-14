@@ -13,6 +13,8 @@ namespace Hiver\Admin;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
+use Illuminate\Foundation\AliasLoader;
+use Hiver\Admin\Facades\Admin as AdminFacade;
 
 /**
  * Admin服务提供程序
@@ -33,10 +35,24 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->loadViewsFrom(realpath(__DIR__.'/../resources/views'), 'admin');
-        $this->setupRoutes($this->app->router);
-        $this->registerPublishableResources();
+        // 注册门面类
+        $loader = AliasLoader::getInstance();
+        $loader->alias('Admin', AdminFacade::class);
+
+        // 单例模型
+        $this->app->singleton('admin', function () {
+            return new Admin();
+        });
+
+        // 注册帮助类
         $this->loadHelpers();
+
+        // 注册视图
+        $this->loadViewsFrom(realpath(__DIR__.'/../resources/views'), 'admin');
+        // 注册路由器
+        $this->setupRoutes($this->app->router);
+        // 注册发布资源
+        $this->registerPublishableResources();
     }
 
     /**

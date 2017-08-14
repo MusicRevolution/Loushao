@@ -111,7 +111,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="fa fa-sign-out" id="admui-signOut" data-ctx="" data-user="15" href="/system/logout" role="button">
+                        <a class="fa fa-sign-out" id="admui-signOut" data-ctx="" data-user="15" href="admin/logout" role="button">
                             <span class="sr-only">退出</span>
                         </a>
                     </li>
