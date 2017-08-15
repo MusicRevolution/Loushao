@@ -1,0 +1,125 @@
+.event-gift-container {
+    position: relative;
+}
+
+a {
+    color: #333;
+}
+
+footer.footer .pull-right .list-inline>li:nth-child(1)>a, footer.footer .pull-right .list-inline>li:nth-child(1)>button {
+    background: url(../images/icons.png) 0 -38px no-repeat;
+    background-size: 120px;
+}
+
+footer.footer .pull-right .list-inline>li:nth-child(2)>a, footer.footer .pull-right .list-inline>li:nth-child(2)>button {
+    background: url(../images/icons.png) 0 -80px no-repeat;
+    background-size: 120px;
+}
+
+footer.footer .pull-right .list-inline>li:nth-child(3)>a, footer.footer .pull-right .list-inline>li:nth-child(3)>button {
+    background: url(../images/icons.png) 0 -122px no-repeat;
+    background-size: 120px;
+}
+
+footer.footer .pull-right .list-inline>li:nth-child(4)>a, footer.footer .pull-right .list-inline>li:nth-child(4)>button {
+    background: url(../images/icons.png) 0 -164px no-repeat;
+    background-size: 120px;
+}
+
+footer.footer .pull-right .list-inline>li:nth-child(5)>a, footer.footer .pull-right .list-inline>li:nth-child(5)>button {
+    background: url(../images/icons.png) 0 -206px no-repeat;
+    background-size: 120px;
+}
+
+footer.footer .pull-right .list-inline>li:nth-child(6)>a, footer.footer .pull-right .list-inline>li:nth-child(6)>button {
+    background: url(../images/icons.png) 0 -248px no-repeat;
+    background-size: 120px;
+}
+
+footer.footer .pull-right .list-inline>li>div>span {
+    display: block;
+    position: relative;
+    margin: 0;
+}
+
+footer.footer .pull-right .list-inline>li:nth-child(6)>div>span {
+    width: 230px;
+    border: 1px solid #fff;
+    background: #fff;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.15);
+}
+
+footer.footer .pull-right .list-inline>li>div {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    padding-bottom: 10px;
+    border-radius: 3px;
+    transition: opacity .3s ease-in-out 0s;
+}
+
+footer.footer .pull-left .footer-left-header {
+    margin: 0 0 15px;
+}
+
+footer.footer .pull-left .footer-left-header .left-header-logo {
+    float: left;
+    display: block;
+    width: 120px;
+    height: 36px;
+    background: url(https://img.taptapdada.com/market/images/0fb3bf76ca2d9d9fe4f76eb8a2cfd738.png) no-repeat;
+    background-size: 120px;
+}
+
+footer.footer .pull-left .footer-left-header .dropdown {
+    margin: 0 0 0 135px;
+    padding: 16px 0 0;
+}
+
+footer.footer .pull-left .footer-left-header .dropdown .btn, footer.footer .pull-left .footer-left-header .dropdown section.developer-app-submit .app-submit-main.form>form .form-footer .btn-save-verifying, section.developer-app-submit .app-submit-main.form>form .form-footer footer.footer .pull-left .footer-left-header .dropdown .btn-save-verifying {
+    padding: 0;
+    line-height: 20px;
+    color: #999;
+    border: none;
+}
+
+footer.footer .pull-left .footer-left-header .dropdown .dropdown-menu {
+    margin: 0 0 -16px;
+    padding: 10px 0;
+    border-radius: 3px;
+    background: #eee;
+}
+
+footer.footer .pull-left .footer-left-header .dropdown .dropdown-menu>li>a {
+    color: #666;
+}
+
+footer.footer .pull-left .footer-left-header .dropdown .link {
+    display: inline-block;
+    margin: 0 0 0 5px;
+    vertical-align: middle;
+    line-height: 20px;
+}
+
+footer.footer .pull-left .footer-left-header .dropdown .link a {
+    color: #999;
+}
+
+footer.footer .pull-left>p {
+    margin: 0 0 15px;
+    line-height: 30px;
+    font-family: Arial;
+    font-size: 24px;
+    color: #999;
+}
+
+footer.footer .pull-left>span {
+    font-family: Arial;
+    font-size: 12px;
+    color: #838383;
+}
+
+footer.footer .pull-left>span a {
+    color: #838383;
+}
