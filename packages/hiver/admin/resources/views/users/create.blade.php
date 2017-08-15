@@ -1,33 +1,36 @@
 @extends('admin::master')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Create New User</div>
-                    <div class="panel-body">
-                        <a href="{{ url('/admin/users') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <br />
-                        <br />
-
-                        @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
-
-                        {!! Form::open(['url' => '/admin/users', 'class' => 'form-horizontal', 'files' => true]) !!}
-
-                        @include ('admin::users.form')  
-
-                        {!! Form::close() !!}
-
-                    </div>
-                </div>
+<div class="page animation-fade page-forms">
+    <div class="page-header">
+        <h1 class="page-title">用户管理</h1>
+        <ol class="breadcrumb">
+            <li>
+                <a>首页</a>
+            </li>
+            <li>
+                <a href="javascript:;">系统管理</a>
+            </li>
+            <li class="active">用户管理</li>
+        </ol>
+    </div>
+    <div class="page-content">
+        <div class="panel">
+            <div class="panel-heading">添加新用户</div>
+            <div class="panel-body container-fluid">
+                <a href="{{ url('/admin/users') }}" title="返回"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> 返回</button></a>
+                @if ($errors->any())
+                    <ul class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+                {!! Form::open(['url' => '/admin/users', 'class' => '', 'files' => true]) !!}
+                @include ('admin::users.form')  
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
+</div>
 @endsection

@@ -1,11 +1,11 @@
 <?php
 
-namespace Hiver\Admin\Http\Controllers;
+namespace DummyNamespace;
 
 use DummyRootNamespaceHttp\Requests;
 use DummyRootNamespaceHttp\Controllers\Controller;
 
-use Hiver\Admin\Models\{{modelName}};
+use DummyRootNamespace{{modelNamespace}}{{modelName}};
 use Illuminate\Http\Request;
 use Session;
 
@@ -27,7 +27,7 @@ class DummyClass extends Controller
             ${{crudName}} = {{modelName}}::paginate($perPage);
         }
 
-        return view('admin::{{viewName}}.index', compact('{{crudName}}'));
+        return view('{{viewPath}}{{viewName}}.index', compact('{{crudName}}'));
     }
 
     /**
@@ -37,7 +37,7 @@ class DummyClass extends Controller
      */
     public function create()
     {
-        return view('admin::{{viewName}}.create');
+        return view('{{viewPath}}{{viewName}}.create');
     }
 
     /**
@@ -70,7 +70,7 @@ class DummyClass extends Controller
     {
         ${{crudNameSingular}} = {{modelName}}::findOrFail($id);
 
-        return view('admin::{{viewName}}.show', compact('{{crudNameSingular}}'));
+        return view('{{viewPath}}{{viewName}}.show', compact('{{crudNameSingular}}'));
     }
 
     /**
@@ -84,7 +84,7 @@ class DummyClass extends Controller
     {
         ${{crudNameSingular}} = {{modelName}}::findOrFail($id);
 
-        return view('admin::{{viewName}}.edit', compact('{{crudNameSingular}}'));
+        return view('{{viewPath}}{{viewName}}.edit', compact('{{crudNameSingular}}'));
     }
 
     /**

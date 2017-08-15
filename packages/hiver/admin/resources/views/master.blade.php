@@ -196,13 +196,7 @@
         </div>
     </nav>
     <main class="site-page">
-        <div class="page-container" id="admui-pageContent">
-            <div class="page animation-fade page-index">
-                <div class="page-content">
-                    @yield('content')
-                </div>
-            </div>
-        </div>
+        @yield('content')
     </main>
     <footer class="site-footer">
         <div class="site-footer-legal">海文科技 ©

@@ -6,12 +6,24 @@ body, h1, h2, h3, h4, h5, .ui.button, .ui.modal > .header .ui.menu, .ui.header, 
   font-weight: normal;
 }
 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica Neue",Helvetica,Tahoma,Arial,"Microsoft Yahei","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+    font-weight: 300;
+    line-height: 1.2;
+    color: #37474f;
+}
+
 body {
   font-family: "Helvetica Neue",Helvetica,Tahoma,Arial,"Microsoft Yahei","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
   font-size: $default-size;
   line-height: $default-line-height;
   color: $default-color;
   background-color: $white;
+}
+
+h1 {
+    margin: .67em 0;
+    font-size: 2em;
 }
 
 a {
