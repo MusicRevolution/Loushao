@@ -625,6 +625,9 @@ label {
   float: right !important;
   margin-right: 12px; }
 
+.icon-fullscreen.active:before {
+  content: "\f11e"; }
+
 /* 左侧菜单样式 */
 .site-menubar {
   position: fixed;

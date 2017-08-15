@@ -85,12 +85,12 @@
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li class="no-menu" role="presentation">
-                                        <a href="/sitemap" target="_blank" role="menuitem" data-pjax>
+                                        <a href="#" target="_blank" role="menuitem" data-pjax>
                                             <i class="icon wb-list-numbered"></i><span>网站地图</span>
                                         </a>
                                     </li>
                                     <li class="no-menu" role="presentation">
-                                        <a href="/system/menu" target="_blank" role="menuitem" data-pjax>
+                                        <a href="#" target="_blank" role="menuitem" data-pjax>
                                             <i class="icon wb-wrench"></i><span>菜单管理</span>
                                         </a>
                                     </li>
@@ -111,7 +111,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="fa fa-sign-out" id="admui-signOut" data-ctx="" data-user="15" href="admin/logout" role="button">
+                        <a class="fa fa-sign-out" id="admui-signOut" data-ctx="" data-user="15" href="{{ url('/admin/logout') }}" role="button">
                             <span class="sr-only">退出</span>
                         </a>
                     </li>
@@ -125,11 +125,17 @@
                 <div class="tab-pane animation-fade height-full active" id="hiver-navTabsItem-1" role="tabpanel">
                     <div>
                         <ul class="site-menu">
-                            <li class="site-menu-category">UI 示例</li>
+                            <li class="site-menu-category">cms系统</li>
+                            <li class="site-menu-item">
+                                <a href="{{ url('/admin') }}">
+                                    <i class="site-menu-icon fa fa-home" aria-hidden="true"></i>
+                                    <span class="site-menu-title">控制面板</span>
+                                </a>
+                            </li>
                             <li class="site-menu-item has-sub">
                                 <a href="javascript:;">
-                                    <i class="site-menu-icon fa fa-laptop" aria-hidden="true"></i>
-                                    <span class="site-menu-title">布局</span><span class="site-menu-arrow"></span>
+                                    <i class="site-menu-icon fa fa-files-o" aria-hidden="true"></i>
+                                    <span class="site-menu-title">页面设置</span><span class="site-menu-arrow"></span>
                                 </a>
                                 <ul class="site-menu-sub">
                                     <li class="site-menu-item has-sub">
@@ -160,32 +166,28 @@
                 <div class="tab-pane animation-fade height-full" id="hiver-navTabsItem-2" role="tabpanel">
                     <div>
                         <ul class="site-menu">
-                            <li class="site-menu-category">UI 示例1</li>
+                            <li class="site-menu-category">系统信息</li>
+                            <li class="site-menu-item">
+                                <a href="{{ url('/admin/users') }}">
+                                    <i class="site-menu-icon fa fa-street-view" aria-hidden="true"></i>
+                                    <span class="site-menu-title">用户管理</span>
+                                </a>
+                            </li>
                             <li class="site-menu-item has-sub">
                                 <a href="javascript:;">
-                                    <i class="site-menu-icon fa fa-laptop" aria-hidden="true"></i>
-                                    <span class="site-menu-title">布局</span><span class="site-menu-arrow"></span>
+                                    <i class="site-menu-icon fa fa-gear" aria-hidden="true"></i>
+                                    <span class="site-menu-title">系统设置</span><span class="site-menu-arrow"></span>
                                 </a>
                                 <ul class="site-menu-sub">
-                                    <li class="site-menu-item has-sub">
+                                    <li class="site-menu-item">
                                         <a href="javascript:;">
-                                            <span class="site-menu-title">栅格</span>
-                                            <span class="site-menu-arrow"></span>
+                                            <span class="site-menu-title">显示设置</span>
                                         </a>
-                                        <ul class="site-menu-sub">
-                                            <!-- 五级菜单 -->
-                                            <li class="site-menu-item ">
-                                                <a data-pjax href="/components/layouts/grids" target="_blank">
-                                                    <span class="site-menu-title">基本栅格</span>
-                                                </a>
-                                            </li>
-                                            <li class="site-menu-item ">
-                                                <a data-pjax href="/components/layouts/layout-grid" target="_blank">
-                                                    <span class="site-menu-title">布局栅格</span>
-                                                </a>
-                                            </li>
-                                                <!-- 五级菜单 -->
-                                        </ul>
+                                    </li>
+                                    <li class="site-menu-item">
+                                        <a href="javascript:;">
+                                            <span class="site-menu-title">日志设置</span>
+                                        </a>
                                     </li>
                                 </ul>
                             </li>
@@ -219,10 +221,21 @@
     <script src="{{ admin_asset('vendor/toastr/toastr.min.js') }}"></script>
     <script src="{{ admin_asset('vendor/metismenu/metisMenu.min.js') }}"></script>
     <script src="{{ admin_asset('vendor/bootbox.min.js') }}"></script>
+    <script src="{{ admin_asset('vendor/screenfull/screenfull.min.js') }}"></script>
     <script>
         $(document).ready(function(){
             $('#admui-navMenu').tab('show')
             $('.site-menu').metisMenu();
+            $("#hiver-navbarFullscreen").click(function(){
+                $a = $(this).find("a");
+                if($a.hasClass("active")) {
+                    screenfull.exit();
+                    $a.removeClass("active");
+                } else {
+                    screenfull.request();
+                    $(this).find("a").addClass("active");
+                }
+            });
         })
     </script>
 </body>

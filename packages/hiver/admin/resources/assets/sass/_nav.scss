@@ -277,3 +277,7 @@
   float: right!important;
   margin-right: 12px;
 }
+
+.icon-fullscreen.active:before {
+    content: "\f11e";
+}
