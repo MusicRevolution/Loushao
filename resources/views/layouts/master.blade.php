@@ -41,17 +41,17 @@
     <![endif]-->
 </head>
 <body>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-taptap-slide="nav" data-target="#navbarSlide" aria-expanded="false">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarSlide" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="https://www.loushao.net">
-                <img src="https://assets.tapimg.com/img/logo_new.png" alt="Loushao" title="Loushao">
+                <img src="{{ asset('images/logo.png') }}" alt="Loushao" title="Loushao">
             </a>
             <a href="https://www.loushao.net/mobile" class="navbar-header-download">
                 <i class="taptap-icon icon-mobile"></i>
@@ -60,47 +60,56 @@
             </a>
         </div>
         <div class="navbar-collapse" id="navbarSlide">
+            <div class="narbar-collapse-btn">
+                <button class="btn btn-default" data-toggle="collapse" data-target="#navbarSlide" type="button">
+                    <i class="taptap-icon icon-arrow-left"></i>
+                </button>
+            </div>
             <ul class="nav navbar-nav navbar-left">
                 <li class="active">
-                    <a href="https://www.taptap.com">首页</a>
+                    <a href="#">首页</a>
                 </li>
                 <li>
-                    <a href="https://www.taptap.com/top/download">排行榜</a>
+                    <a href="#">排行榜</a>
                 </li>
                 <li>
-                    <a href="https://www.taptap.com/review/new">安利墙</a>
+                    <a href="#">安利墙</a>
                 </li>
                 <li>
-                    <a href="https://www.taptap.com/categories">发现</a>
+                    <a href="#">发现</a>
                 </li>
                 <li>
-                    <a href="https://www.taptap.com/forum">论坛</a>
+                    <a href="#">论坛</a>
                 </li>
             </ul>
         </div>
-        <form class="navbar-form" id="search" role="search" method="get" action="https://www.taptap.com/search/apps">
+        <div class="navbar-mask" data-toggle="collapse" data-target="#navbarSlide"></div>
+        <form class="navbar-form" id="search" role="search" method="get" action="#">
             <button type="submit" class="btn btn-default">
                 <i class="taptap-icon icon-search"></i>
             </button>
             <div class="form-group">
-                <input type="text" class="form-control js-emit" tap-event="click:search.show,change:search.apps,keydown:search.keydown" autocomplete="off" id="search-kw" name="kw" value="" placeholder="搜索...">
+                <input type="text" class="form-control js-emit" autocomplete="off" id="search-kw" name="kw" value="" placeholder="搜索...">
             </div>
         </form>
+        <button class="navbar-search btn btn-default js-emit" tap-event="search.show" type="button">
+            <i class="taptap-icon icon-search-white"></i>
+        </button>
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown navbar-notice hide">
-                <button id="taptap-notification" class="btn btn-default taptap-notice-bell" data-taptap-ajax="notification" data-message-total="条新消息" data-toggle="dropdown" type="button" data-unread="0" data-get-unread-total-url="https://www.taptap.com/ajax/notification/un-read-total" data-url="https://www.taptap.com/ajax/notification">
+                <button id="taptap-notification" class="btn btn-default taptap-notice-bell" data-message-total="条新消息" data-toggle="dropdown" type="button" data-unread="0" data-get-unread-total-url="https://www.taptap.com/ajax/notification/un-read-total" data-url="https://www.taptap.com/ajax/notification">
                     <i></i>
                 </button>
                 <div class="taptap-notice-widget dropdown-menu" id="ajaxNotifications">
                     <div class="notice-widget-loading" data-taptap-ajax-notification="loading">
-                        <img src="https://img.taptapdada.com/market/images/0e6e0f46d7504242302bc8055ad9c8c2.gif" alt="">
+                        <img src="{{ asset('images/loading.gif') }}" alt="">
                     </div>
                 </div>
                 <span class="taptap-notice-triangle" data-taptap-ajax-notification="triangle"></span>
             </li>
             <li class="dropdown navbar-user">
-                <a href="https://www.taptap.com/auth/login" class="img-circle" rel="nofollow" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img src="https://img.taptapdada.com/market/images/22f1196f825298281376608459bfa7fe.png" alt="">
+                <a href="#" class="img-circle" rel="nofollow" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img src="{{ asset('images/avator.png') }}" alt="">
                 </a>
             </li>
         </ul>
@@ -117,7 +126,7 @@
                     <p>Contact Us</p>
                     <ul class="list-inline">
                         <li>
-                            <a href="https://www.facebook.com/gametaptap/" target="_blank" title="Facebook" rel="nofollow"></a>
+                            <a href="#" target="_blank" title="Facebook" rel="nofollow"></a>
                         </li>
                         <li>
                             <button class="btn" type="button" title="微信"></button>
@@ -130,20 +139,20 @@
                         <li>
                             <button class="btn" type="button" title="QQ"></button>
                             <div>
-                                <span class="thumbnail">官方QQ群: 116587007</span>
+                                <span class="thumbnail">官方QQ群: </span>
                             </div>
                         </li>
                         <li>
-                            <a href="https://zhuanlan.zhihu.com/taptap" target="_blank" title="知乎" rel="nofollow"></a>
+                            <a href="#" target="_blank" title="知乎" rel="nofollow"></a>
                         </li>
                         <li>
-                            <a href="http://weibo.com/taptapgames" target="_blank" title="微博" rel="nofollow"></a>
+                            <a href="#" target="_blank" title="微博" rel="nofollow"></a>
                         </li>
                         <li>
                             <button class="btn" type="button" title="邮箱"></button>
                             <div>
                                 <span class="thumbnail">
-                                    合作邮箱: <a href="mailto:cooperation@taptap.com" rel="nofollow">cooperation@taptap.com</a>
+                                    合作邮箱: <a href="mailto:delicacylee@vip.sina.com" rel="nofollow">delicacylee@vip.sina.com</a>
                                 </span>
                             </div>
                         </li>
@@ -159,41 +168,41 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="languageSelect">
                                 <li>
-                                    <a href="https://www.taptap.com?hl=en" rel="nofollow">English</a>
+                                    <a href="#" rel="nofollow">English</a>
                                 </li>
                                 <li>
-                                    <a href="https://www.taptap.com?hl=ja" rel="nofollow">日本語</a>
+                                    <a href="#" rel="nofollow">日本語</a>
                                 </li>
                                 <li>
-                                    <a href="https://www.taptap.com?hl=ko" rel="nofollow">한국어</a>
+                                    <a href="#" rel="nofollow">한국어</a>
                                 </li>
                                 <li>
-                                    <a href="https://www.taptap.com?hl=cht" rel="nofollow">繁體中文</a>
+                                    <a href="#" rel="nofollow">繁體中文</a>
                                 </li>
                                 <li class="active">
-                                    <a href="https://www.taptap.com?hl=chs" rel="nofollow">简体中文</a>
+                                    <a href="#" rel="nofollow">简体中文</a>
                                 </li>
                             </ul>
                             <span class="link">
-                                <a href="https://www.taptap.com/developer" rel="nofollow">开发者中心</a>
+                                <a href="#" rel="nofollow">开发者中心</a>
                             </span>
                             <span class="link">
-                                <a href="https://www.taptap.com/ads" rel="nofollow">广告投放</a>
+                                <a href="#" rel="nofollow">广告投放</a>
                             </span>
                             <span class="link">
-                                <a href="https://www.taptap.com/about-us" rel="nofollow">关于我们</a>
+                                <a href="#" rel="nofollow">关于我们</a>
                             </span>
                         </div>
                     </div>
-                    <p>Discover superb games.</p>
+                    <p>Discover superb animations.</p>
                     <span>
                         <span>Copyright © 2017 <a href="https://www.loushao.net">Loushao</a>. All rights Reserved.</span>
                         <br>
                         <span>适龄提示：本公司产品适合10周岁以上玩家使用</span>
-                        <span>&nbsp;&nbsp;<a href="https://www.taptap.com/taptapjh" target="_blank" rel="nofollow">未成年人家长监护</a>&nbsp;&nbsp;<a href="https://www.taptap.com/privacy-policy" rel="nofollow">隐私权和条款</a></span>
+                        <span>&nbsp;&nbsp;<a href="#" target="_blank" rel="nofollow">未成年人家长监护</a>&nbsp;&nbsp;<a href="#" rel="nofollow">隐私权和条款</a></span>
                         <br>
-                        <span><a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">沪ICP备16012525号-1</a>&nbsp;&nbsp;沪网文(2016)2204-116号&nbsp;&nbsp;</span>
-                        易玩（上海）网络科技有限公司
+                        <span><a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">XXX</a>&nbsp;&nbsp;XXX&nbsp;&nbsp;</span>
+                        天津海文科技有限公司
                     </span>
                 </div>
             </div>
@@ -203,5 +212,7 @@
 <section class="taptap-button-top" data-taptap-widgets="container" data-taptap-go="top" style="display: block;">
     <i></i>
 </section>
+<script src="{{ asset('vendor/jquery/jquery.js') }}"></script>
+<script src="{{ asset('vendor/bootstrap/bootstrap.js') }}"></script>
 </body>
 </html>
