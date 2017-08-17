@@ -21,3 +21,15 @@ Homestead.json
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
 !/packages/hiver/admin/publishable/assets/vendor/
+/resources/crud-generator/
+/public/css/app.css
+/public/css/app.css.map
+/public/css/site.css.map
+/public/css/site.css
+*.lock
+packages/hiver/admin/publishable/assets/css/site.css.map
+public/css/app.css
+public/css/app.css.map
+public/css/site.css
+public/css/site.css.map
+resources/grud-generator/
