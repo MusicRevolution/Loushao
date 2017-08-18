@@ -17,6 +17,7 @@
     "mews/captcha": "^2.1",
     "zizaco/entrust": "5.2.x-dev",
     "laravelcollective/html": "5.1.*"
+    "rap2hpoutre/laravel-log-viewer": "^0.10.4"
   },
   "autoload": {
     "psr-0": {

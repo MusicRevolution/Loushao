@@ -149,6 +149,7 @@ return [
         Mews\Captcha\CaptchaServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
         Hiver\Admin\AdminServiceProvider::class
 

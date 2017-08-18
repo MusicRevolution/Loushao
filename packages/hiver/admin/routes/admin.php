@@ -17,5 +17,6 @@ Route::post('admin/loginValidate', 'AdminAuthController@postLogin');
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::get('/', 'AdminController@index');
     Route::resource('users', 'UsersController');
+    Route::get('/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
     Route::get('/manage', ['middleware' => ['permission:manage-admins'], 'uses' => 'AdminController@manageAdmins']);
 });

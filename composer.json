@@ -10,7 +10,8 @@
         "dingo/api": "1.0.*@dev",
         "mews/captcha": "^2.1",
         "zizaco/entrust": "5.2.x-dev",
-        "laravelcollective/html": "5.1.*"
+        "laravelcollective/html": "5.1.*",
+        "rap2hpoutre/laravel-log-viewer": "^0.10.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

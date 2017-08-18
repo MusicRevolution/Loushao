@@ -185,7 +185,7 @@
                                         </a>
                                     </li>
                                     <li class="site-menu-item">
-                                        <a href="javascript:;">
+                                        <a href="{{ url('admin/logs') }}">
                                             <span class="site-menu-title">日志设置</span>
                                         </a>
                                     </li>
