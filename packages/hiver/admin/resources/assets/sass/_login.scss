@@ -1,8 +1,61 @@
 /* 后台登录样式 */
+html {
+  height: 100%;
+}
+
 body {
   .layout-full {
     padding-top: 0;
   }
+}
+
+.height-full {
+  height: 100%!important;
+}
+
+.vertical-align-bottom,
+.vertical-align-middle {
+  display: inline-block;
+  max-width: 100%;
+  font-size: 14px;
+}
+
+.vertical-align-middle {
+  vertical-align: middle;
+}
+
+.list-icons {
+  padding-left: 10px;
+  margin-left: 0;
+  list-style: none;
+}
+
+.list-icons>li:first-child {
+  margin-top: 0;
+}
+
+.list-icons>li i {
+  float: left;
+  width: 1em;
+  margin: 0 6px 0 0;
+}
+
+.margin-right-5 {
+  margin-right: 5px!important;
+}
+
+.vertical-align:before {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  content: "";
+}
+
+.btn .icon {
+  width: 1em;
+  margin: 0 3px;
+  line-height: inherit;
+  text-align: center;
 }
 
 .page-login {
@@ -15,6 +68,21 @@ body {
   }
   .page-brand-info {
     height: 100%;
+    .page-brand {
+      padding: 0 60px 60px;
+      .brand-img {
+        vertical-align: middle;
+        margin-left: -10px;
+      }
+      h2 {
+        max-width: 650px;
+        color: #fff;
+      }
+      .list-icons {
+        padding-left: 0;
+        margin: 30px 0;
+      }
+    }
   }
   .page-copyright {
     position: absolute;
@@ -37,6 +105,9 @@ body {
 
 .page-dark.layout-full {
   color: $white;
+  .brand {
+    margin-bottom: 22px;
+  }
 }
 
 .page-dark.layout-full:before {
@@ -50,6 +121,21 @@ body {
   background-position: center top;
   -webkit-background-size: cover;
   background-size: cover;
+}
+
+.page-login.page-dark.layout-full:after {
+  background-color: rgba(38,50,56,.6);
+}
+
+.page-dark.layout-full:after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: rgba(38,50,56,.6);
 }
 
 .page-login:before {
@@ -91,4 +177,14 @@ body {
   font-size: 12px;
   color: $copyright-color;
   letter-spacing: 1px;
+}
+
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none!important;
+  }
+
+  .page-login .login-form {
+    width: auto;
+  }
 }

@@ -41,25 +41,25 @@
     <meta http-equiv="refresh" content="0; url='http://www.loushao.net/ie.html'" />
     <![endif]-->
 </head>
-<body class="site-contabs-open site-menubar-unfold">
+<body class="site-contabs-open site-menubar-unfold" id="navbarSlide">
     <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided" data-toggle="menubar">
+            <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left collapsed hided" data-toggle="collapse" aria-expanded="false" data-target="#navbarSlide">
                 <span class="sr-only">切换菜单</span> <span class="hamburger-bar"></span>
             </button>
             <button type="button" class="navbar-toggle collapsed" data-target="#hiver-navbarCollapse" data-toggle="collapse">
                 <i class="icon wb-more-horizontal" aria-hidden="true"></i>
             </button>
             <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
-                <img class="navbar-brand-logo visible-lg visible-xs navbar-logo" src="http://cdn.admui.com/demo/1.1.0/images/logo-white.svg" title="Hiver">
-                <img class="navbar-brand-logo hidden-xs hidden-lg navbar-logo-mini" src="http://cdn.admui.com/demo/1.1.0/images/logo-white-min.svg" title="Hiver">
+                <img class="navbar-brand-logo visible-lg visible-xs navbar-logo" src="{{ admin_asset('images/admin_logo.png') }}" title="Hiver">
+                <img class="navbar-brand-logo hidden-xs hidden-lg navbar-logo-mini" src="{{ admin_asset('images/admin_logo.png') }}" title="Hiver">
             </div>
         </div>
         <div class="navbar-container">
             <div class="collapse navbar-collapse navbar-collapse-toolbar" id="hiver-navbarCollapse">
                 <ul class="nav navbar-toolbar navbar-left">
                     <li class="hidden-float">
-                        <a data-toggle="menubar" class="hidden-float" href="javascript:;" role="button" id="hiver-toggleMenubar">
+                        <a class="hidden-float">
                             <i class="icon hamburger hamburger-arrow-left">
                                 <span class="sr-only">切换目录</span>
                                 <span class="hamburger-bar"></span>

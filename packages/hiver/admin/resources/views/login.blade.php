@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <title>后台管理系统</title>
+    <title>Hiver后台管理系统</title>
     <meta charset="utf-8">
     <meta name="keywords" content="hiver,hiver官网,loushao,营销,产品,海文科技,漏勺网,通用后台管理系统,后台框架,ui框架" />
     <meta name="description" content="基于Laravel5.1框架开发后台插件" />
@@ -28,6 +28,8 @@
     <!-- 样式 -->
     <link rel="stylesheet" href="{{ admin_asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ admin_asset('css/bootstrap-select.css') }}">
+    <link rel="stylesheet" href="{{ admin_asset('vendor/animsition/css/animsition.css') }}">
+    <link rel="stylesheet" href="{{ admin_asset('css/web-icons/web-icons.css') }}">
     <link rel="stylesheet" href="{{ admin_asset('css/site.css') }}">
     <!--[if lte IE 9]>
     <meta http-equiv="refresh" content="0; url='http://www.loushao.net/ie.html'" />
@@ -37,7 +39,37 @@
     <div class="page height-full">
         <div class="page-content height-full">
             <div class="page-brand-info vertical-align animation-slide-left hidden-xs">
-
+                <div class="page-brand vertical-align-middle">
+                    <div class="brand">
+                        <img class="brand-img" src="{{ admin_asset('images/admin_logo.png') }}" height="50" alt="Admui">
+                    </div>
+                    <h2 class="hidden-sm">Hiver通用后台管理系统</h2>
+                    <ul class="list-icons hidden-sm">
+                        <li>
+                            <i class="wb-check" aria-hidden="true"></i> Hiver 是基于Laravel开源框架开发的一套企业级通用管理系统，可以帮助企业提高开发效率，节约开发成本，提升品牌形象。
+                        </li>
+                        <li><i class="wb-check" aria-hidden="true"></i> Hiver 包含多角色用户管理、CMS系统等多个核心模块。</li>
+                        <li><i class="wb-check" aria-hidden="true"></i> Hiver 还将提供更多功能，同时还将支持Android、iOS、微信公众号、微信小程序等。
+                        </li>
+                    </ul>
+                    <div class="hidden-sm">
+                        <a href="http://www.hiver.cc" class="btn btn-primary margin-right-5" target="_blank"><i class="icon wb-home"></i> 返回官网</a>
+                        <div class="btn-group margin-right-5">
+                            <button type="button" class="btn btn-success dropdown-toggle" id="demoApp" data-toggle="dropdown" aria-expanded="false">
+                                <i class="icon wb-download"></i> 合作伙伴 <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-success bullet" aria-labelledby="demoApp" role="menu">
+                                <li role="presentation">
+                                    <a href="http://www.loushao.net" role="menuitem" target="_blank"><i class="icon fa-windows"></i> 漏勺网</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="http://www.musicalnova.com" role="menuitem" target="_blank"><i class="icon fa-apple"></i> 音乐革命</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="javascript:;" class="btn btn-info open-kf"><i class="icon wb-user"></i> 联系客服</a>
+                    </div>
+                </div>
             </div>
             <div class="page-login-main animation-fade">
                 @if (count($errors) > 0)
@@ -51,22 +83,21 @@
                 @endif
                 <div class="vertical-align">
                     <div class="vertical-align-middle">
-                        <h3 class="hidden-xs">登录 Admui</h3>
-                        <p class="hidden-xs">Admui 在线演示系统</p>
+                        <div class="brand visible-xs text-center">
+                            <img class="brand-img" src="{{ admin_asset('images/admin_login_logo.png') }}" height="50" alt="Admui">
+                        </div>
+                        <h3 class="hidden-xs">登录 Hiver</h3>
+                        <p class="hidden-xs">Hiver后台管理系统</p>
                         <form class="login-form fv-form fv-form-bootstrap" id="loginForm" action="loginValidate" method="post">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group">
-                                <label class="sr-only" for="identity">选择身份</label>
+                                <label class="sr-only" for="identity">选择系统</label>
                                 <select class="form-control" id="identity">
-                                    <option value="">我自己</option>
+                                    <option value="">漏勺网</option>
                                     <option data-divider="true"></option>
-                                    <option value="xiaxuan@admui_demo" data-password="123456">夏瑄</option>
-                                    <option value="zhangzhiyuan@admui_demo" data-password="123456">张致远</option>
-                                    <option value="wangshiqi@admui_demo" data-password="123456">王诗琪</option>
-                                    <option value="lixin@admui_demo" data-password="123456">李欣</option>
-                                    <option value="qinshouren@admui_demo" data-password="123456">秦守仁</option>
-                                    <option value="liuyiming@admui_demo" data-password="123456">刘一鸣</option>
-                                    <option value="wangjiaqi@admui_demo" data-password="123456">王佳琪</option>
+                                    <option value="Loushao">漏勺网</option>
+                                    <option value="Hiver">海文科技</option>
+                                    <option value="Musicalnova">音乐革命</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -92,9 +123,9 @@
                                     <label for="remember">自动登录</label>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="http://www.admui.com/?sendUrl=http%3A%2F%2Fdemo.admui.com%2Flogin#register" target="_blank">注册账号</a>
+                                    <a href="{{ url('admin/register') }}" target="_blank">注册账号</a>
                                     ·
-                                    <a class="collapsed" data-toggle="collapse" href="#forgetPassword" aria-expanded="false" aria-controls="forgetPassword">
+                                    <a href="{{ url('password/email') }}" target="_blank">
                                         找回密码
                                     </a>
                                 </div>
@@ -119,6 +150,7 @@
     <script src="{{ admin_asset('vendor/jquery/jquery.js') }}"></script>
     <script src="{{ admin_asset('vendor/bootstrap/bootstrap.js') }}"></script>
     <script src="{{ admin_asset('vendor/bootstrap-select/bootstrap-select.js') }}"></script>
+    <script src="{{ admin_asset('vendor/animsition/js/animsition.js') }}"></script>
     <script src="{{ admin_asset('js/login.js') }}"></script>
 </body>
 </html>

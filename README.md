@@ -30,4 +30,4 @@ php artisan vendor:publish --force</code></pre>
 `composer dump-autoload`<br>
 
 ## 关于后台自动生成模板
-`php artisan crud:generate Users --fields_from_file="packages/hiver/admin/template/users.json" --view-path=../../packages/hiver/admin/resources/views/ --controller-namespace=../../../packages/hiver/admin/src/Http/Controllers --route-group=admin --route=no --model-namespace=../packages/hiver/admin/src/Models`
+<pre><code>php artisan crud:generate Users --fields_from_file="packages/hiver/admin/template/users.json" --view-path=../../packages/hiver/admin/resources/views/ --controller-namespace=../../../packages/hiver/admin/src/Http/Controllers --route-group=admin --route=no --model-namespace=../packages/hiver/admin/src/Models</code></pre>

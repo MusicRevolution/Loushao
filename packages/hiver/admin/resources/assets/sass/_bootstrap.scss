@@ -1,5 +1,8 @@
 /* boostrap改变样式 */
-.bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:active {
+.bootstrap-select > .dropdown-toggle.bs-placeholder,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:hover,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:active {
   color: $gray;
   background-color: $white;
 }
@@ -26,6 +29,12 @@
   color: $danger-color;
   background-color: rgba(255,234,234,.8);
   border-color: $danger-border-color;
+  ul {
+    list-style: none;
+    li {
+      list-style: none;
+    }
+  }
 }
 
 /* 下拉菜单 */
@@ -42,7 +51,7 @@
   font-size: 14px;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: $white;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border: 1px solid #e4eaec;
@@ -62,7 +71,7 @@
   clear: both;
   font-weight: 400;
   line-height: 1.6;
-  color: #76838f;
+  color: $default-color;
   white-space: nowrap;
 }
 
@@ -73,14 +82,16 @@
   transition: background-color .25s;
 }
 
-.dropdown-menu li .icon:first-child, .dropdown-menu li>a .icon:first-child {
+.dropdown-menu li .icon:first-child,
+.dropdown-menu li>a .icon:first-child {
   width: 1em;
   margin-right: .5em;
   text-align: center;
 }
 
-.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
-  color: #76838f;
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+  color: $default-color;
   text-decoration: none;
   background-color: #f3f7f9;
 }
