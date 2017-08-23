@@ -24,3 +24,8 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 // 密码重置路由
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
+
+$api = app('Dingo\Api\Routing\Router');
+$api->version('v1', ['namespace' => 'App\Http\Controllers\Api\v1'], function ($api) {
+    $api->get('users', 'UsersController@getUsers');
+});
