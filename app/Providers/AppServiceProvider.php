@@ -14,6 +14,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        app('Dingo\Api\Auth\Auth')->extend('basic', function ($app) {
+            return new \Dingo\Api\Auth\Provider\Basic($app['auth'], 'email');
+        });
     }
 
     /**
