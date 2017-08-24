@@ -1,17 +1,13 @@
 {
   "fields": [
     {
-      "name": "title",
+      "name": "avatar",
       "type": "string"
     },
     {
-      "name": "content",
-      "type": "text"
-    },
-    {
-      "name": "category",
-      "type": "select",
-      "options": ["technology", "tips", "health"]
+      "name": "status",
+      "type": "radio",
+      "options": ["正常", "锁定"]
     },
     {
       "name": "user_id",
@@ -35,8 +31,8 @@
   ],
   "validations": [
     {
-      "field": "title",
-      "rules": "required|max:10"
+      "field": "avatar",
+      "rules": "max:255"
     }
   ]
 }

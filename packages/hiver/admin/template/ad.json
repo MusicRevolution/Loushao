@@ -1,0 +1,61 @@
+{
+  "fields": [
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+        "name": "img",
+        "type": "file"
+    },
+    {
+        "name": "url",
+        "type": "text"
+    },
+    {
+        "name": "hits",
+        "type": "number"
+    },
+    {
+        "name": "status",
+        "type": "number"
+    },
+    {
+      "name": "user_id",
+      "type": "integer#unsigned"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "user_id",
+      "references": "id",
+      "on": "users",
+      "onDelete": "cascade"
+    }
+  ],
+  "relationships": [
+    {
+      "name": "user",
+      "type": "belongsTo",
+      "class": "App\\User"
+    }
+  ],
+  "validations": [
+    {
+      "field": "title",
+      "rules": "required|max:255"
+    },
+    {
+        "field": "img",
+        "rules": "required|max:255"
+    },
+    {
+        "field": "url",
+        "rules": "required|max:255"
+    },
+    {
+        "field": "hits",
+        "rules": "required|min:0"
+    }
+  ]
+}

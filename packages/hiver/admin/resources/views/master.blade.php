@@ -133,6 +133,18 @@
                                 </a>
                             </li>
                             <li class="site-menu-item has-sub">
+                                <a href="{{ url('/admin/banner') }}">
+                                    <i class="site-menu-icon fa fa-files-o" aria-hidden="true"></i>
+                                    <span class="site-menu-title">Banner管理</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item has-sub">
+                                <a href="{{ url('/admin/ad') }}">
+                                    <i class="site-menu-icon fa fa-files-o" aria-hidden="true"></i>
+                                    <span class="site-menu-title">广告管理</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item has-sub">
                                 <a href="javascript:;">
                                     <i class="site-menu-icon fa fa-files-o" aria-hidden="true"></i>
                                     <span class="site-menu-title">页面设置</span><span class="site-menu-arrow"></span>

@@ -3,22 +3,22 @@
 @section('content')
 <div class="page animation-fade page-forms">
     <div class="page-header">
-        <h1 class="page-title">%%modelName%%管理</h1>
+        <h1 class="page-title">用户管理</h1>
         <ol class="breadcrumb">
             <li>
-                <a href="{{ url('/admin') }}">首页</a>
+                <a>首页</a>
             </li>
             <li>
-                <a href="{{ url('/admin/%%viewName%%') }}">%%modelName%%管理</a>
+                <a href="javascript:;">系统管理</a>
             </li>
-            <li class="active">编辑%%modelName%%</li>
+            <li class="active">用户管理</li>
         </ol>
     </div>
     <div class="page-content">
         <div class="panel">
-            <div class="panel-heading">编辑%%modelName%% #{{ $%%crudNameSingular%%->%%primaryKey%% }}</div>
-            <div class="panel-body">
-                <a href="{{ url('/%%routeGroup%%%%viewName%%') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+            <div class="panel-heading">Edit Banner #{{ $banner->id }}</div>
+            <div class="panel-body container-fluid">
+                <a href="{{ url('/admin/banner') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                 @if ($errors->any())
                     <ul class="alert alert-danger">
                         @foreach ($errors->all() as $error)
@@ -26,13 +26,13 @@
                         @endforeach
                     </ul>
                 @endif
-                {!! Form::model($%%crudNameSingular%%, [
+                {!! Form::model($banner, [
                     'method' => 'PATCH',
-                    'url' => ['/%%routeGroup%%%%viewName%%', $%%crudNameSingular%%->%%primaryKey%%],
+                    'url' => ['/admin/banner', $banner->id],
                     'class' => '',
                     'files' => true
                 ]) !!}
-                @include ('admin::%%viewName%%.form', ['submitButtonText' => '更新'])
+                @include ('admin::banner.form', ['submitButtonText' => 'Update'])
                 {!! Form::close() !!}
                 </div>
             </div>

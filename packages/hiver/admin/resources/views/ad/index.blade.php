@@ -3,22 +3,22 @@
 @section('content')
 <div class="page animation-fade page-forms">
     <div class="page-header">
-        <h1 class="page-title">%%modelName%%管理</h1>
+        <h1 class="page-title">Ad管理</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="{{ url('/admin') }}">首页</a>
             </li>
-            <li class="active">%%modelName%%管理</li>
+            <li class="active">Ad管理</li>
         </ol>
     </div>
     <div class="page-content">
         <div class="panel">
-            <div class="panel-heading">%%crudNameCap%%管理</div>
+            <div class="panel-heading">Ad管理</div>
                 <div class="panel-body">
-                    <a href="{{ url('/%%routeGroup%%%%viewName%%/create') }}" class="btn btn-success btn-sm" title="Add New %%modelName%%">
-                        <i class="fa fa-plus" aria-hidden="true"></i> 添加新%%modelName%%
+                    <a href="{{ url('/admin/ad/create') }}" class="btn btn-success btn-sm" title="Add New Ad">
+                        <i class="fa fa-plus" aria-hidden="true"></i> 添加新Ad
                     </a>
-                    {!! Form::open(['method' => 'GET', 'url' => '/%%routeGroup%%%%viewName%%', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
+                    {!! Form::open(['method' => 'GET', 'url' => '/admin/ad', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
                     <div class="input-group">
                         <input type="text" class="form-control" name="search" placeholder="Search...">
                         <span class="input-group-btn">
@@ -32,26 +32,26 @@
                         <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th>ID</th>%%formHeadingHtml%%<th>Actions</th>
+                            <th>ID</th><th>Title</th><th>Img</th><th>Url</th><th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($%%crudName%% as $item)
+                        @foreach($ad as $item)
                         <tr>
                             <td>{{ $item->id }}</td>
-                            %%formBodyHtml%%
+                            <td>{{ $item->title }}</td><td>{{ $item->img }}</td><td>{{ $item->url }}</td>
                             <td>
-                                <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%%) }}" title="查看%%modelName%%"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> 查看</button></a>
-                                <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%% . '/edit') }}" title="编辑%%modelName%%"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 编辑</button></a>
+                                <a href="{{ url('/admin/ad/' . $item->id) }}" title="查看Ad"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> 查看</button></a>
+                                <a href="{{ url('/admin/ad/' . $item->id . '/edit') }}" title="编辑Ad"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 编辑</button></a>
                                     {!! Form::open([
                                         'method'=>'DELETE',
-                                        'url' => ['/%%routeGroup%%%%viewName%%', $item->%%primaryKey%%],
+                                        'url' => ['/admin/ad', $item->id],
                                         'style' => 'display:inline'
                                     ]) !!}
                                     {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> 删除', array(
                                         'type' => 'submit',
                                         'class' => 'btn btn-danger btn-xs',
-                                        'title' => '删除 %%modelName%%',
+                                        'title' => '删除 Ad',
                                         'onclick'=>'return confirm("确定要删除该信息？")'
                                     )) !!}
                                     {!! Form::close() !!}
@@ -60,7 +60,7 @@
                             @endforeach
                             </tbody>
                             </table>
-                            <div class="pagination-wrapper"> {!! $%%crudName%%->appends(['search' => Request::get('search')])->render() !!} </div>
+                            <div class="pagination-wrapper"> {!! $ad->appends(['search' => Request::get('search')])->render() !!} </div>
                         </div>
                     </div>
                 </div>
