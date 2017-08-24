@@ -3,41 +3,53 @@
 @section('content')
 <div class="page animation-fade page-forms">
     <div class="page-header">
-        <h1 class="page-title">用户管理</h1>
+        <h1 class="page-title">查看Banner</h1>
         <ol class="breadcrumb">
-            <li>
-                <a>首页</a>
+             <li>
+                <a href="{{ url('/admin') }}">首页</a>
             </li>
             <li>
-                <a href="javascript:;">系统管理</a>
+                <a href="{{ url('/admin/banner') }}">Banner管理</a>
             </li>
-            <li class="active">用户管理</li>
+            <li class="active">查看Banner</li>
         </ol>
     </div>
     <div class="page-content">
         <div class="panel">
-            <div class="panel-heading">Banner {{ $banner->id }}</div>
             <div class="panel-body">
-                <a href="{{ url('/admin/banner') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                <a href="{{ url('/admin/banner/' . $banner->id . '/edit') }}" title="Edit Banner"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                <a href="{{ url('/admin/banner/' . $banner->id . '/edit') }}" title="编辑Banner"><button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 编辑</button></a>
                 {!! Form::open([
                     'method'=>'DELETE',
                     'url' => ['admin/banner', $banner->id],
                     'style' => 'display:inline'
                 ]) !!}
-                {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(
+                {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> 删除', array(
                     'type' => 'submit',
-                    'class' => 'btn btn-danger btn-xs',
-                    'title' => 'Delete Banner',
-                    'onclick'=>'return confirm("Confirm delete?")'
+                    'class' => 'btn btn-danger',
+                    'title' => '删除Banner',
+                    'onclick'=>'return confirm("确认要删除该信息？")'
                 ))!!}
                 {!! Form::close() !!}
+                <br /><br />
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped">
                     <tbody>
                     <tr>
-                        <th>ID</th><td>{{ $banner->id }}</td></tr>
-                        <tr><th> Title </th><td> {{ $banner->title }} </td></tr><tr><th> Img </th><td> {{ $banner->img }} </td></tr><tr><th> Url </th><td> {{ $banner->url }} </td></tr>
+                        <th>编号</th>
+                        <td>{{ $banner->id }}</td>
+                    </tr>
+                    <tr>
+                        <th>标题</th>
+                        <td>{{ $banner->title }}</td>
+                    </tr>
+                    <tr>
+                        <th>图片</th>
+                        <td>{{ $banner->img }}</td>
+                    </tr>
+                    <tr>
+                        <th>URL地址</th>
+                        <td>{{ $banner->url }}</td>
+                    </tr>
                     </tbody>
                     </table>
                 </div>

@@ -1,4 +1,5 @@
 @extends('admin::master')
+
 @section('content')
 <div class="page animation-fade page-index">
     <div class="page-header">
@@ -10,7 +11,7 @@
         </ol>
     </div>
     <div class="page-content">
-        Hello, World.
+        
     </div>
 </div>
 @stop

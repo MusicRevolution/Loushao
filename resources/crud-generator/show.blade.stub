@@ -3,7 +3,7 @@
 @section('content')
 <div class="page animation-fade page-forms">
     <div class="page-header">
-        <h1 class="page-title">%%modelName%%管理</h1>
+        <h1 class="page-title">查看%%modelName%%</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="{{ url('/admin') }}">首页</a>
@@ -16,10 +16,8 @@
     </div>
     <div class="page-content">
         <div class="panel">
-            <div class="panel-heading">%%modelName%% {{ $%%crudNameSingular%%->%%primaryKey%% }}</div>
             <div class="panel-body">
-                <a href="{{ url('/%%routeGroup%%%%viewName%%') }}" title="返回"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> 返回</button></a>
-                <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $%%crudNameSingular%%->%%primaryKey%% . '/edit') }}" title="编辑%%modelName%%"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 编辑</button></a>
+                <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $%%crudNameSingular%%->%%primaryKey%% . '/edit') }}" title="编辑%%modelName%%"><button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 编辑</button></a>
                 {!! Form::open([
                     'method'=>'DELETE',
                     'url' => ['%%routeGroup%%%%crudName%%', $%%crudNameSingular%%->%%primaryKey%%],
@@ -27,11 +25,12 @@
                 ]) !!}
                 {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> 删除', array(
                     'type' => 'submit',
-                    'class' => 'btn btn-danger btn-xs',
-                    'title' => 'Delete %%modelName%%',
+                    'class' => 'btn btn-danger',
+                    'title' => '删除%%modelName%%',
                     'onclick'=>'return confirm("确定要删除该信息？")'
                 ))!!}
                 {!! Form::close() !!}
+                <br /><br />
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped">
                     <tbody>

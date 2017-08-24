@@ -3,22 +3,20 @@
 @section('content')
 <div class="page animation-fade page-forms">
     <div class="page-header">
-        <h1 class="page-title">用户管理</h1>
+        <h1 class="page-title">添加新用户</h1>
         <ol class="breadcrumb">
             <li>
-                <a>首页</a>
+                <a href="{{ url('/admdin') }}">首页</a>
             </li>
             <li>
-                <a href="javascript:;">系统管理</a>
+                <a href="{{ url('/admin/users') }}">用户管理</a>
             </li>
-            <li class="active">用户管理</li>
+            <li class="active">添加新用户</li>
         </ol>
     </div>
     <div class="page-content">
         <div class="panel">
-            <div class="panel-heading">添加新用户</div>
             <div class="panel-body container-fluid">
-                <a href="{{ url('/admin/users') }}" title="返回"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> 返回</button></a>
                 @if ($errors->any())
                     <ul class="alert alert-danger">
                         @foreach ($errors->all() as $error)

@@ -16,7 +16,7 @@ class CreateBannersTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('img');
-            $table->text('url');
+            $table->string('url');
             $table->integer('hits');
             $table->integer('status');
             $table->integer('user_id')->unsigned();

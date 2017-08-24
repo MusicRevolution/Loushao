@@ -58,23 +58,23 @@ class BannerController extends Controller
         $this->validate($request, [
 			'title' => 'required|max:255',
 			'img' => 'required|max:255',
-			'url' => 'required|max:255',
+			'url' => 'required',
 			'hits' => 'required|min:0'
 		]);
         $requestData = $request->all();
         
-
         if ($request->hasFile('img')) {
-            foreach($request['img'] as $file){
-                $uploadPath = public_path('/uploads/img');
-
-                $extension = $file->getClientOriginalExtension();
-                $fileName = rand(11111, 99999) . '.' . $extension;
-
-                $file->move($uploadPath, $fileName);
-                $requestData['img'] = $fileName;
-            }
+            $file = $request['img'];
+            $uploadPath = public_path('/uploads/img/').date('Y-m-d');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = date('Ymdhis').'.'.$extension;
+            $file->move($uploadPath, $fileName);
+            $requestData['img'] = $fileName;
+        } else {
+            $requestData['img'] = '';
         }
+
+        $requestData['user_id'] = \Auth::id();
 
         Banner::create($requestData);
 
@@ -123,24 +123,24 @@ class BannerController extends Controller
     {
         $this->validate($request, [
 			'title' => 'required|max:255',
-			'img' => 'required|max:255',
+			'img' => 'required',
 			'url' => 'required|max:255',
 			'hits' => 'required|min:0'
 		]);
         $requestData = $request->all();
         
-
         if ($request->hasFile('img')) {
-            foreach($request['img'] as $file){
-                $uploadPath = public_path('/uploads/img');
-
-                $extension = $file->getClientOriginalExtension();
-                $fileName = rand(11111, 99999) . '.' . $extension;
-
-                $file->move($uploadPath, $fileName);
-                $requestData['img'] = $fileName;
-            }
+            $file = $request['img'];
+            $uploadPath = public_path('/uploads/img/').date('Y-m-d');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = date('Ymdhis').'.'.$extension;
+            $file->move($uploadPath, $fileName);
+            $requestData['img'] = $fileName;
+        } else {
+            $requestData['img'] = '';
         }
+
+        $requestData['user_id'] = \Auth::id();
 
         $banner = Banner::findOrFail($id);
         $banner->update($requestData);

@@ -1,24 +1,27 @@
 @extends('admin::master')
 
+@section('style')
+@parent
+  <link rel="stylesheet" href="{{ admin_asset('js/plugins/dropify/css/dropify.css') }}">
+@endsection
+
 @section('content')
 <div class="page animation-fade page-forms">
     <div class="page-header">
-        <h1 class="page-title">用户管理</h1>
+        <h1 class="page-title">编辑Banner</h1>
         <ol class="breadcrumb">
-            <li>
-                <a>首页</a>
+             <li>
+                <a href="{{ url('/admin') }}">首页</a>
             </li>
             <li>
-                <a href="javascript:;">系统管理</a>
+                <a href="{{ url('/admin/banner') }}">Banner管理</a>
             </li>
-            <li class="active">用户管理</li>
+            <li class="active">编辑Banner</li>
         </ol>
     </div>
     <div class="page-content">
         <div class="panel">
-            <div class="panel-heading">Edit Banner #{{ $banner->id }}</div>
             <div class="panel-body container-fluid">
-                <a href="{{ url('/admin/banner') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                 @if ($errors->any())
                     <ul class="alert alert-danger">
                         @foreach ($errors->all() as $error)
@@ -32,11 +35,21 @@
                     'class' => '',
                     'files' => true
                 ]) !!}
-                @include ('admin::banner.form', ['submitButtonText' => 'Update'])
+                @include ('admin::banner.form', ['submitButtonText' => '更新'])
                 {!! Form::close() !!}
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+@parent
+    <script src="{{ admin_asset('js/plugins/dropify/js/dropify.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+           $('.dropify').dropify(); 
+        });
+    </script>
 @endsection

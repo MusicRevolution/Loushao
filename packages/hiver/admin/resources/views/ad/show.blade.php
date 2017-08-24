@@ -3,23 +3,21 @@
 @section('content')
 <div class="page animation-fade page-forms">
     <div class="page-header">
-        <h1 class="page-title">Ad管理</h1>
+        <h1 class="page-title">查看广告</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="{{ url('/admin') }}">首页</a>
             </li>
             <li>
-                <a href="{{ url('/admin/ad') }}">Ad管理</a>
+                <a href="{{ url('/admin/ad') }}">广告管理</a>
             </li>
-            <li class="active">查看Ad</li>
+            <li class="active">查看广告</li>
         </ol>
     </div>
     <div class="page-content">
         <div class="panel">
-            <div class="panel-heading">Ad {{ $ad->id }}</div>
             <div class="panel-body">
-                <a href="{{ url('/admin/ad') }}" title="返回"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> 返回</button></a>
-                <a href="{{ url('/admin/ad/' . $ad->id . '/edit') }}" title="编辑Ad"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 编辑</button></a>
+                <a href="{{ url('/admin/ad/' . $ad->id . '/edit') }}" title="编辑广告"><button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 编辑</button></a>
                 {!! Form::open([
                     'method'=>'DELETE',
                     'url' => ['admin/ad', $ad->id],
@@ -27,19 +25,31 @@
                 ]) !!}
                 {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> 删除', array(
                     'type' => 'submit',
-                    'class' => 'btn btn-danger btn-xs',
-                    'title' => 'Delete Ad',
+                    'class' => 'btn btn-danger',
+                    'title' => '删除广告',
                     'onclick'=>'return confirm("确定要删除该信息？")'
                 ))!!}
                 {!! Form::close() !!}
+                <br /><br />
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped">
                     <tbody>
                     <tr>
-                        <th>ID</th>
+                        <th>编号</th>
                         <td>{{ $ad->id }}</td>
                     </tr>
-                    <tr><th> Title </th><td> {{ $ad->title }} </td></tr><tr><th> Img </th><td> {{ $ad->img }} </td></tr><tr><th> Url </th><td> {{ $ad->url }} </td></tr>
+                    <tr>
+                        <th>标题</th>
+                        <td>{{ $ad->title }}</td>
+                    </tr>
+                    <tr>
+                        <th>图片</th>
+                        <td>{{ $ad->img }}</td>
+                    </tr>
+                    <tr>
+                        <th>URL地址</th>
+                        <td>{{ $ad->url }}</td>
+                    </tr>
                     </tbody>
                     </table>
                 </div>

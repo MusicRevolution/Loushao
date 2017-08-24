@@ -35,6 +35,8 @@
     <link rel="stylesheet" href="{{ admin_asset('vendor/animsition/css/animsition.css') }}">
     <link rel="stylesheet" href="{{ admin_asset('vendor/toastr/toastr.css') }}">
     <link rel="stylesheet" href="{{ admin_asset('vendor/metismenu/Metismenu.css') }}">
+    @section('style')
+    @show
     <!-- 自定义 -->
     <link rel="stylesheet" href="{{ admin_asset('css/site.css') }}">
     <!--[if lte IE 9]>
@@ -85,12 +87,12 @@
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li class="no-menu" role="presentation">
-                                        <a href="#" target="_blank" role="menuitem" data-pjax>
+                                        <a href="javascript:;" role="menuitem">
                                             <i class="icon wb-list-numbered"></i><span>网站地图</span>
                                         </a>
                                     </li>
                                     <li class="no-menu" role="presentation">
-                                        <a href="#" target="_blank" role="menuitem" data-pjax>
+                                        <a href="javascript:;" role="menuitem">
                                             <i class="icon wb-wrench"></i><span>菜单管理</span>
                                         </a>
                                     </li>
@@ -133,44 +135,87 @@
                                 </a>
                             </li>
                             <li class="site-menu-item has-sub">
-                                <a href="{{ url('/admin/banner') }}">
-                                    <i class="site-menu-icon fa fa-files-o" aria-hidden="true"></i>
-                                    <span class="site-menu-title">Banner管理</span>
-                                </a>
-                            </li>
-                            <li class="site-menu-item has-sub">
-                                <a href="{{ url('/admin/ad') }}">
-                                    <i class="site-menu-icon fa fa-files-o" aria-hidden="true"></i>
-                                    <span class="site-menu-title">广告管理</span>
-                                </a>
-                            </li>
-                            <li class="site-menu-item has-sub">
                                 <a href="javascript:;">
                                     <i class="site-menu-icon fa fa-files-o" aria-hidden="true"></i>
                                     <span class="site-menu-title">页面设置</span><span class="site-menu-arrow"></span>
                                 </a>
                                 <ul class="site-menu-sub">
+                                    <li class="site-menu-item">
+                                        <a href="javascript:;">
+                                            <span class="site-menu-title">动画资源管理</span>
+                                        </a>
+                                    </li>
                                     <li class="site-menu-item has-sub">
                                         <a href="javascript:;">
-                                            <span class="site-menu-title">栅格</span>
+                                            <span class="site-menu-title">营销管理</span>
                                             <span class="site-menu-arrow"></span>
                                         </a>
                                         <ul class="site-menu-sub">
                                             <!-- 五级菜单 -->
                                             <li class="site-menu-item ">
-                                                <a data-pjax href="/components/layouts/grids" target="_blank">
-                                                    <span class="site-menu-title">基本栅格</span>
+                                                <a href="{{ url('/admin/banner') }}">
+                                                    <span class="site-menu-title">Banner管理</span>
                                                 </a>
                                             </li>
                                             <li class="site-menu-item ">
-                                                <a data-pjax href="/components/layouts/layout-grid" target="_blank">
-                                                    <span class="site-menu-title">布局栅格</span>
+                                                <a href="{{ url('/admin/ad') }}">
+                                                    <span class="site-menu-title">广告管理</span>
+                                                </a>
+                                            </li>
+                                            <!-- 五级菜单 -->
+                                        </ul>
+                                    </li>
+                                    <li class="site-menu-item has-sub">
+                                        <a href="javascript:;">
+                                            <span class="site-menu-title">论坛管理</span>
+                                            <span class="site-menu-arrow"></span>
+                                        </a>
+                                        <ul class="site-menu-sub">
+                                            <!-- 五级菜单 -->
+                                            <li class="site-menu-item ">
+                                                <a href="javascript:;">
+                                                    <span class="site-menu-title">板块管理</span>
+                                                </a>
+                                            </li>
+                                            <li class="site-menu-item ">
+                                                <a href="javascript:;">
+                                                    <span class="site-menu-title">主题管理</span>
                                                 </a>
                                             </li>
                                             <!-- 五级菜单 -->
                                         </ul>
                                     </li>
                                 </ul>
+                            </li>
+                            <li class="site-menu-item has-sub">
+                                <a href="javascript:;">
+                                    <i class="site-menu-icon fa fa-television" aria-hidden="true"></i>
+                                    <span class="site-menu-title">专题管理</span>
+                                    <span class="site-menu-arrow"></span>
+                                </a>
+                                <ul class="site-menu-sub">
+                                    <li class="site-menu-item ">
+                                        <a href="javascript:;">
+                                            <span class="site-menu-title">排行榜</span>
+                                        </a>
+                                    </li>
+                                    <li class="site-menu-item ">
+                                        <a href="javascript:;">
+                                            <span class="site-menu-title">安利墙</span>
+                                        </a>
+                                    </li>
+                                    <li class="site-menu-item ">
+                                        <a href="javascript:;">
+                                            <span class="site-menu-title">发现</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="javascript:;">
+                                    <i class="site-menu-icon fa fa-bar-chart" aria-hidden="true"></i>
+                                    <span class="site-menu-title">数据统计</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -185,12 +230,38 @@
                                     <span class="site-menu-title">用户管理</span>
                                 </a>
                             </li>
+                            <li class="site-menu-item">
+                                <a href="javascript:;">
+                                    <i class="site-menu-icon fa fa-comments-o" aria-hidden="true"></i>
+                                    <span class="site-menu-title">反馈管理</span>
+                                </a>
+                            </li>
                             <li class="site-menu-item has-sub">
                                 <a href="javascript:;">
                                     <i class="site-menu-icon fa fa-gear" aria-hidden="true"></i>
                                     <span class="site-menu-title">系统设置</span><span class="site-menu-arrow"></span>
                                 </a>
                                 <ul class="site-menu-sub">
+                                    <li class="site-menu-item has-sub">
+                                        <a href="javascript:;">
+                                            <span class="site-menu-title">权限管理</span>
+                                            <span class="site-menu-arrow"></span>
+                                        </a>
+                                        <ul class="site-menu-sub">
+                                            <!-- 五级菜单 -->
+                                            <li class="site-menu-item ">
+                                                <a href="javascript:;">
+                                                    <span class="site-menu-title">角色管理</span>
+                                                </a>
+                                            </li>
+                                            <li class="site-menu-item ">
+                                                <a href="javascript:;">
+                                                    <span class="site-menu-title">权限管理</span>
+                                                </a>
+                                            </li>
+                                            <!-- 五级菜单 -->
+                                        </ul>
+                                    </li>
                                     <li class="site-menu-item">
                                         <a href="javascript:;">
                                             <span class="site-menu-title">显示设置</span>
@@ -234,6 +305,8 @@
     <script src="{{ admin_asset('vendor/metismenu/metisMenu.min.js') }}"></script>
     <script src="{{ admin_asset('vendor/bootbox.min.js') }}"></script>
     <script src="{{ admin_asset('vendor/screenfull/screenfull.min.js') }}"></script>
+    @section('script')
+    @show
     <script>
         $(document).ready(function(){
             $('#admui-navMenu').tab('show')

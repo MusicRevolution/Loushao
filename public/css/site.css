@@ -416,7 +416,8 @@ body .layout-full {
     width: 100%;
     -webkit-overflow-scrolling: touch; }
   .site-page .page {
-    min-height: calc(100vh - 100px) !important; }
+    min-height: calc(100vh - 100px) !important;
+    margin-top: 60px; }
 
 /* 表单样式 */
 .site-page .page {
@@ -558,7 +559,7 @@ label {
     border-radius: 0 !important; }
 
 .navbar {
-  position: relative;
+  /*position: relative;*/
   min-height: 60px;
   margin-bottom: 0px;
   border: 1px solid transparent; }
