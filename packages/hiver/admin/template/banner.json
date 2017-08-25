@@ -10,7 +10,7 @@
     },
     {
         "name": "url",
-        "type": "text"
+        "type": "string"
     },
     {
         "name": "hits",

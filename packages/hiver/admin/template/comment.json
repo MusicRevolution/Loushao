@@ -1,23 +1,31 @@
 {
   "fields": [
     {
-      "name": "title",
-      "type": "string"
+      "name": "score",
+      "type": "number"
     },
     {
-        "name": "img",
-        "type": "file"
+        "name": "content",
+        "type": "text"
     },
     {
-        "name": "url",
+        "name": "source",
         "type": "string"
     },
     {
-        "name": "hits",
+        "name": "tops",
         "type": "number"
     },
     {
-        "name": "status",
+        "name": "downs",
+        "type": "number"
+    },
+    {
+        "name": "isadmin",
+        "type": "number"
+    },
+    {
+        "name": "comment_id",
         "type": "number"
     },
     {
@@ -38,24 +46,6 @@
       "name": "user",
       "type": "belongsTo",
       "class": "App\\User"
-    }
-  ],
-  "validations": [
-    {
-      "field": "title",
-      "rules": "required|max:255"
-    },
-    {
-        "field": "img",
-        "rules": "required|max:255"
-    },
-    {
-        "field": "url",
-        "rules": "required|max:255"
-    },
-    {
-        "field": "hits",
-        "rules": "required|min:0"
     }
   ]
 }
