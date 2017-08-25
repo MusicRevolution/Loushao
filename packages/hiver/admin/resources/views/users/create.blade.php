@@ -6,7 +6,7 @@
         <h1 class="page-title">添加新用户</h1>
         <ol class="breadcrumb">
             <li>
-                <a href="{{ url('/admdin') }}">首页</a>
+                <a href="{{ url('/admin') }}">首页</a>
             </li>
             <li>
                 <a href="{{ url('/admin/users') }}">用户管理</a>

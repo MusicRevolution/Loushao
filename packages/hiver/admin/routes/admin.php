@@ -20,6 +20,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::get('/', 'AdminController@index');
     // 用户管理
     Route::resource('users', 'UsersController');
+    Route::get('/profile/{id}/edit', 'ProfileController@edit');
+    Route::patch('/profile/{id}', 'ProfileController@update');
     // Banner管理
     Route::resource('banner', 'BannerController');
     // 广告管理

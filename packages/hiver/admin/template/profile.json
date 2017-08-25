@@ -6,8 +6,23 @@
     },
     {
       "name": "status",
-      "type": "radio",
-      "options": ["正常", "锁定"]
+      "type": "number"
+    },
+    {
+      "name": "follows",
+      "type": "number"
+    },
+    {
+      "name": "logins",
+      "type": "number"
+    },
+    {
+      "name": "times",
+      "type": "number"
+    },
+    {
+      "name": "fans",
+      "type": "number"
     },
     {
       "name": "user_id",
@@ -27,12 +42,6 @@
       "name": "user",
       "type": "belongsTo",
       "class": "App\\User"
-    }
-  ],
-  "validations": [
-    {
-      "field": "avatar",
-      "rules": "max:255"
     }
   ]
 }

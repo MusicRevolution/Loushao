@@ -60,6 +60,7 @@
                                 'onclick'=>'return confirm("您确定要删除该信息吗？")'
                             )) !!}
                             {!! Form::close() !!}
+                            <a href="{{ url('/admin/profile/'.$item->id.'/edit') }}" title="详细信息"><button class="btn btn-success btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 详细信息</button></a>
                         </td>
                     </tr>
                     @endforeach

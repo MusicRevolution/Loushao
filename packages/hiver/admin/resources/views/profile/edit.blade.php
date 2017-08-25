@@ -1,9 +1,14 @@
 @extends('admin::master')
 
+@section('style')
+@parent
+  <link rel="stylesheet" href="{{ admin_asset('js/plugins/dropify/css/dropify.css') }}">
+@endsection
+
 @section('content')
 <div class="page animation-fade page-forms">
     <div class="page-header">
-        <h1 class="page-title">编辑用户</h1>
+        <h1 class="page-title">编辑Profile</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="{{ url('/admin') }}">首页</a>
@@ -11,12 +16,12 @@
             <li>
                 <a href="{{ url('/admin/users') }}">用户管理</a>
             </li>
-            <li class="active">编辑用户</li>
+            <li class="active">详细信息</li>
         </ol>
     </div>
     <div class="page-content">
         <div class="panel">
-            <div class="panel-body container-fluid">
+            <div class="panel-body">
                 @if ($errors->any())
                     <ul class="alert alert-danger">
                         @foreach ($errors->all() as $error)
@@ -24,16 +29,27 @@
                         @endforeach
                     </ul>
                 @endif
-                {!! Form::model($user, [
+                {!! Form::model($profile, [
                     'method' => 'PATCH',
-                    'url' => ['/admin/users', $user->id],
+                    'url' => ['/admin/profile', $profile->id],
                     'class' => '',
                     'files' => true
                 ]) !!}
-                @include ('admin::users.form', ['submitButtonText' => '更新'])
+                @include ('admin::profile.form', ['submitButtonText' => '更新'])
                 {!! Form::close() !!}
+                </div>
             </div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+@parent
+    <script src="{{ admin_asset('js/plugins/dropify/js/dropify.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+           $('.dropify').dropify(); 
+        });
+    </script>
 @endsection

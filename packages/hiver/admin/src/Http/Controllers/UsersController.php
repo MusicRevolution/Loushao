@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Hiver\Admin\Models\User;
+use Hiver\Admin\Models\Profile;
 use Illuminate\Http\Request;
 use Session;
 
@@ -57,7 +58,17 @@ class UsersController extends Controller
 		]);
         $requestData = $request->all();
         
-        User::create($requestData);
+        $user = User::create($requestData);
+        $profile = array(
+            'avatar' => '',
+            'status' => 1,
+            'follows' => 0,
+            'logins' => 0,
+            'times' => 0,
+            'fans' => 0,
+            'user_id' => $user->id
+        );
+        Profile::create($profile);
 
         Session::flash('flash_message', '添加成功！');
 
