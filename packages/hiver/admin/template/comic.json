@@ -1,0 +1,101 @@
+{
+  "fields": [
+    {
+        "name": "title",
+        "type": "string"
+    },
+    {
+        "name": "small_img",
+        "type": "file"
+    },
+    {
+        "name": "big_img",
+        "type": "file"
+    },
+    {
+        "name": "score",
+        "type": "number"
+    },
+    {
+        "name": "hits",
+        "type": "number"
+    },
+    {
+        "name": "content",
+        "type": "text"
+    },
+    {
+        "name": "comment",
+        "type": "number"
+    },
+    {
+        "name": "topic",
+        "type": "number"
+    },
+    {
+        "name": "tags",
+        "type": "string"
+    },
+    {
+        "name": "country",
+        "type": "string"
+    },
+    {
+        "name": "source",
+        "type": "number"
+    },
+    {
+        "name": "barcode",
+        "type": "string"
+    },
+    {
+      "name": "user_id",
+      "type": "integer#unsigned"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "user_id",
+      "references": "id",
+      "on": "users",
+      "onDelete": "cascade"
+    }
+  ],
+  "relationships": [
+    {
+      "name": "user",
+      "type": "belongsTo",
+      "class": "App\\User"
+    }
+  ],
+  "validations": [
+    {
+      "field": "title",
+      "rules": "required|max:255"
+    },
+    {
+        "field": "small_img",
+        "rules": "required"
+    },
+    {
+        "field": "big_img",
+        "rules": "required"
+    },
+    {
+        "field": "score",
+        "rules": "required|min:0"
+    },
+    {
+        "field": "hits",
+        "rules": "required|min:0"
+    },
+    {
+        "field": "comment",
+        "rules": "required|min:0"
+    },
+    {
+        "field": "topic",
+        "rules": "required|min:0"
+    }
+  ]
+}

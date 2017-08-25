@@ -5,11 +5,11 @@ namespace Hiver\Admin\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Hiver\Admin\Models\User;
+use Hiver\Admin\Models\Download;
 use Illuminate\Http\Request;
 use Session;
 
-class UsersController extends Controller
+class DownloadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,28 +19,25 @@ class UsersController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
+        $id = $request->get('id');
+        if($id < 1)
+            return redirect('admin/comics');
+
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $users = User::where('name', 'LIKE', "%$keyword%")
-				->orWhere('email', 'LIKE', "%$keyword%")
-				->orWhere('password', 'LIKE', "%$keyword%")
+            $download = Download::where('title', 'LIKE', "%$keyword%")
+				->orWhere('url', 'LIKE', "%$keyword%")
+				->orWhere('filesize', 'LIKE', "%$keyword%")
+				->orWhere('download', 'LIKE', "%$keyword%")
+				->andWhere('comic_id', '=', $id)
+				->orWhere('user_id', 'LIKE', "%$keyword%")
 				->paginate($perPage);
         } else {
-            $users = User::where('id', '>', 1)->paginate($perPage);
+            $download = Download::where('comic_id', '=', $id)->paginate($perPage);
         }
 
-        return view('admin::users.index', compact('users'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function create()
-    {
-        return view('admin::users.create');
+        return view('admin::download.index', compact('download'));
     }
 
     /**
@@ -53,43 +50,20 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'name' => 'required|max:10'
+			'title' => 'required|max:255',
+			'url' => 'required|max:255',
+			'filesize' => 'required|min:0',
+			'download' => 'required|min:0'
 		]);
         $requestData = $request->all();
+
+        $requestData['user_id'] = \Auth::id();
         
-        User::create($requestData);
+        Download::create($requestData);
 
         Session::flash('flash_message', '添加成功！');
 
-        return redirect('admin/users');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     *
-     * @return \Illuminate\View\View
-     */
-    public function show($id)
-    {
-        $user = User::findOrFail($id);
-
-        return view('admin::users.show', compact('user'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     *
-     * @return \Illuminate\View\View
-     */
-    public function edit($id)
-    {
-        $user = User::findOrFail($id);
-
-        return view('admin::users.edit', compact('user'));
+        return redirect('admin/download/index?id='.$requestData['comic_id']);
     }
 
     /**
@@ -103,16 +77,21 @@ class UsersController extends Controller
     public function update($id, Request $request)
     {
         $this->validate($request, [
-			'name' => 'required|max:10'
+			'title' => 'required|max:255',
+			'url' => 'required|max:255',
+			'filesize' => 'required|min:0',
+			'download' => 'required|min:0'
 		]);
         $requestData = $request->all();
+
+        $requestData['user_id'] = \Auth::id();
         
-        $user = User::findOrFail($id);
-        $user->update($requestData);
+        $download = Download::findOrFail($id);
+        $download->update($requestData);
 
         Session::flash('flash_message', '更新成功！');
 
-        return redirect('admin/users');
+        return redirect('admin/download/index?id='.$requestData['comic_id']);
     }
 
     /**
@@ -124,10 +103,12 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
+        $download = Download::findOrFail($id);
+        $comic_id = $download['comic_id'];
+        Download::destroy($id);
 
         Session::flash('flash_message', '删除成功！');
 
-        return redirect('admin/users');
+        return redirect('admin/download/index?id='.$comic_id);
     }
 }

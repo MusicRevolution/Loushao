@@ -993,4 +993,31 @@ label {
 .site-menu .site-menu-sub .site-menu-item.active > a {
   background-color: transparent; }
 
+.modal-content {
+  border-radius: 0px; }
+
+.modal-header {
+  padding: 10px 20px;
+  border-bottom: 1px solid #e4eaec; }
+
+.modal-header {
+  padding: 10px 20px;
+  background-color: #f3f7f9; }
+
+.modal-body {
+  position: relative;
+  padding: 20px; }
+
+.modal-body {
+  padding: 20px; }
+
+.modal-footer {
+  padding: 20px;
+  text-align: right;
+  border-top: 1px solid #e4eaec; }
+
+.modal-footer {
+  padding: 10px 20px 20px;
+  border-top: none; }
+
 /*# sourceMappingURL=site.css.map */

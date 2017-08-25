@@ -26,7 +26,7 @@
         <h1 class="page-title">日志管理</h1>
         <ol class="breadcrumb">
             <li>
-                <a href="{{ url('/admdin') }}">首页</a>
+                <a href="{{ url('/admin') }}">首页</a>
             </li>
             <li>
                 <a href="javascript:;">系统设置</a>

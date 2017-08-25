@@ -141,8 +141,8 @@
                                 </a>
                                 <ul class="site-menu-sub">
                                     <li class="site-menu-item">
-                                        <a href="javascript:;">
-                                            <span class="site-menu-title">动画资源管理</span>
+                                        <a href="{{ url('/admin/comics') }}">
+                                            <span class="site-menu-title">动漫资源管理</span>
                                         </a>
                                     </li>
                                     <li class="site-menu-item has-sub">
@@ -322,6 +322,12 @@
                 }
             });
         })
+        @if(Session::has('flash_message'))
+            toastr.info("{{Session::get('flash_message')}}", "系统提示", {
+                "positionClass": "toast-bottom-right",
+                "progressBar": true
+            })
+        @endif
     </script>
 </body>
 </html>

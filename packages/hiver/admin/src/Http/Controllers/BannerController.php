@@ -78,7 +78,7 @@ class BannerController extends Controller
 
         Banner::create($requestData);
 
-        Session::flash('flash_message', 'Banner added!');
+        Session::flash('flash_message', '添加成功！');
 
         return redirect('admin/banner');
     }
@@ -145,7 +145,7 @@ class BannerController extends Controller
         $banner = Banner::findOrFail($id);
         $banner->update($requestData);
 
-        Session::flash('flash_message', 'Banner updated!');
+        Session::flash('flash_message', '更新成功！');
 
         return redirect('admin/banner');
     }
@@ -161,7 +161,7 @@ class BannerController extends Controller
     {
         Banner::destroy($id);
 
-        Session::flash('flash_message', 'Banner deleted!');
+        Session::flash('flash_message', '删除成功！');
 
         return redirect('admin/banner');
     }

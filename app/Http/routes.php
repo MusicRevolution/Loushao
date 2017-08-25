@@ -26,6 +26,11 @@ Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 $api = app('Dingo\Api\Routing\Router');
+// 私有API
 $api->version('v1', ['namespace' => 'App\Http\Controllers\Api\v1', 'middleware' => 'api.auth'], function ($api) {
     $api->get('users', 'UsersController@getUsers');
+});
+// 公共API
+$api->version('v1', ['namespace' => 'App\Http\Controllers\Api\v1'], function($api) {
+    $api->get('downloadByID/{id}', 'ComicController@getDownloadByID');
 });

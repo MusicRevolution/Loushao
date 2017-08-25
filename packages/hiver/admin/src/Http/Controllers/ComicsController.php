@@ -5,11 +5,11 @@ namespace Hiver\Admin\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Hiver\Admin\Models\Ad;
+use Hiver\Admin\Models\Comic;
 use Illuminate\Http\Request;
 use Session;
 
-class AdController extends Controller
+class ComicsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,18 +22,25 @@ class AdController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $ad = Ad::where('title', 'LIKE', "%$keyword%")
-				->orWhere('img', 'LIKE', "%$keyword%")
-				->orWhere('url', 'LIKE', "%$keyword%")
+            $comics = Comic::where('title', 'LIKE', "%$keyword%")
+				->orWhere('small_img', 'LIKE', "%$keyword%")
+				->orWhere('big_img', 'LIKE', "%$keyword%")
+				->orWhere('score', 'LIKE', "%$keyword%")
 				->orWhere('hits', 'LIKE', "%$keyword%")
-				->orWhere('status', 'LIKE', "%$keyword%")
+				->orWhere('content', 'LIKE', "%$keyword%")
+				->orWhere('comment', 'LIKE', "%$keyword%")
+				->orWhere('topic', 'LIKE', "%$keyword%")
+				->orWhere('tags', 'LIKE', "%$keyword%")
+				->orWhere('country', 'LIKE', "%$keyword%")
+				->orWhere('source', 'LIKE', "%$keyword%")
+				->orWhere('barcode', 'LIKE', "%$keyword%")
 				->orWhere('user_id', 'LIKE', "%$keyword%")
 				->paginate($perPage);
         } else {
-            $ad = Ad::paginate($perPage);
+            $comics = Comic::paginate($perPage);
         }
 
-        return view('admin::ad.index', compact('ad'));
+        return view('admin::comics.index', compact('comics'));
     }
 
     /**
@@ -43,7 +50,7 @@ class AdController extends Controller
      */
     public function create()
     {
-        return view('admin::ad.create');
+        return view('admin::comics.create');
     }
 
     /**
@@ -57,31 +64,44 @@ class AdController extends Controller
     {
         $this->validate($request, [
 			'title' => 'required|max:255',
-			'img' => 'required',
-			'url' => 'required|max:255',
-			'hits' => 'required|min:0'
+			'small_img' => 'required',
+			'big_img' => 'required',
+			'score' => 'required|min:0',
+			'hits' => 'required|min:0',
+			'comment' => 'required|min:0',
+			'topic' => 'required|min:0'
 		]);
         $requestData = $request->all();
-        
 
-        if ($request->hasFile('img')) {
-            $file = $request['img'];
+        if ($request->hasFile('small_img')) {
+            $file = $request['small_img'];
             $uploadPath = public_path('/uploads/img/').date('Y-m-d');
             $extension = $file->getClientOriginalExtension();
             $fileName = date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
-            $requestData['img'] = $fileName;
+            $requestData['small_img'] = $fileName;
         } else {
-            $requestData['img'] = '';
+            $requestData['small_img'] = '';
+        }
+
+        if ($request->hasFile('big_img')) {
+            $file = $request['big_img'];
+            $uploadPath = public_path('/uploads/img/').date('Y-m-d');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = date('Ymdhis').'.'.$extension;
+            $file->move($uploadPath, $fileName);
+            $requestData['big_img'] = $fileName;
+        } else {
+            $requestData['big_img'] = '';
         }
 
         $requestData['user_id'] = \Auth::id();
 
-        Ad::create($requestData);
+        Comic::create($requestData);
 
         Session::flash('flash_message', '添加成功！');
 
-        return redirect('admin/ad');
+        return redirect('admin/comics');
     }
 
     /**
@@ -93,9 +113,9 @@ class AdController extends Controller
      */
     public function show($id)
     {
-        $ad = Ad::findOrFail($id);
+        $comic = Comic::findOrFail($id);
 
-        return view('admin::ad.show', compact('ad'));
+        return view('admin::comics.show', compact('comic'));
     }
 
     /**
@@ -107,9 +127,9 @@ class AdController extends Controller
      */
     public function edit($id)
     {
-        $ad = Ad::findOrFail($id);
+        $comic = Comic::findOrFail($id);
 
-        return view('admin::ad.edit', compact('ad'));
+        return view('admin::comics.edit', compact('comic'));
     }
 
     /**
@@ -124,31 +144,45 @@ class AdController extends Controller
     {
         $this->validate($request, [
 			'title' => 'required|max:255',
-			'img' => 'required',
-			'url' => 'required|max:255',
-			'hits' => 'required|min:0'
+			'small_img' => 'required',
+			'big_img' => 'required',
+			'score' => 'required|min:0',
+			'hits' => 'required|min:0',
+			'comment' => 'required|min:0',
+			'topic' => 'required|min:0'
 		]);
         $requestData = $request->all();
         
-        if ($request->hasFile('img')) {
-            $file = $request['img'];
+        if ($request->hasFile('small_img')) {
+            $file = $request['small_img'];
             $uploadPath = public_path('/uploads/img/').date('Y-m-d');
             $extension = $file->getClientOriginalExtension();
             $fileName = date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
-            $requestData['img'] = $fileName;
+            $requestData['small_img'] = $fileName;
         } else {
-            $requestData['img'] = '';
+            $requestData['small_img'] = '';
+        }
+
+        if ($request->hasFile('big_img')) {
+            $file = $request['big_img'];
+            $uploadPath = public_path('/uploads/img/').date('Y-m-d');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = date('Ymdhis').'.'.$extension;
+            $file->move($uploadPath, $fileName);
+            $requestData['big_img'] = $fileName;
+        } else {
+            $requestData['big_img'] = '';
         }
 
         $requestData['user_id'] = \Auth::id();
 
-        $ad = Ad::findOrFail($id);
-        $ad->update($requestData);
+        $comic = Comic::findOrFail($id);
+        $comic->update($requestData);
 
         Session::flash('flash_message', '更新成功！');
 
-        return redirect('admin/ad');
+        return redirect('admin/comics');
     }
 
     /**
@@ -160,10 +194,10 @@ class AdController extends Controller
      */
     public function destroy($id)
     {
-        Ad::destroy($id);
+        Comic::destroy($id);
 
         Session::flash('flash_message', '删除成功！');
 
-        return redirect('admin/ad');
+        return redirect('admin/comics');
     }
 }

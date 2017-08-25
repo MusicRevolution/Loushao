@@ -1,0 +1,72 @@
+{
+  "fields": [
+    {
+        "name": "title",
+        "type": "string"
+    },
+    {
+        "name": "url",
+        "type": "string"
+    },
+    {
+        "name": "filesize",
+        "type": "number"
+    },
+    {
+        "name": "download",
+        "type": "number"
+    },
+    {
+        "name": "comic_id",
+        "type": "integer#unsigned"
+    },
+    {
+        "name": "user_id",
+        "type": "integer#unsigned"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "comic_id",
+      "references": "id",
+      "on": "comics",
+      "onDelete": "cascade"
+    },
+    {
+      "column": "user_id",
+      "references": "id",
+      "on": "users",
+      "onDelete": "cascade"
+    }
+  ],
+  "relationships": [
+    {
+      "name": "user",
+      "type": "belongsTo",
+      "class": "App\\User"
+    },
+    {
+      "name": "comic",
+      "type": "belongsTo",
+      "class": "Hiver\\Admin\\Models\\Comic"
+    }
+  ],
+  "validations": [
+    {
+        "field": "title",
+        "rules": "required|max:255"
+    },
+    {
+        "field": "url",
+        "rules": "required|max:255"
+    },
+    {
+        "field": "filesize",
+        "rules": "required|min:0"
+    },
+    {
+        "field": "download",
+        "rules": "required|min:0"
+    }
+  ]
+}

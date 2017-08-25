@@ -24,6 +24,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::resource('banner', 'BannerController');
     // 广告管理
     Route::resource('ad', 'AdController');
+    // 动漫管理
+    Route::resource('comics', 'ComicsController');
+    // 下载管理
+    Route::get('/download/index', 'DownloadController@index');
+    Route::post('/download', 'DownloadController@store');
+    Route::post('/download/{id}', 'DownloadController@update');
+    Route::delete('/download/{id}', 'DownloadController@destroy');
     // 日志管理
     Route::get('/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
     // 注销用户
