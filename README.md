@@ -31,3 +31,7 @@ php artisan vendor:publish --force</code></pre>
 
 ## 关于后台自动生成模板
 <pre><code>php artisan crud:generate Users --fields_from_file="packages/hiver/admin/template/users.json" --view-path=../../packages/hiver/admin/resources/views/ --controller-namespace=../../../packages/hiver/admin/src/Http/Controllers --route-group=admin --route=no --model-namespace=../packages/hiver/admin/src/Models</code></pre>
+
+<pre><code>php artisan crud:controller RoleController --crud-name=role --view-path=../packages/hiver/admin/resources/views/ --controller-namespace=../packages/hiver/admin/src/Http/Controllers --route-group=admin --model-namespace=../packages/hiver/admin/src/Models --model-name=Role</code></pre>
+
+<pre><code>php artisan crud:view role --fields="name#string; display_name#string; description#string" --view-path=../../packages/hiver/admin/resources/views/ --route-group=admin</code></pre>

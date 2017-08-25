@@ -250,12 +250,12 @@
                                         <ul class="site-menu-sub">
                                             <!-- 五级菜单 -->
                                             <li class="site-menu-item ">
-                                                <a href="javascript:;">
+                                                <a href="{{ url('/admin/role') }}">
                                                     <span class="site-menu-title">角色管理</span>
                                                 </a>
                                             </li>
                                             <li class="site-menu-item ">
-                                                <a href="javascript:;">
+                                                <a href="{{ url('/admin/permissions') }}">
                                                     <span class="site-menu-title">权限管理</span>
                                                 </a>
                                             </li>

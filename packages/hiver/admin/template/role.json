@@ -1,0 +1,30 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "display_name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        }
+    ],
+    "validations": [
+        {
+            "field": "name",
+            "rules": "required|max:255"
+        },
+        {
+            "field": "display_name",
+            "rules": "required|max:255"
+        },
+        {
+            "field": "description",
+            "rules": "required|max:255"
+        }
+    ]
+}

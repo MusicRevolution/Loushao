@@ -22,6 +22,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::resource('users', 'UsersController');
     Route::get('/profile/{id}/edit', 'ProfileController@edit');
     Route::patch('/profile/{id}', 'ProfileController@update');
+    // 角色管理
+    Route::resource('role', 'RoleController');
+    Route::resource('permissions', 'PermissionController');
     // Banner管理
     Route::resource('banner', 'BannerController');
     // 广告管理

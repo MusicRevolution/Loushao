@@ -5,13 +5,12 @@ namespace Hiver\Admin\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Hiver\Admin\Models\User;
 use Hiver\Admin\Models\Role;
-use Hiver\Admin\Models\Profile;
+use Hiver\Admin\Models\Permission;
 use Illuminate\Http\Request;
 use Session;
 
-class UsersController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,15 +23,12 @@ class UsersController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $users = User::where('name', 'LIKE', "%$keyword%")
-				->orWhere('email', 'LIKE', "%$keyword%")
-				->orWhere('password', 'LIKE', "%$keyword%")
-				->paginate($perPage);
+            $role = Role::paginate($perPage);
         } else {
-            $users = User::where('id', '>', 1)->paginate($perPage);
+            $role = Role::paginate($perPage);
         }
 
-        return view('admin::users.index', compact('users'));
+        return view('admin::role.index', compact('role'));
     }
 
     /**
@@ -42,8 +38,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        $roles = Role::all();
-        return view('admin::users.create', compact('roles'));
+        $permissions = Permission::all();
+        return view('admin::role.create', compact('permissions'));
     }
 
     /**
@@ -55,26 +51,18 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-			'name' => 'required|max:10'
-		]);
+        
         $requestData = $request->all();
         
-        $user = User::create($requestData);
-        $profile = array(
-            'avatar' => '',
-            'status' => 1,
-            'follows' => 0,
-            'logins' => 0,
-            'times' => 0,
-            'fans' => 0,
-            'user_id' => $user->id
-        );
-        Profile::create($profile);
+        $role = Role::create($requestData);
+
+        $permissions = $request->get('permissions');
+        if(!empty($permissions))
+            $role->perms()->sync($permissions);
 
         Session::flash('flash_message', '添加成功！');
 
-        return redirect('admin/users');
+        return redirect('admin/role');
     }
 
     /**
@@ -86,9 +74,9 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::findOrFail($id);
-        $roles = Role::all();
-        return view('admin::users.show', compact('user', 'roles'));
+        $role = Role::findOrFail($id);
+
+        return view('admin::role.show', compact('role'));
     }
 
     /**
@@ -100,9 +88,9 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
-
-        return view('admin::users.edit', compact('user'));
+        $role = Role::findOrFail($id);
+        $permissions = Permission::all();
+        return view('admin::role.edit', compact('role', 'permissions'));
     }
 
     /**
@@ -115,17 +103,19 @@ class UsersController extends Controller
      */
     public function update($id, Request $request)
     {
-        $this->validate($request, [
-			'name' => 'required|max:10'
-		]);
+        
         $requestData = $request->all();
         
-        $user = User::findOrFail($id);
-        $user->update($requestData);
+        $role = Role::findOrFail($id);
+        $role->update($requestData);
+
+        $permissions = $request->get('permissions');
+        if(!empty($permissions))
+            $role->perms()->sync($permissions);
 
         Session::flash('flash_message', '更新成功！');
 
-        return redirect('admin/users');
+        return redirect('admin/role');
     }
 
     /**
@@ -137,10 +127,15 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
+        $role = Role::findOrFail($id);
+        $role->delete();
+        $role->users()->sync([]);
+        $role->perms()->sync([]);
+        $role->forceDelete();
+        // Role::destroy($id);
 
         Session::flash('flash_message', '删除成功！');
 
-        return redirect('admin/users');
+        return redirect('admin/role');
     }
 }

@@ -10,6 +10,13 @@
     {!! Form::label('password', '密码', ['class' => 'control-label']) !!}
     {!! Form::password('password', ['class' => 'form-control']) !!}
     {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
+</div><div class="form-group">
+    {!! Form::label('roles', '角色列表', ['class' => 'control-label']) !!}
+    <div>
+    @foreach($roles as $role)
+        <input type="checkbox" name="roles[]" value="{{ $role->id }}" />{{ $role->display_name }}
+    @endforeach
+    </div>
 </div>
 
 <div class="form-group">

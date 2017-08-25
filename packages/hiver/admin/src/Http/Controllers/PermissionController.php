@@ -5,13 +5,11 @@ namespace Hiver\Admin\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Hiver\Admin\Models\User;
-use Hiver\Admin\Models\Role;
-use Hiver\Admin\Models\Profile;
+use Hiver\Admin\Models\Permission;
 use Illuminate\Http\Request;
 use Session;
 
-class UsersController extends Controller
+class PermissionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,15 +22,12 @@ class UsersController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $users = User::where('name', 'LIKE', "%$keyword%")
-				->orWhere('email', 'LIKE', "%$keyword%")
-				->orWhere('password', 'LIKE', "%$keyword%")
-				->paginate($perPage);
+            $permission = Permission::paginate($perPage);
         } else {
-            $users = User::where('id', '>', 1)->paginate($perPage);
+            $permission = Permission::paginate($perPage);
         }
 
-        return view('admin::users.index', compact('users'));
+        return view('admin::permissions.index', compact('permission'));
     }
 
     /**
@@ -42,8 +37,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        $roles = Role::all();
-        return view('admin::users.create', compact('roles'));
+        return view('admin::permissions.create', compact('roles'));
     }
 
     /**
@@ -55,26 +49,14 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-			'name' => 'required|max:10'
-		]);
+        
         $requestData = $request->all();
         
-        $user = User::create($requestData);
-        $profile = array(
-            'avatar' => '',
-            'status' => 1,
-            'follows' => 0,
-            'logins' => 0,
-            'times' => 0,
-            'fans' => 0,
-            'user_id' => $user->id
-        );
-        Profile::create($profile);
+        Permission::create($requestData);
 
         Session::flash('flash_message', '添加成功！');
 
-        return redirect('admin/users');
+        return redirect('admin/permissions');
     }
 
     /**
@@ -86,9 +68,9 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::findOrFail($id);
-        $roles = Role::all();
-        return view('admin::users.show', compact('user', 'roles'));
+        $permission = Permission::findOrFail($id);
+
+        return view('admin::permissions.show', compact('permission'));
     }
 
     /**
@@ -100,9 +82,9 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
+        $permission = Permission::findOrFail($id);
 
-        return view('admin::users.edit', compact('user'));
+        return view('admin::permissions.edit', compact('permission'));
     }
 
     /**
@@ -115,17 +97,15 @@ class UsersController extends Controller
      */
     public function update($id, Request $request)
     {
-        $this->validate($request, [
-			'name' => 'required|max:10'
-		]);
+        
         $requestData = $request->all();
         
-        $user = User::findOrFail($id);
-        $user->update($requestData);
+        $permission = Permission::findOrFail($id);
+        $permission->update($requestData);
 
         Session::flash('flash_message', '更新成功！');
 
-        return redirect('admin/users');
+        return redirect('admin/permissions');
     }
 
     /**
@@ -137,10 +117,10 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
+        Permission::destroy($id);
 
         Session::flash('flash_message', '删除成功！');
 
-        return redirect('admin/users');
+        return redirect('admin/permissions');
     }
 }
