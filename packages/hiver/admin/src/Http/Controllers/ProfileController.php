@@ -37,6 +37,17 @@ class ProfileController extends Controller
     {
         
         $requestData = $request->all();
+
+        if ($request->hasFile('avatar')) {
+            $file = $request['avatar'];
+            $uploadPath = public_path('/uploads/avatar/').date('Y-m-d');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = date('Ymdhis').'.'.$extension;
+            $file->move($uploadPath, $fileName);
+            $requestData['avatar'] = $fileName;
+        } else {
+            $requestData['avatar'] = '';
+        }
         
         $profile = Profile::findOrFail($id);
         $profile->update($requestData);

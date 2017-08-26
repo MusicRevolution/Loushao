@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="{{ admin_asset('vendor/animsition/css/animsition.css') }}">
     <link rel="stylesheet" href="{{ admin_asset('vendor/toastr/toastr.css') }}">
     <link rel="stylesheet" href="{{ admin_asset('vendor/metismenu/Metismenu.css') }}">
+    <link rel="stylesheet" href="{{ admin_asset('css/awesome-bootstrap-checkbox.css') }}">
     @section('style')
     @show
     <!-- 自定义 -->
