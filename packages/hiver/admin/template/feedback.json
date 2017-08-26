@@ -1,0 +1,30 @@
+{
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "email",
+      "type": "email"
+    },
+    {
+      "name": "feedback",
+      "type": "string"
+    }
+  ],
+  "validations": [
+    {
+      "field": "name",
+      "rules": "required|max:20"
+    },
+    {
+      "field": "email",
+      "rules": "required|max:255"
+    },
+    {
+      "field": "feedback",
+      "rules": "required|max:255"
+    }
+  ]
+}

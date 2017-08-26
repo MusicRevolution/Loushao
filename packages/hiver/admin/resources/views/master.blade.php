@@ -232,7 +232,7 @@
                                 </a>
                             </li>
                             <li class="site-menu-item">
-                                <a href="javascript:;">
+                                <a href="{{ url('/admin/feedback') }}">
                                     <i class="site-menu-icon fa fa-comments-o" aria-hidden="true"></i>
                                     <span class="site-menu-title">反馈管理</span>
                                 </a>

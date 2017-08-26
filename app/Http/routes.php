@@ -33,4 +33,5 @@ $api->version('v1', ['namespace' => 'App\Http\Controllers\Api\v1', 'middleware' 
 // 公共API
 $api->version('v1', ['namespace' => 'App\Http\Controllers\Api\v1'], function($api) {
     $api->get('downloadByID/{id}', 'ComicController@getDownloadByID');
+    $api->post('feedback', 'FeedbackController@feedback');
 });

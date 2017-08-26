@@ -20,6 +20,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::get('/', 'AdminController@index');
     Route::get('/setting', 'AdminController@setting');
     Route::post('/setting', 'AdminController@update');
+    Route::get('/feedback', 'FeedbackController@index');
+    Route::delete('/feedback/{id}', 'FeedbackController@destroy');
     // 用户管理
     Route::resource('users', 'UsersController');
     Route::get('/profile/{id}/edit', 'ProfileController@edit');
