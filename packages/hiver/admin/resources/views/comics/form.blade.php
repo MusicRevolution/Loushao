@@ -4,11 +4,11 @@
     {!! $errors->first('title', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('small_img') ? 'has-error' : ''}}">
     {!! Form::label('small_img', '图片（小）', ['class' => 'control-label']) !!}
-    {!! Form::file('small_img', ['class' => 'form-control dropify', 'required' => 'required']) !!}
+    {!! Form::file('small_img', ['class' => 'form-control dropify', 'data-default-file' => $small_img, 'data-show-remove' => false]) !!}
     {!! $errors->first('small_img', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('big_img') ? 'has-error' : ''}}">
     {!! Form::label('big_img', '图片（大）', ['class' => 'control-label']) !!}
-    {!! Form::file('big_img', ['class' => 'form-control dropify', 'required' => 'required']) !!}
+    {!! Form::file('big_img', ['class' => 'form-control dropify', 'data-default-file' => $big_img, 'data-show-remove' => false]) !!}
     {!! $errors->first('big_img', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('score') ? 'has-error' : ''}}">
     {!! Form::label('score', '总评分', ['class' => 'control-label']) !!}

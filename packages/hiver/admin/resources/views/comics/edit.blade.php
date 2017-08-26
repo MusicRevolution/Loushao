@@ -85,8 +85,8 @@
                         onSubmit: function() {}
                     },
                     transform: {
-                        '<img src="{SRC}" />':"[img]{SRC}[/img]",
-                        '<img src="{SRC}" width="{WIDTH}" height="{HEIGHT}"/>':"[img width={WIDTH},height={HEIGHT}]{SRC}[/img]"
+                        '<img src="{{ url('/') }}/{SRC}" />':"[img]{{ url('/') }}/{SRC}[/img]",
+                        '<img src="{{ url('/') }}/{SRC}" width="{WIDTH}" height="{HEIGHT}"/>':"[img width={WIDTH},height={HEIGHT}]{{ url('/') }}/{SRC}[/img]"
                     }
                 }
             }

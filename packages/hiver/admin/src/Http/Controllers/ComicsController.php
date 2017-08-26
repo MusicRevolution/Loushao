@@ -50,7 +50,9 @@ class ComicsController extends Controller
      */
     public function create()
     {
-        return view('admin::comics.create');
+        $small_img = '';
+        $big_img = '';
+        return view('admin::comics.create', compact('small_img', 'big_img'));
     }
 
     /**
@@ -77,7 +79,7 @@ class ComicsController extends Controller
             $file = $request['small_img'];
             $uploadPath = public_path('/uploads/img/').date('Y-m-d');
             $extension = $file->getClientOriginalExtension();
-            $fileName = date('Ymdhis').'.'.$extension;
+            $fileName = 'small_'.date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
             $requestData['small_img'] = $fileName;
         } else {
@@ -88,7 +90,7 @@ class ComicsController extends Controller
             $file = $request['big_img'];
             $uploadPath = public_path('/uploads/img/').date('Y-m-d');
             $extension = $file->getClientOriginalExtension();
-            $fileName = date('Ymdhis').'.'.$extension;
+            $fileName = 'big_'.date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
             $requestData['big_img'] = $fileName;
         } else {
@@ -128,8 +130,13 @@ class ComicsController extends Controller
     public function edit($id)
     {
         $comic = Comic::findOrFail($id);
-
-        return view('admin::comics.edit', compact('comic'));
+        $small_img = '';
+        $big_img = '';
+        if(!empty($comic->small_img))
+            $small_img = url('/uploads/img/'.date('Y-m-d', strtotime($comic->created_at)).'/'.$comic->small_img);
+        if(!empty($comic->big_img))
+            $big_img = url('/uploads/img/'.date('Y-m-d', strtotime($comic->created_at)).'/'.$comic->big_img);
+        return view('admin::comics.edit', compact('comic', 'small_img', 'big_img'));
     }
 
     /**
@@ -144,8 +151,6 @@ class ComicsController extends Controller
     {
         $this->validate($request, [
 			'title' => 'required|max:255',
-			'small_img' => 'required',
-			'big_img' => 'required',
 			'score' => 'required|min:0',
 			'hits' => 'required|min:0',
 			'comment' => 'required|min:0',
@@ -157,22 +162,18 @@ class ComicsController extends Controller
             $file = $request['small_img'];
             $uploadPath = public_path('/uploads/img/').date('Y-m-d');
             $extension = $file->getClientOriginalExtension();
-            $fileName = date('Ymdhis').'.'.$extension;
+            $fileName = 'small_'.date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
             $requestData['small_img'] = $fileName;
-        } else {
-            $requestData['small_img'] = '';
         }
 
         if ($request->hasFile('big_img')) {
             $file = $request['big_img'];
             $uploadPath = public_path('/uploads/img/').date('Y-m-d');
             $extension = $file->getClientOriginalExtension();
-            $fileName = date('Ymdhis').'.'.$extension;
+            $fileName = 'big_'.date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
             $requestData['big_img'] = $fileName;
-        } else {
-            $requestData['big_img'] = '';
         }
 
         $requestData['user_id'] = \Auth::id();

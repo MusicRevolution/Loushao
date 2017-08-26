@@ -21,8 +21,10 @@ class ProfileController extends Controller
     public function edit($id)
     {
         $profile = Profile::where('user_id', '=', $id)->firstOrFail();
-
-        return view('admin::profile.edit', compact('profile'));
+        $avatar = '';
+        if(!empty($profile->avatar))
+            $avatar = url('/uploads/avatar/'.date('Y-m-d', strtotime($profile->created_at)).'/'.$profile->avatar);
+        return view('admin::profile.edit', compact('profile', 'avatar'));
     }
 
     /**
@@ -45,8 +47,6 @@ class ProfileController extends Controller
             $fileName = date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
             $requestData['avatar'] = $fileName;
-        } else {
-            $requestData['avatar'] = '';
         }
         
         $profile = Profile::findOrFail($id);

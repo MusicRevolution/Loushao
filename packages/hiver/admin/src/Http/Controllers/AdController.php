@@ -43,7 +43,8 @@ class AdController extends Controller
      */
     public function create()
     {
-        return view('admin::ad.create');
+        $img = '';
+        return view('admin::ad.create', compact('img'));
     }
 
     /**
@@ -108,8 +109,10 @@ class AdController extends Controller
     public function edit($id)
     {
         $ad = Ad::findOrFail($id);
-
-        return view('admin::ad.edit', compact('ad'));
+        $img = '';
+        if(!empty($ad->img))
+            $img = url('/uploads/img/'.date('Y-m-d', strtotime($ad->created_at)).'/'.$ad->img);
+        return view('admin::ad.edit', compact('ad', 'img'));
     }
 
     /**
@@ -124,7 +127,6 @@ class AdController extends Controller
     {
         $this->validate($request, [
 			'title' => 'required|max:255',
-			'img' => 'required',
 			'url' => 'required|max:255',
 			'hits' => 'required|min:0'
 		]);
@@ -137,8 +139,6 @@ class AdController extends Controller
             $fileName = date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
             $requestData['img'] = $fileName;
-        } else {
-            $requestData['img'] = '';
         }
 
         $requestData['user_id'] = \Auth::id();

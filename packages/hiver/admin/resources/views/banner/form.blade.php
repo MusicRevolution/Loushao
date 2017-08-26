@@ -4,7 +4,7 @@
     {!! $errors->first('title', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('img') ? 'has-error' : ''}}">
     {!! Form::label('img', '图片', ['class' => 'control-label']) !!}
-    {!! Form::file('img', ['class' => 'form-control dropify', 'required' => 'required']) !!}
+    {!! Form::file('img', ['class' => 'form-control dropify', 'data-default-file' => $img, 'data-show-remove' => false]) !!}
     {!! $errors->first('img', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('url') ? 'has-error' : ''}}">
     {!! Form::label('url', 'URL地址', ['class' => 'control-label']) !!}

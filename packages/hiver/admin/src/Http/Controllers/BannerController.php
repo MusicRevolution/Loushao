@@ -43,7 +43,8 @@ class BannerController extends Controller
      */
     public function create()
     {
-        return view('admin::banner.create');
+        $img = '';
+        return view('admin::banner.create', compact('img'));
     }
 
     /**
@@ -107,8 +108,10 @@ class BannerController extends Controller
     public function edit($id)
     {
         $banner = Banner::findOrFail($id);
-
-        return view('admin::banner.edit', compact('banner'));
+        $img = '';
+        if(!empty($banner->img))
+            $img = url('/uploads/img/'.date('Y-m-d', strtotime($banner->created_at)).'/'.$banner->img);
+        return view('admin::banner.edit', compact('banner', 'img'));
     }
 
     /**
@@ -123,7 +126,6 @@ class BannerController extends Controller
     {
         $this->validate($request, [
 			'title' => 'required|max:255',
-			'img' => 'required',
 			'url' => 'required|max:255',
 			'hits' => 'required|min:0'
 		]);
@@ -136,8 +138,6 @@ class BannerController extends Controller
             $fileName = date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
             $requestData['img'] = $fileName;
-        } else {
-            $requestData['img'] = '';
         }
 
         $requestData['user_id'] = \Auth::id();

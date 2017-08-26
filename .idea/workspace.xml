@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdec23db-cded-48a2-ada7-5a2df65967ea" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/FeedbackController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/hiver/admin/template/feedback.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/attachments/.gitkeep" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/hiver/admin/resources/views/master.blade.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/resources/views/master.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/hiver/admin/routes/admin.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/routes/admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/hiver/admin/publishable/assets/vendor/wysibb/php/iupload.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/publishable/assets/vendor/wysibb/php/iupload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/hiver/admin/resources/views/ad/form.blade.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/resources/views/ad/form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/hiver/admin/resources/views/banner/form.blade.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/resources/views/banner/form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/create.blade.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/create.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/edit.blade.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/form.blade.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/hiver/admin/resources/views/profile/form.blade.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/resources/views/profile/form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/AdController.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/AdController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/BannerController.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/BannerController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/ComicsController.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/ComicsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/ProfileController.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/ProfileController.php" />
     </list>
     <ignored path="loushao.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +47,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/packages/hiver/admin/composer.json" />
-        <option value="$PROJECT_DIR$/resources/views/vendor/laravel-log-viewer/log.blade.php" />
-        <option value="$PROJECT_DIR$/packages/hiver/admin/template/profile.json" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/assets/sass/_common.scss" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/resources/assets/sass/_menu.scss" />
         <option value="$PROJECT_DIR$/config/captcha.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/password.blade.php" />
@@ -61,23 +62,16 @@
         <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/role/edit.blade.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/users/create.blade.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/users/edit.blade.php" />
-        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/form.blade.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/resources/assets/sass/_form.scss" />
-        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/edit.blade.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/profile/edit.blade.php" />
-        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/create.blade.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/download/form.blade.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/download/index.blade.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/UsersController.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/users/form.blade.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/RoleController.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/role/form.blade.php" />
-        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/banner/form.blade.php" />
         <option value="$PROJECT_DIR$/public/css/site.css" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/resources/assets/sass/_bootstrap.scss" />
-        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/ad/form.blade.php" />
-        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/profile/form.blade.php" />
-        <option value="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/ProfileController.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/composer.json" />
@@ -92,6 +86,18 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Controller.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/v1/FeedbackController.php" />
+        <option value="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/AdController.php" />
+        <option value="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/BannerController.php" />
+        <option value="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/ProfileController.php" />
+        <option value="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/ComicsController.php" />
+        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/ad/form.blade.php" />
+        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/banner/form.blade.php" />
+        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/form.blade.php" />
+        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/profile/form.blade.php" />
+        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/edit.blade.php" />
+        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/create.blade.php" />
+        <option value="$PROJECT_DIR$/public/vendor/wysibb/php/iupload.php" />
+        <option value="$PROJECT_DIR$/packages/hiver/admin/publishable/assets/vendor/wysibb/php/iupload.php" />
       </list>
     </option>
   </component>
@@ -252,11 +258,11 @@
       <recent name="$PROJECT_DIR$/packages/hiver/admin/publishable/assets/images" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/packages/hiver/admin/publishable/assets/vendor/wysibb/php" />
+      <recent name="$PROJECT_DIR$/public/uploads/attachments" />
       <recent name="$PROJECT_DIR$/database/migrations" />
       <recent name="$PROJECT_DIR$/public/uploads/avatar" />
       <recent name="$PROJECT_DIR$/public/css" />
-      <recent name="$PROJECT_DIR$/public/js/plugins/formatter" />
-      <recent name="$PROJECT_DIR$/public/vendor" />
     </key>
   </component>
   <component name="RunManager">
@@ -307,12 +313,12 @@
       <workItem from="1502449125682" duration="142000" />
       <workItem from="1502449275127" duration="6484000" />
       <workItem from="1502507645985" duration="23598000" />
-      <workItem from="1503109801567" duration="33301000" />
+      <workItem from="1503109801567" duration="39027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63525000" />
+    <option name="totallyTimeSpent" value="69251000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -356,83 +362,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/users/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
-          <folding>
-            <marker date="1503755792000" expanded="true" signature="1004:1215" ph="..." />
-            <marker date="1503755792000" expanded="true" signature="1017:1213" ph="..." />
-            <marker date="1503755792000" expanded="true" signature="1025:1212" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/zizaco/entrust/src/Entrust/Traits/EntrustRoleTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="94" column="33" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/plugins/formatter/jquery.formatter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="94" selection-start-line="34" selection-start-column="94" selection-end-line="34" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="943">
-          <caret line="90" column="40" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
-          <folding>
-            <marker date="1503761096000" expanded="true" signature="3328:3361" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/download/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="71" selection-start-line="6" selection-start-column="71" selection-end-line="6" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/download/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="943">
-          <caret line="143" column="17" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
-          <folding>
-            <marker date="1503761846000" expanded="true" signature="2638:2868" ph="..." />
-            <marker date="1503761846000" expanded="true" signature="2650:2866" ph="..." />
-            <marker date="1503761846000" expanded="true" signature="2651:2865" ph="..." />
-            <marker date="1503761846000" expanded="true" signature="2903:3254" ph="..." />
-            <marker date="1503761846000" expanded="true" signature="2917:3252" ph="..." />
-            <marker date="1503761846000" expanded="true" signature="2978:3251" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="47" column="65" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/users/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -485,38 +414,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1012">
           <caret line="1051" column="0" selection-start-line="1051" selection-start-column="0" selection-end-line="1051" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/ad/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/BannerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="74" column="9" selection-start-line="65" selection-start-column="8" selection-end-line="74" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/profile/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/ProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -613,14 +510,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="52" selection-start-line="22" selection-start-column="8" selection-end-line="23" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/banner/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="6" selection-start-line="35" selection-start-column="0" selection-end-line="37" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -735,25 +624,7 @@
         <state relative-caret-position="195">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="e#47#92#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/AdController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="62" column="11" selection-start-line="57" selection-start-column="8" selection-end-line="62" selection-end-column="11" />
-          <folding>
-            <element signature="e#48#70#0#PHP" expanded="true" />
+            <element signature="e#47#92#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -787,8 +658,141 @@
         <state relative-caret-position="315">
           <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
           <folding>
-            <element signature="e#47#79#0#PHP" expanded="true" />
+            <element signature="e#47#79#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/ad/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+          <folding>
+            <marker date="1503564562000" expanded="true" signature="969:1173" ph="..." />
+            <marker date="1503564562000" expanded="true" signature="982:1171" ph="..." />
+            <marker date="1503564562000" expanded="true" signature="988:1170" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/BannerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="112" column="103" selection-start-line="111" selection-start-column="8" selection-end-line="112" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="73" selection-start-line="26" selection-start-column="73" selection-end-line="26" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/ad/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="89" selection-start-line="6" selection-start-column="89" selection-end-line="6" selection-end-column="118" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/banner/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="118" selection-start-line="6" selection-start-column="118" selection-end-line="6" selection-end-column="118" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="126" selection-start-line="10" selection-start-column="126" selection-end-line="10" selection-end-column="126" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/profile/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="124" selection-start-line="2" selection-start-column="124" selection-end-line="2" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/AdController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="138" column="54" selection-start-line="137" selection-start-column="12" selection-end-line="138" selection-end-column="54" />
+          <folding>
+            <element signature="e#48#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/ComicsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="877">
+          <caret line="173" column="31" selection-start-line="173" selection-start-column="31" selection-end-line="173" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="823">
+          <caret line="88" column="145" selection-start-line="88" selection-start-column="145" selection-end-line="88" selection-end-column="145" />
+          <folding>
+            <marker date="1503783745000" expanded="true" signature="1272:1486" ph="..." />
+            <marker date="1503783745000" expanded="true" signature="1285:1484" ph="..." />
+            <marker date="1503783745000" expanded="true" signature="1294:1483" ph="..." />
+            <marker date="1503783745000" expanded="true" signature="3523:3556" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="847">
+          <caret line="82" column="145" selection-start-line="82" selection-start-column="145" selection-end-line="82" selection-end-column="145" />
+          <folding>
+            <marker date="1503783759000" expanded="true" signature="3328:3361" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendor/wysibb/php/iupload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/publishable/assets/vendor/wysibb/php/iupload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendor/bootbox.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

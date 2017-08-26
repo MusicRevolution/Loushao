@@ -1,6 +1,6 @@
 <div class="form-group form-material {{ $errors->has('avatar') ? 'has-error' : ''}}">
     {!! Form::label('avatar', '头像', ['class' => 'control-label']) !!}
-    {!! Form::file('avatar', ['class' => 'form-control dropify']) !!}
+    {!! Form::file('avatar', ['class' => 'form-control dropify', 'data-default-file' => $avatar, 'data-show-remove' => false]) !!}
     {!! $errors->first('avatar', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('status') ? 'has-error' : ''}}">
     {!! Form::label('status', '状态', ['class' => 'control-label']) !!}
