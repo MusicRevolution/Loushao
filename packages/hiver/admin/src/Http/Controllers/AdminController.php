@@ -14,6 +14,8 @@ namespace Hiver\Admin\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Http\Request;
+use anlutro\LaravelSettings\Facade as Setting;
+use Session;
 
 /**
  * 后台控制器
@@ -31,5 +33,21 @@ class AdminController extends Controller
     {
         //dd(Config::get("admin.message"));
         return view('admin::index');
+    }
+
+    public function setting()
+    {
+        return view('admin::setting');
+    }
+
+    public function update(Request $request)
+    {
+        $title = $request->get('title');
+        Setting::set('setting.title', $title);
+        Setting::save();
+
+        Session::flash('flash_message', '保存成功！');
+
+        return redirect('admin/setting');
     }
 }

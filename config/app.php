@@ -150,6 +150,7 @@ return [
         Zizaco\Entrust\EntrustServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        anlutro\LaravelSettings\ServiceProvider::class,
 
         Hiver\Admin\AdminServiceProvider::class
 
@@ -205,6 +206,7 @@ return [
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
+        'Setting'   => anlutro\LaravelSettings\Facade::class,
     ],
 
 ];

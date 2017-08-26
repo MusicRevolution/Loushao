@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <title>漏勺网</title>
+    <title>{{ Setting::get('setting.title', '天津海文科技有限公司') }}</title>
     <meta charset="utf-8">
     <meta name="keywords" content="hiver,hiver官网,loushao,营销,产品,海文科技,漏勺网,通用后台管理系统,后台框架,ui框架" />
     <meta name="description" content="基于Laravel5.1框架开发后台插件" />

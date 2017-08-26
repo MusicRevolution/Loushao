@@ -264,7 +264,7 @@
                                         </ul>
                                     </li>
                                     <li class="site-menu-item">
-                                        <a href="javascript:;">
+                                        <a href="{{ url('admin/setting') }}">
                                             <span class="site-menu-title">显示设置</span>
                                         </a>
                                     </li>
