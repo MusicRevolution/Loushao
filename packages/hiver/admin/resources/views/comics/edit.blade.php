@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="{{ admin_asset('js/plugins/dropify/css/dropify.css') }}">
   <link rel="stylesheet" href="{{ admin_asset('vendor/wysibb/theme/default/wbbtheme.css') }}">
   <link rel="stylesheet" href="{{ admin_asset('vendor/wysibb/theme/hiver/wbbtheme.css') }}">
+  <link rel="stylesheet" href="{{ admin_asset('vendor/bootstrap-tagsinput/bootstrap-tagsinput.css') }}">
 @endsection
 
 @section('content')
@@ -51,6 +52,7 @@
     <script src="{{ admin_asset('js/plugins/dropify/js/dropify.js') }}"></script>
     <script src="{{ admin_asset('vendor/wysibb/jquery.wysibb.min.js') }}"></script>
     <script src="{{ admin_asset('vendor/wysibb/lang/cn.js') }}"></script>
+    <script src="{{ admin_asset('vendor/bootstrap-tagsinput/bootstrap-tagsinput.js') }}"></script>
     <script>
         var wbbOpt = {
             lang: "cn",
@@ -90,8 +92,9 @@
             }
         }
         $(document).ready(function(){
-           $('.dropify').dropify();
-           $(".editor").wysibb(wbbOpt);
+            $('.dropify').dropify();
+            $(".editor").wysibb(wbbOpt);
+            $('.tagsinput').tagsinput();
         });
     </script>
 @endsection

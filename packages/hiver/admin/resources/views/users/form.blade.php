@@ -13,9 +13,11 @@
 </div><div class="form-group">
     {!! Form::label('roles', '角色列表', ['class' => 'control-label']) !!}
     <div>
-    @foreach($roles as $role)
-        <input type="checkbox" name="roles[]" value="{{ $role->id }}" />{{ $role->display_name }}
-    @endforeach
+        <select multiple="multiple" class="multiselect" name="roles[]">
+            @foreach($roles as $role)
+                <option value='{{ $role->id }}' @if($user->hasRole($role->name)) selected="selected" @endif>{{ $role->display_name }}</option>
+            @endforeach
+        </select>
     </div>
 </div>
 

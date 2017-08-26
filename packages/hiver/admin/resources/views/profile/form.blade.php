@@ -4,7 +4,10 @@
     {!! $errors->first('avatar', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('status') ? 'has-error' : ''}}">
     {!! Form::label('status', '状态', ['class' => 'control-label']) !!}
-    {!! Form::number('status', null, ['class' => 'form-control']) !!}
+    <div class="checkbox">
+        {!! Form::radio('status', '1', true) !!} 正常
+        {!! Form::radio('status', '0') !!} 锁定
+    </div>
     {!! $errors->first('status', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('follows') ? 'has-error' : ''}}">
     {!! Form::label('follows', '关注数', ['class' => 'control-label']) !!}

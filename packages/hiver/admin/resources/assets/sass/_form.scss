@@ -95,7 +95,8 @@ label {
     margin-bottom: 0;
 }
 
-.form-control {
+.form-control,
+.bootstrap-tagsinput {
     display: block;
     width: 100%;
     height: 32px;
@@ -117,7 +118,8 @@ label {
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
 }
 
-.form-control {
+.form-control,
+.bootstrap-tagsinput {
     -webkit-appearance: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -129,7 +131,8 @@ label {
     -moz-appearance: none;
 }
 
-.form-material .form-control {
+.form-material .form-control,
+.form-material .bootstrap-tagsinput {
     padding: 0;
     background-color: transparent;
     background-color: rgba(0,0,0,0);
@@ -143,7 +146,8 @@ label {
     transition: background 0s ease-out;
 }
 
-.form-material .form-control, .form-material .form-control.focus, .form-material .form-control:focus {
+.form-material .form-control, .form-material .form-control.focus, .form-material .form-control:focus,
+.form-material .bootstrap-tagsinput, .form-material .bootstrap-tagsinput:focus, .form-material .bootstrap-tagsinput.focus {
     float: none;
     background-image: -webkit-gradient(linear,left top,left bottom,from(#62a8ea),to(#62a8ea)),-webkit-gradient(linear,left top,left bottom,from(#e4eaec),to(#e4eaec));
     background-image: -webkit-linear-gradient(#62a8ea,#62a8ea),-webkit-linear-gradient(#e4eaec,#e4eaec);
@@ -155,7 +159,8 @@ label {
     box-shadow: none;
 }
 
-.form-material .form-control.focus, .form-material .form-control:focus {
+.form-material .form-control.focus, .form-material .form-control:focus,
+.form-material .bootstrap-tagsinput.focus, .form-material .bootstrap-tagsinput:focus {
     -webkit-background-size: 100% 2px,100% 1px;
     background-size: 100% 2px,100% 1px;
     outline: 0;

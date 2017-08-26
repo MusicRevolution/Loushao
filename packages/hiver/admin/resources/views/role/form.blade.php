@@ -13,9 +13,11 @@
 </div><div class="form-group">
     {!! Form::label('roles', '权限列表', ['class' => 'control-label']) !!}
     <div>
-    @foreach($permissions as $permission)
-        <input type="checkbox" name="permissions[]" value="{{ $permission->id }}" />{{ $permission->display_name }}
-    @endforeach
+        <select multiple="multiple" class="multiselect" name="permissions[]">
+        @foreach($permissions as $permission)
+        <option value='{{ $permission->id }}' @if($role->hasPermission($permission->name)) selected="selected" @endif>{{ $permission->display_name }}</option>
+        @endforeach
+        </select>
     </div>
 </div>
 

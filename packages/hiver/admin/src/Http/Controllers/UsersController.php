@@ -5,7 +5,8 @@ namespace Hiver\Admin\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Hiver\Admin\Models\User;
+//use Hiver\Admin\Models\User;
+use App\User;
 use Hiver\Admin\Models\Role;
 use Hiver\Admin\Models\Profile;
 use Illuminate\Http\Request;
@@ -71,6 +72,12 @@ class UsersController extends Controller
             'user_id' => $user->id
         );
         Profile::create($profile);
+        $roles = $request->get('roles');
+        if(!empty($roles))
+        {
+            foreach ($roles as $role)
+                $user->attachRole($role);
+        }
 
         Session::flash('flash_message', '添加成功！');
 
@@ -87,8 +94,7 @@ class UsersController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
-        $roles = Role::all();
-        return view('admin::users.show', compact('user', 'roles'));
+        return view('admin::users.show', compact('user'));
     }
 
     /**
@@ -101,8 +107,8 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-
-        return view('admin::users.edit', compact('user'));
+        $roles = Role::all();
+        return view('admin::users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -122,6 +128,18 @@ class UsersController extends Controller
         
         $user = User::findOrFail($id);
         $user->update($requestData);
+
+        $roles = $request->get('roles');
+        if(!empty($roles))
+        {
+            $user->detachRoles(false);
+            foreach ($roles as $role)
+                $user->attachRole($role);
+        }
+        else
+        {
+            $user->detachRoles(false);
+        }
 
         Session::flash('flash_message', '更新成功！');
 

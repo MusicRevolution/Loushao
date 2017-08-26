@@ -32,7 +32,7 @@
     {!! $errors->first('topic', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('tags') ? 'has-error' : ''}}">
     {!! Form::label('tags', '动漫标签', ['class' => 'control-label']) !!}
-    {!! Form::text('tags', null, ['class' => 'form-control']) !!}
+    {!! Form::text('tags', null, ['class' => 'form-control tagsinput', 'style' => 'width: 100%']) !!}
     {!! $errors->first('tags', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('country') ? 'has-error' : ''}}">
     {!! Form::label('country', '所属国家', ['class' => 'control-label']) !!}

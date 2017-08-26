@@ -1,5 +1,10 @@
 @extends('admin::master')
 
+@section('style')
+    @parent
+    <link rel="stylesheet" href="{{ admin_asset('vendor/lou-multi-select/css/multi-select.css') }}">
+@endsection
+
 @section('content')
 <div class="page animation-fade page-forms">
     <div class="page-header">
@@ -31,4 +36,14 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+    @parent
+    <script src="{{ admin_asset('vendor/lou-multi-select/js/jquery.multi-select.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.multiselect').multiSelect();
+        });
+    </script>
 @endsection

@@ -8,7 +8,7 @@
 @section('content')
 <div class="page animation-fade page-forms">
     <div class="page-header">
-        <h1 class="page-title">编辑Profile</h1>
+        <h1 class="page-title">编辑用户信息</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="{{ url('/admin') }}">首页</a>
@@ -16,7 +16,7 @@
             <li>
                 <a href="{{ url('/admin/users') }}">用户管理</a>
             </li>
-            <li class="active">详细信息</li>
+            <li class="active">编辑用户信息</li>
         </ol>
     </div>
     <div class="page-content">
