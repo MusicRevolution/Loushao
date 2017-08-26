@@ -1,5 +1,10 @@
 @extends('admin::master')
 
+@section('style')
+    @parent
+    <link rel="stylesheet" href="{{ admin_asset('js/plugins/magnific-popup/magnific-popup.css') }}">
+@endsection
+
 @section('content')
 <div class="page animation-fade page-forms">
     <div class="page-header">
@@ -44,11 +49,19 @@
                     </tr>
                     <tr>
                         <th>图片（小）</th>
-                        <td>{{ $comic->small_img }}</td>
+                        <td>
+                            <a href="{{ url('/uploads/img/'.date('Y-m-d', strtotime($comic->created_at)).'/'.$comic->small_img) }}" class="image-link">
+                                <img width="200px" height="200px" src="{{ url('/uploads/img/'.date('Y-m-d', strtotime($comic->created_at)).'/'.$comic->small_img) }}" class="img-thumbnail">
+                            </a>
+                        </td>
                     </tr>
                     <tr>
                         <th>图片（大）</th>
-                        <td>{{ $comic->big_img }}</td>
+                        <td>
+                            <a href="{{ url('/uploads/img/'.date('Y-m-d', strtotime($comic->created_at)).'/'.$comic->big_img) }}" class="image-link">
+                                <img width="200px" height="200px" src="{{ url('/uploads/img/'.date('Y-m-d', strtotime($comic->created_at)).'/'.$comic->big_img) }}" class="img-thumbnail">
+                            </a>
+                        </td>
                     </tr>
                     </tbody>
                     </table>
@@ -57,4 +70,14 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+    @parent
+    <script src="{{ admin_asset('js/plugins/magnific-popup/jquery.magnific-popup.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.image-link').magnificPopup({type:'image'});
+        });
+    </script>
 @endsection

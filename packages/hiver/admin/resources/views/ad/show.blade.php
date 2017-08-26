@@ -1,5 +1,10 @@
 @extends('admin::master')
 
+@section('style')
+    @parent
+    <link rel="stylesheet" href="{{ admin_asset('js/plugins/magnific-popup/magnific-popup.css') }}">
+@endsection
+
 @section('content')
 <div class="page animation-fade page-forms">
     <div class="page-header">
@@ -44,7 +49,11 @@
                     </tr>
                     <tr>
                         <th>图片</th>
-                        <td>{{ $ad->img }}</td>
+                        <td>
+                            <a href="{{ url('/uploads/img/'.date('Y-m-d', strtotime($ad->created_at)).'/'.$ad->img) }}" class="image-link">
+                                <img width="200px" height="200px" src="{{ url('/uploads/img/'.date('Y-m-d', strtotime($ad->created_at)).'/'.$ad->img) }}" class="img-thumbnail">
+                            </a>
+                        </td>
                     </tr>
                     <tr>
                         <th>URL地址</th>
@@ -57,4 +66,14 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+    @parent
+    <script src="{{ admin_asset('js/plugins/magnific-popup/jquery.magnific-popup.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.image-link').magnificPopup({type:'image'});
+        });
+    </script>
 @endsection
