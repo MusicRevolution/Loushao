@@ -136,7 +136,12 @@
                     var modal = $(this);
                     modal.find('.modal-form').attr("action", "{{ url('/admin/download') }}");
                 }
-            })
+            });
+
+            /*$('.formatter-download-url').formatter({
+                'pattern': '{{999}}-{{999}}-{{999}}-{{9999}}',
+                'persistent': true
+            });*/
         });
     </script>
 @endsection

@@ -15,7 +15,7 @@
     <div>
         <select multiple="multiple" class="multiselect" name="roles[]">
             @foreach($roles as $role)
-                <option value='{{ $role->id }}' @if($user->hasRole($role->name)) selected="selected" @endif>{{ $role->display_name }}</option>
+                <option value='{{ $role->id }}' @if($user != null && $user->hasRole($role->name)) selected="selected" @endif>{{ $role->display_name }}</option>
             @endforeach
         </select>
     </div>

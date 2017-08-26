@@ -305,6 +305,7 @@
     <script src="{{ admin_asset('vendor/metismenu/metisMenu.min.js') }}"></script>
     <script src="{{ admin_asset('vendor/bootbox.min.js') }}"></script>
     <script src="{{ admin_asset('vendor/screenfull/screenfull.min.js') }}"></script>
+    <script src="{{ admin_asset('js/plugins/formatter/jquery.formatter.js') }}"></script>
     @section('script')
     @show
     <script>

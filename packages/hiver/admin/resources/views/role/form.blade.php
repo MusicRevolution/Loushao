@@ -15,7 +15,7 @@
     <div>
         <select multiple="multiple" class="multiselect" name="permissions[]">
         @foreach($permissions as $permission)
-        <option value='{{ $permission->id }}' @if($role->hasPermission($permission->name)) selected="selected" @endif>{{ $permission->display_name }}</option>
+        <option value='{{ $permission->id }}' @if($role != null && $role->hasPermission($permission->name)) selected="selected" @endif>{{ $permission->display_name }}</option>
         @endforeach
         </select>
     </div>

@@ -3,8 +3,8 @@
     {!! Form::text('title', null, ['class' => 'form-control download-title', 'required' => 'required']) !!}
     {!! $errors->first('title', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('url') ? 'has-error' : ''}}">
-    {!! Form::label('url', '下载地址', ['class' => 'control-label']) !!}
-    {!! Form::text('url', null, ['class' => 'form-control download-url', 'required' => 'required']) !!}
+    {!! Form::label('url', '下载地址', ['class' => 'control-label download-url']) !!}
+    {!! Form::text('url', null, ['class' => 'form-control download-url formatter-download-url', 'required' => 'required']) !!}
     {!! $errors->first('url', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('filesize') ? 'has-error' : ''}}">
     {!! Form::label('filesize', '文件大小', ['class' => 'control-label']) !!}
