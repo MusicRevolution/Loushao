@@ -40,7 +40,7 @@
     {!! $errors->first('country', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('source') ? 'has-error' : ''}}">
     {!! Form::label('source', '来源', ['class' => 'control-label']) !!}
-    {!! Form::number('source', null, ['class' => 'form-control']) !!}
+    {!! Form::select('source', array('0' => '无', '1' => '编辑推荐'), null, ['class' => 'form-control']) !!}
     {!! $errors->first('source', '<p class="help-block">:message</p>') !!}
 </div>
 
