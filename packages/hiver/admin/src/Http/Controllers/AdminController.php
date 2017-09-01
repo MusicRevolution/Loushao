@@ -43,7 +43,9 @@ class AdminController extends Controller
     public function update(Request $request)
     {
         $title = $request->get('title');
+        $welcome = $request->get('welcome');
         Setting::set('setting.title', $title);
+        setting::set('setting.welcome', $welcome);
         Setting::save();
 
         Session::flash('flash_message', '保存成功！');

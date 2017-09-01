@@ -50,7 +50,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://www.loushao.net">
+            <a class="navbar-brand" href="http://www.loushao.net">
                 <img src="{{ asset('images/logo.png') }}" alt="Loushao" title="Loushao">
             </a>
             <a href="https://www.loushao.net/mobile" class="navbar-header-download">
@@ -66,8 +66,8 @@
                 </button>
             </div>
             <ul class="nav navbar-nav navbar-left">
-                <li class="active">
-                    <a href="#">首页</a>
+                <li @if(Request::getPathInfo() == '/')class="active"@endif>
+                    <a href="{{ url('/') }}">首页</a>
                 </li>
                 <li>
                     <a href="#">排行榜</a>
@@ -95,29 +95,37 @@
         <button class="navbar-search btn btn-default js-emit" tap-event="search.show" type="button">
             <i class="taptap-icon icon-search-white"></i>
         </button>
+        @if(Auth::check())
         <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown navbar-notice hide">
+            <li class="dropdown navbar-notice">
                 <button id="taptap-notification" class="btn btn-default taptap-notice-bell" data-message-total="条新消息" data-toggle="dropdown" type="button" data-unread="0" data-get-unread-total-url="https://www.taptap.com/ajax/notification/un-read-total" data-url="https://www.taptap.com/ajax/notification">
                     <i></i>
                 </button>
-                <div class="taptap-notice-widget dropdown-menu" id="ajaxNotifications">
-                    <div class="notice-widget-loading" data-taptap-ajax-notification="loading">
-                        <img src="{{ asset('images/loading.gif') }}" alt="">
-                    </div>
-                </div>
-                <span class="taptap-notice-triangle" data-taptap-ajax-notification="triangle"></span>
             </li>
             <li class="dropdown navbar-user">
-                <a href="#" class="img-circle" rel="nofollow" role="button" aria-haspopup="true" aria-expanded="false">
+                <a href="javascript:;" id="dLabel" class="img-circle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="{{ asset('images/default_avatar.jpg') }}" alt="">
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                    <li><a href="javascript:;">个人中心</a></li>
+                    <li><a href="javascript:;">我的收藏</a></li>
+                    <li><a href="javascript:;">我的订单</a></li>
+                    <li><a href="{{ url('auth/logout') }}">登出</a></li>
+                </ul>
+            </li>
+        </ul>
+        @else
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown navbar-user">
+                <a href="{{ url('auth/login') }}" class="img-circle" rel="nofollow" role="button" aria-haspopup="true" aria-expanded="false">
                     <img src="{{ asset('images/avator.png') }}" alt="">
                 </a>
             </li>
         </ul>
+        @endif
     </div>
 </nav>
-<div class="container event-gift-container">
-    @yield('content')
-</div>
+@yield('content')
 <footer class="footer">
     <div class="container">
         <div class="row">

@@ -12,6 +12,15 @@
 a {
   color: #333; }
 
+a {
+  color: #337ab7;
+  text-decoration: none; }
+
+body {
+  line-height: 20px;
+  background-color: #f2f2f2;
+  transition: all .3s ease-in-out 0s; }
+
 footer.footer .pull-right .list-inline > li:nth-child(1) > a, footer.footer .pull-right .list-inline > li:nth-child(1) > button {
   background: url(../images/icons.png) 0 -38px no-repeat;
   background-size: 120px; }
@@ -562,5 +571,212 @@ footer.footer .pull-left .footer-left-header .dropdown .dropdown-menu > li.activ
     margin: 0 3px; }
   .taptap-button-top {
     display: none !important; } }
+
+.hiver-breadcrumb {
+  margin-bottom: 20px;
+  background: #fff;
+  border-bottom: 1px solid #ddd; }
+  .hiver-breadcrumb .breadcrumb {
+    margin: 0;
+    padding: 5px 15px;
+    border-radius: 0;
+    background: 0 0; }
+  .hiver-breadcrumb .breadcrumb > li > span,
+  .hiver-breadcrumb .breadcrumb > li.active > span {
+    font-size: 12px;
+    color: #666; }
+  .hiver-breadcrumb .breadcrumb > li + li:before {
+    color: #666;
+    content: "\00bb"; }
+  .hiver-breadcrumb .breadcrumb > li:nth-child(2):before {
+    content: ""; }
+
+section.auth-main {
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15); }
+  section.auth-main .auth-main-title {
+    font-size: 18px;
+    margin: 0 33px;
+    padding: 16px 0;
+    height: 62px;
+    line-height: 30px;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5; }
+  section.auth-main .auth-main-body .main-body-header {
+    padding: 60px 0 0;
+    text-align: center; }
+  section.auth-main .main-body-header > p {
+    margin: 0 auto;
+    padding: 44px 0 0;
+    width: 160px;
+    text-align: center;
+    color: #14B9C8;
+    background: url(../img/background/auth-icon.png?20161128) no-repeat;
+    background-size: 160px; }
+  section.auth-main .main-body-header > p > span {
+    display: block;
+    background: #fff; }
+
+.main-body-login {
+  position: relative;
+  margin: 60px auto 50px;
+  width: 380px;
+  overflow: hidden; }
+
+section.auth-main .auth-main-body.login .third-account-wrapper,
+section.auth-main .auth-main-body.login .third-account-wrapper li,
+section.auth-main .auth-main-body.register .third-account-wrapper,
+section.auth-main .auth-main-body.register .third-account-wrapper li {
+  position: static; }
+
+section.auth-main .auth-main-body.login .phone-register,
+section.auth-main .auth-main-body.register .phone-register {
+  margin-bottom: 143px; }
+
+section.auth-main .auth-main-body.login form .form-group,
+section.auth-main .auth-main-body.register form .form-group {
+  position: relative;
+  margin-bottom: 25px; }
+
+section.auth-main .auth-main-body.login .label-name,
+section.auth-main .auth-main-body.register .label-name {
+  height: 21px;
+  line-height: 21px;
+  font-size: 16px;
+  color: #999;
+  position: absolute;
+  left: 0;
+  top: 9px;
+  text-indent: 5px; }
+
+section.auth-main .auth-main-body.login .form-control,
+section.auth-main .auth-main-body.register .form-control {
+  border-radius: 0px;
+  border: none;
+  padding-left: 100px;
+  height: 40px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #e5e5e5;
+  color: #ccc;
+  line-height: 21px;
+  font-size: 16px;
+  width: 100%;
+  box-shadow: none;
+  transition: none; }
+
+section.auth-main .auth-main-body.login .has-error .form-control,
+section.auth-main .auth-main-body.register .has-error .form-control {
+  border-bottom: 1px solid #DB4437; }
+
+section.auth-main .auth-main-body.login .form-control:focus,
+section.auth-main .auth-main-body.register .form-control:focus {
+  outline: 0;
+  border-bottom-color: #14B9C8;
+  color: #333; }
+
+.auth-main-body.register form .btn {
+  padding: 14px 12px;
+  line-height: 20px;
+  font-size: 18px;
+  border-color: #12A7B4;
+  background: #12A7B4;
+  color: #fff; }
+
+.main-body-login .third-account-tip {
+  height: 22px;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+  background: #fff;
+  position: relative; }
+  .main-body-login .third-account-tip span {
+    padding: 10px 15px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #A0A0A0;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: -50px;
+    background: #fff; }
+
+.main-body-login .third-account-wrapper {
+  text-align: center;
+  display: -ms-flexbox;
+  display: flex;
+  position: static; }
+  .main-body-login .third-account-wrapper .third-account-wrapper-item {
+    width: 100%; }
+  .main-body-login .third-account-wrapper a {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 15px;
+    text-align: center; }
+    .main-body-login .third-account-wrapper a .icon {
+      display: block;
+      margin: 0 auto;
+      height: 48px;
+      width: 48px;
+      background: url(../images/icons.png) no-repeat;
+      background-size: 140px; }
+    .main-body-login .third-account-wrapper a .icon.icon-weixinweb {
+      background-position: 0 -93px; }
+    .main-body-login .third-account-wrapper a .icon.icon-qq {
+      background-position: 0 -141px; }
+    .main-body-login .third-account-wrapper a .icon.icon-weibo {
+      background-position: 0 -239px; }
+    .main-body-login .third-account-wrapper a span {
+      display: block;
+      font-size: 12px;
+      color: #999;
+      height: 20px;
+      line-height: 20px;
+      margin-top: 3px; }
+  .main-body-login .third-account-wrapper a:hover {
+    text-decoration: none; }
+    .main-body-login .third-account-wrapper a:hover .icon.icon-weixinweb {
+      background-position: -49px -93px; }
+    .main-body-login .third-account-wrapper a:hover .icon.icon-qq {
+      background-position: -49px -141px; }
+    .main-body-login .third-account-wrapper a:hover .icon.icon-weibo {
+      background-position: -49px -239px; }
+
+section.auth-main .auth-main-body.login .phone-register .help-block,
+section.auth-main .auth-main-body.register .phone-register .help-block {
+  margin: 30px 0 40px; }
+
+section.auth-main .auth-main-body.login form > .help-block > p > a,
+section.auth-main .auth-main-body.register form > .help-block > p > a {
+  color: #14B9C8; }
+
+section.auth-main .auth-main-body.login form > .help-block::after,
+section.auth-main .auth-main-body.profile-edit > form::after,
+section.auth-main .auth-main-body.register form > .help-block::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.login-form-group {
+  margin-bottom: 40px; }
+
+section.auth-main .auth-main-body .main-body-links > a {
+  color: #14B9C8; }
+
+section.auth-main .auth-main-body.login form .form-group .help-block,
+section.auth-main .auth-main-body.register form .form-group .help-block {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: #DB4437; }
+
+nav.navbar .navbar-right > li.navbar-user .dropdown-menu {
+  top: 68px;
+  border-radius: 3px; }
 
 /*# sourceMappingURL=app.css.map */

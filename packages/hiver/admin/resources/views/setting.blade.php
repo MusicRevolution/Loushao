@@ -23,6 +23,24 @@
                         {!! Form::text('title', Setting::get('setting.title', '天津海文科技有限公司'), ['class' => 'form-control', 'required' => 'required']) !!}
                         {!! $errors->first('title', '<p class="help-block">:message</p>') !!}
                     </div>
+                    <div class="form-group form-material {{ $errors->has('welcome') ? 'has-error' : ''}}">
+                        {!! Form::label('welcome', '网站访问', ['class' => 'control-label']) !!}
+                        <div class="radio-list">
+                            <div class="radio">
+                                {!! Form::radio('welcome', '1', Setting::get('setting.welcome', '1') == '1', ['id' => 'radio1']) !!}
+                                <label for="radio1">
+                                    正常
+                                </label>
+                            </div>
+                            <div class="radio">
+                                {!! Form::radio('welcome', '0', Setting::get('setting.welcome', '0') == '0', ['id' => 'radio2']) !!}
+                                <label for="radio2">
+                                    锁定
+                                </label>
+                            </div>
+                        </div>
+                        {!! $errors->first('welcome', '<p class="help-block">:message</p>') !!}
+                    </div>
                     <div class="form-group">
                         {!! Form::submit(isset($submitButtonText) ? $submitButtonText : '保存', ['class' => 'btn btn-primary']) !!}
                     </div>
