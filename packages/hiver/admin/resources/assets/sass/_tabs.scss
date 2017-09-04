@@ -125,3 +125,12 @@
 .page-tab-operation {
     left: -100px;
 }
+
+@media (max-width: 767px) {
+    .site-menubar-unfold .contabs {
+        margin-left: auto;
+    }
+    .collapse.in .contabs {
+        margin-left: 220px;
+    }
+}

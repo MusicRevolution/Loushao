@@ -19,7 +19,8 @@ body {
   font-size: 14px;
   line-height: 1.6;
   color: #76838f;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  overflow: hidden; }
 
 h1 {
   margin: .67em 0;
@@ -649,7 +650,8 @@ label {
   padding: 10px 15px; }
 
 .site-navbar .navbar-toolbar.navbar-left .navbar-menu {
-  width: calc(100% - 50px); }
+  /*width: -webkit-calc(100% - 50px);
+  width: calc(100% - 50px);*/ }
 
 .navbar-toolbar > li {
   float: left; }
@@ -1166,5 +1168,11 @@ label {
 
 .page-tab-operation {
   left: -100px; }
+
+@media (max-width: 767px) {
+  .site-menubar-unfold .contabs {
+    margin-left: auto; }
+  .collapse.in .contabs {
+    margin-left: 220px; } }
 
 /*# sourceMappingURL=site.css.map */
