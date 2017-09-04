@@ -4,7 +4,7 @@
 <div class="page animation-fade page-forms">
     <div class="page-header">
         <h1 class="page-title">查看用户</h1>
-        <ol class="breadcrumb">
+        <ol class="breadcrumb hide">
             <li>
                 <a href="{{ url('/admin') }}">首页</a>
             </li>
@@ -30,6 +30,7 @@
                     'onclick'=>'return confirm("您约定要删除该信息吗？")'
                 ))!!}
                 {!! Form::close() !!}
+                <a href="{{ url('/admin/users') }}" class="btn btn-warning">返回</a>
                 <br /><br />
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped">

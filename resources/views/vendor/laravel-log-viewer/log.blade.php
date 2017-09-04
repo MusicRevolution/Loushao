@@ -24,7 +24,7 @@
 <div class="page animation-fade page-index">
     <div class="page-header">
         <h1 class="page-title">日志管理</h1>
-        <ol class="breadcrumb">
+        <ol class="breadcrumb hide">
             <li>
                 <a href="{{ url('/admin') }}">首页</a>
             </li>

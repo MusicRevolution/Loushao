@@ -18,10 +18,6 @@
         //激活menu
         $("#page-content iframe.active").removeClass("active");
         $("#page-content .iframe-content[data-url='" + url + "'][data-value='" + value + "']").addClass("active");
-
-        //激活所有菜单中的li
-        $("#menu-all-ul li.active").removeClass("active");
-        $("#menu-all-ul li[data-url='" + url + "'][data-value='" + value + "']").addClass("active");
     },
     move = function (selDom) {
         /**
@@ -111,19 +107,38 @@
                 nav.animate({ "margin-left": (temp < allshowleft ? allshowleft : temp) + "px" }, animatSpeed);
             }
         });
-        //所有菜单按钮点击事件
-        $("#page-operation").bind("click", function () {
-            var menuall = $("#menu-all");
-            if (menuall.is(":visible")) {
-                menuall.hide();
-            } else {
-                menuall.show();
+        //注册更新当前页面
+        $(".reload-page").bind("click", function () {
+            var f = $("#page-content iframe.active");
+            if(f.length >= 1) {
+                f[0].contentWindow.location.reload(true);
             }
         });
-        //注册点击body隐藏所有菜单事件
-        $("body").bind("mousedown", function (event) {
-            if (!(event.target.id === "menu-all" || event.target.id === "menu-all-ul" || event.target.id === "page-operation" || event.target.id === "page-operation" || event.target.parentElement.id === "menu-all-ul")) {
-                $("#menu-all").hide();
+        //注册关闭其他页面
+        $(".close-other").bind("click", function () {
+            var closed_menus = $("#menu-list a");
+            var closed_contents = $("#page-content iframe");
+            for(var i = 1; i < closed_menus.length; i++) {
+                if (!$(closed_menus[i]).hasClass("active")) {
+                    closed_menus[i].remove();
+                    closed_contents[i].remove();
+                }
+                var nav = $("#menu-list");
+                nav.animate({ "margin-left": "0px" }, animatSpeed);
+            }
+        });
+        //注册关闭所有页面
+        $(".close-all").bind("click", function () {
+            var closed_menus = $("#menu-list a");
+            var closed_contents = $("#page-content iframe");
+            for(var i = 1; i < closed_menus.length; i++) {
+                closed_menus[i].remove();
+                closed_contents[i].remove();
+                var home_url = $("#home").data("url");
+                var home_val = $("#home").data("value");
+                var nav = $("#menu-list");
+                linkframe(home_url, home_val);
+                nav.animate({ "margin-left": "0px" }, animatSpeed);
             }
         });
     };
@@ -164,19 +179,6 @@
                         "data-value": linkHtml,
                         src: linkUrl
                     }).appendTo("#page-content");
-
-                    //创建所有菜单列表
-                    $("<li>", {
-                        "html": linkHtml,
-                        "data-url": linkUrl,
-                        "data-value": linkHtml
-                    }).bind("click", function () {
-                        var jthis = $(this);
-                        linkframe(jthis.data("url"), jthis.data("value"));
-                        move($("#menu-list a[data-url='" + linkUrl + "'][data-value='" + linkHtml + "']"));
-                        $("#menu-all").hide();
-                        event.stopPropagation();
-                    }).appendTo("#menu-all-ul");
 
                     createmove();
                 } else {

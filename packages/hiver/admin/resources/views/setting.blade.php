@@ -4,7 +4,7 @@
     <div class="page animation-fade page-index">
         <div class="page-header">
             <h1 class="page-title">显示设置</h1>
-            <ol class="breadcrumb">
+            <ol class="breadcrumb hide">
                 <li>
                     <a href="{{ url('/admin') }}">首页</a>
                 </li>

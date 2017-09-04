@@ -13,7 +13,7 @@
 <div class="page animation-fade page-forms">
     <div class="page-header">
         <h1 class="page-title">下载资源管理</h1>
-        <ol class="breadcrumb">
+        <ol class="breadcrumb hide">
             <li>
                 <a href="{{ url('/admin') }}">首页</a>
             </li>
@@ -29,6 +29,8 @@
                 <button class="btn btn-success btn-sm" title="添加资源" data-toggle="modal" data-target="#myModal">
                     <i class="fa fa-plus" aria-hidden="true"></i> 添加资源
                 </button>
+                &nbsp;&nbsp;
+                <a href="{{ url('/admin/comics') }}" class="btn btn-warning">返回</a>
                 {!! Form::open(['method' => 'GET', 'url' => '/admin/download/index', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
                 <input type="hidden" name="id" value="{{ Input::get('id') }}" />
                 <div class="input-group">

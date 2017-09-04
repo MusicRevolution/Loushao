@@ -14,4 +14,6 @@
 
 <div class="form-group">
     {!! Form::submit(isset($submitButtonText) ? $submitButtonText : '添加', ['class' => 'btn btn-primary']) !!}
+    &nbsp;&nbsp;
+    <a href="{{ url('/admin/permissions') }}" class="btn btn-warning">返回</a>
 </div>

@@ -9,7 +9,7 @@
 <div class="page animation-fade page-forms">
     <div class="page-header">
         <h1 class="page-title">添加新用户</h1>
-        <ol class="breadcrumb">
+        <ol class="breadcrumb hide">
             <li>
                 <a href="{{ url('/admin') }}">首页</a>
             </li>
