@@ -254,6 +254,15 @@ input[type="radio"].styled:checked label:after,
 .checkbox-list .checkbox {
   display: inline-block; }
 
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: none;
+  outline-offset: 0; }
+
 /* 后台登录样式 */
 html {
   height: 100%; }
@@ -1051,5 +1060,111 @@ label {
 .modal-footer {
   padding: 10px 20px 20px;
   border-top: none; }
+
+.contabs {
+  margin-left: 220px; }
+
+.contabs {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  left: 0;
+  z-index: 1980;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  background: #fff;
+  border-bottom: solid 1px #e4eaec; }
+
+.contabs .btn {
+  height: 38px;
+  background: #fff;
+  border: none;
+  border-radius: 0; }
+
+.contabs .contabs-scroll {
+  position: relative;
+  height: 40px;
+  overflow: hidden; }
+
+.site-page {
+  position: relative;
+  background: #f1f4f5;
+  height: calc(100vh - 80px);
+  margin-top: 40px; }
+
+.contabs .contabs-scroll .con-tabs {
+  position: absolute;
+  width: auto; }
+
+.contabs .contabs-scroll .con-tabs > a {
+  float: left;
+  width: 10em;
+  position: relative;
+  display: block;
+  padding: 0 28px 0 12px;
+  overflow: hidden;
+  color: #76838f;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center; }
+
+.contabs .contabs-scroll .con-tabs > a:hover,
+.contabs .contabs-scroll .con-tabs > a:link,
+.contabs .contabs-scroll .con-tabs > a:active {
+  text-decoration: none; }
+
+.contabs .contabs-scroll .con-tabs > a.active {
+  background: #f1f4f5; }
+
+.menu-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #76838f;
+  width: 14px;
+  height: 14px; }
+
+.menu-close:hover {
+  border-radius: 50px;
+  background: #f96868;
+  color: #ffffff; }
+
+#page-content .iframe-content {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: none; }
+
+#page-content .active {
+  display: block; }
+
+#page-tab-content {
+  margin-left: 0px;
+  width: 100000px; }
+
+#page-tab #page-prev,
+#page-tab .btn-group,
+#page-tab .contabs-scroll {
+  position: absolute;
+  top: 0; }
+
+#page-tab #page-prev {
+  left: 0;
+  width: 30px; }
+
+#page-tab .btn-group {
+  right: 0px;
+  width: 56px; }
+
+#page-tab .contabs-scroll {
+  left: 30px; }
+
+.btn-group .btn + .dropdown-toggle .caret {
+  margin-left: 0;
+  margin-top: 5px; }
+
+.page-tab-operation {
+  left: -100px; }
 
 /*# sourceMappingURL=site.css.map */

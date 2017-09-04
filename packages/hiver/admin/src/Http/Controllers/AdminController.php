@@ -31,8 +31,13 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //dd(Config::get("admin.message"));
         return view('admin::index');
+    }
+
+    public function welcome()
+    {
+        //dd(Config::get("admin.message"));
+        return view('admin::welcome');
     }
 
     public function setting()

@@ -18,6 +18,7 @@ Route::post('admin/loginValidate', 'AdminAuthController@postLogin');
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     // 控制面板
     Route::get('/', 'AdminController@index');
+    Route::get('/welcome', 'AdminController@welcome');
     Route::get('/setting', 'AdminController@setting');
     Route::post('/setting', 'AdminController@update');
     Route::get('/feedback', 'FeedbackController@index');
