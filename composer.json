@@ -15,7 +15,8 @@
         "anlutro/l4-settings": "^0.5.0",
         "overtrue/socialite": "~1.1",
         "spatie/laravel-backup": "^3.0.0",
-        "rap2hpoutre/laravel-epilog": "^0.0.6"
+        "rap2hpoutre/laravel-epilog": "^0.0.6",
+        "regulus/activity-log": "0.5.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

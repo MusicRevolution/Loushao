@@ -154,6 +154,7 @@ return [
         Spatie\Backup\BackupServiceProvider::class,
         Rap2hpoutre\LaravelEpilog\LaravelEpilogServiceProvider::class,
         Mnabialek\LaravelSqlLogger\Providers\ServiceProvider::class,
+        Regulus\ActivityLog\ActivityLogServiceProvider::class,
 
         Hiver\Admin\AdminServiceProvider::class,
 
@@ -210,6 +211,7 @@ return [
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
         'Setting'   => anlutro\LaravelSettings\Facade::class,
+        'Activity' => Regulus\ActivityLog\Models\Activity::class,
     ],
 
 ];
