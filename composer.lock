@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b272d77fffc75dfd11f7c954074e3e6",
+    "content-hash": "57f7680b111fe5f0b95a36973125432a",
     "packages": [
         {
             "name": "anlutro/l4-settings",
@@ -2179,6 +2179,58 @@
                 "spatie"
             ],
             "time": "2017-02-18T09:54:12+00:00"
+        },
+        {
+            "name": "spatie/laravel-pjax",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-pjax.git",
+                "reference": "30e1509517a6371a5774a29e99e2db204cb7fc5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-pjax/zipball/30e1509517a6371a5774a29e99e2db204cb7fc5b",
+                "reference": "30e1509517a6371a5774a29e99e2db204cb7fc5b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^5.1",
+                "illuminate/support": "^5.1",
+                "php": "^5.5.0|^7.0",
+                "symfony/css-selector": "^2.7|^3.0",
+                "symfony/dom-crawler": "^2.7|^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Pjax\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A pjax middleware for Laravel 5",
+            "homepage": "https://github.com/spatie/laravel-pjax",
+            "keywords": [
+                "laravel-pjax",
+                "pjax",
+                "spatie"
+            ],
+            "time": "2016-02-18T15:16:46+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
