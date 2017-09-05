@@ -29,7 +29,9 @@
     <link rel="stylesheet" href="{{ admin_asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ admin_asset('css/bootstrap-select.css') }}">
     <link rel="stylesheet" href="{{ admin_asset('vendor/animsition/css/animsition.css') }}">
+    <link rel="stylesheet" href="{{ admin_asset('css/font-awesome/css/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ admin_asset('css/web-icons/web-icons.css') }}">
+    <link rel="stylesheet" href="{{ admin_asset('css/awesome-bootstrap-checkbox.css') }}">
     <link rel="stylesheet" href="{{ admin_asset('css/site.css') }}">
     <!--[if lte IE 9]>
     <meta http-equiv="refresh" content="0; url='http://www.loushao.net/ie.html'" />
@@ -112,13 +114,13 @@
                                 <label class="sr-only" for="password">验证码</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" name="validCode" placeholder="请输入验证码">
-                                    <a class="input-group-addon padding-0 reload-vify" href="javascript:;">
-                                        <img src="{{ Captcha::src() }}" height="40">
+                                    <a class="input-group-addon padding-0 reload-vify" href="javascript:;" title="点击刷新验证码">
+                                        <img src="{{ Captcha::src() }}" height="40" data-url="{{ url('admin\captcha') }}">
                                     </a>
                                 </div>
                             </div>
                             <div class="form-group clearfix">
-                                <div class="checkbox-custom checkbox-inline checkbox-primary pull-left">
+                                <div class="checkbox-custom checkbox-inline checkbox-primary pull-left checkbox">
                                     <input type="checkbox" id="remember" name="remember">
                                     <label for="remember">自动登录</label>
                                 </div>

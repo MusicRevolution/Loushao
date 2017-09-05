@@ -15,6 +15,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Http\Request;
 use anlutro\LaravelSettings\Facade as Setting;
+use Mews\Captcha\Facades\Captcha;
 use Session;
 
 /**
@@ -43,6 +44,11 @@ class AdminController extends Controller
     public function setting()
     {
         return view('admin::setting');
+    }
+
+    public function getCaptcha()
+    {
+        return Captcha::src();
     }
 
     public function update(Request $request)

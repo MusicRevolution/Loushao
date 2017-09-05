@@ -14,6 +14,7 @@ Route::get('admin', 'AdminController@index');
 // 用户登录
 Route::get('admin/login', 'AdminAuthController@login');
 Route::post('admin/loginValidate', 'AdminAuthController@postLogin');
+Route::get('admin/captcha', 'AdminController@getCaptcha');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     // 控制面板

@@ -179,6 +179,37 @@ body {
   letter-spacing: 1px;
 }
 
+.checkbox-custom label::before {
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: -20px;
+    content: "";
+    background-color: #fff;
+    border: 1px solid #e4eaec;
+    border-radius: 3px;
+    -webkit-transition: all .3s ease-in-out 0s;
+    -o-transition: all .3s ease-in-out 0s;
+    transition: all .3s ease-in-out 0s;
+}
+
+.checkbox-custom input[type=checkbox]:checked+label::before,
+.checkbox-custom input[type=radio]:checked+label::before {
+    border-color: #e4eaec;
+    border-width: 10px;
+    -webkit-transition: all .3s ease-in-out 0s;
+    -o-transition: all .3s ease-in-out 0s;
+    transition: all .3s ease-in-out 0s;
+}
+
+.checkbox-primary input[type=checkbox]:checked+label::before,
+.checkbox-primary input[type=radio]:checked+label::before {
+    background-color: #62a8ea;
+    border-color: #62a8ea;
+}
+
 @media (max-width: 767px) {
   .hidden-xs {
     display: none!important;
