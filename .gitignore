@@ -35,3 +35,4 @@ public/css/site.css.map
 resources/grud-generator/
 .idea/workspace.xml
 !resources/views/vendor/
+!resources/lang/vendor/

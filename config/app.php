@@ -156,6 +156,15 @@ return [
         Mnabialek\LaravelSqlLogger\Providers\ServiceProvider::class,
         Regulus\ActivityLog\ActivityLogServiceProvider::class,
         Conner\Tagging\Providers\TaggingServiceProvider::class,
+        Spatie\PaginateRoute\PaginateRouteServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+        Vinkla\Hashids\HashidsServiceProvider::class,
+        App\Providers\AnnotationsServiceProvider::class,
+        Jenssegers\Agent\AgentServiceProvider::class,
+        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
+        Felixkiss\UniqueWithValidator\ServiceProvider::class,
+        Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider::class,
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 
         Hiver\Admin\AdminServiceProvider::class,
 
@@ -213,6 +222,13 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Setting'   => anlutro\LaravelSettings\Facade::class,
         'Activity' => Regulus\ActivityLog\Models\Activity::class,
+        'PaginateRoute' => Spatie\PaginateRoute\PaginateRouteFacade::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'Hashids' => Vinkla\Hashids\Facades\Hashids::class,
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
+        'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
+        'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
     ],
 
 ];
