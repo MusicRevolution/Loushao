@@ -155,6 +155,7 @@ return [
         Rap2hpoutre\LaravelEpilog\LaravelEpilogServiceProvider::class,
         Mnabialek\LaravelSqlLogger\Providers\ServiceProvider::class,
         Regulus\ActivityLog\ActivityLogServiceProvider::class,
+        Conner\Tagging\Providers\TaggingServiceProvider::class,
 
         Hiver\Admin\AdminServiceProvider::class,
 
