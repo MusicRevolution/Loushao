@@ -13,14 +13,17 @@
         "laravelcollective/html": "5.1.*",
         "rap2hpoutre/laravel-log-viewer": "^0.10.4",
         "anlutro/l4-settings": "^0.5.0",
-        "overtrue/socialite": "~1.1"
+        "overtrue/socialite": "~1.1",
+        "spatie/laravel-backup": "^3.0.0",
+        "rap2hpoutre/laravel-epilog": "^0.0.6"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
         "phpspec/phpspec": "~2.1",
-        "appzcoder/crud-generator": "^2.0"
+        "appzcoder/crud-generator": "^2.0",
+        "mnabialek/laravel-sql-logger": "^1.1"
     },
     "autoload": {
         "classmap": [

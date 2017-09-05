@@ -35,3 +35,10 @@ php artisan vendor:publish --force</code></pre>
 <pre><code>php artisan crud:controller RoleController --crud-name=role --view-path=../packages/hiver/admin/resources/views/ --controller-namespace=../packages/hiver/admin/src/Http/Controllers --route-group=admin --model-namespace=../packages/hiver/admin/src/Models --model-name=Role</code></pre>
 
 <pre><code>php artisan crud:view role --fields="name#string; display_name#string; description#string" --view-path=../../packages/hiver/admin/resources/views/ --route-group=admin</code></pre>
+
+## 关于备份数据库操作
+<pre><code>php artisan backup:run</code></pre>
+### 备份数据库
+<pre><code>php artisan backup:run --only-db</code></pre>
+### 备份文件
+<pre><code>php artisan backup:run --only-files</code></pre>

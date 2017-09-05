@@ -151,8 +151,11 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         anlutro\LaravelSettings\ServiceProvider::class,
+        Spatie\Backup\BackupServiceProvider::class,
+        Rap2hpoutre\LaravelEpilog\LaravelEpilogServiceProvider::class,
+        Mnabialek\LaravelSqlLogger\Providers\ServiceProvider::class,
 
-        Hiver\Admin\AdminServiceProvider::class
+        Hiver\Admin\AdminServiceProvider::class,
 
     ],
 
