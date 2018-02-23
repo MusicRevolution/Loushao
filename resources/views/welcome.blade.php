@@ -3,8 +3,8 @@
 <head>
     <title>{{ Setting::get('setting.title', '天津海文科技有限公司') }}</title>
     <meta charset="utf-8">
-    <meta name="keywords" content="hiver,hiver官网,loushao,营销,产品,海文科技,漏勺网,通用后台管理系统,后台框架,ui框架" />
-    <meta name="description" content="基于Laravel5.1框架开发后台插件" />
+    <meta name="keywords" content="{{ Setting::get('setting.keywords', '天津海文科技有限公司') }}" />
+    <meta name="description" content="{{ Setting::get('setting.description', '天津海文科技有限公司') }}" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- 移动设备 viewport -->
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">

@@ -55,8 +55,16 @@ class AdminController extends Controller
     {
         $title = $request->get('title');
         $welcome = $request->get('welcome');
+        $keywords = $request->get('keywords');
+        $description = $request->get('description');
+        $icp = $request->get('icp');
+        $copyright = $request->get('copyright');
         Setting::set('setting.title', $title);
-        setting::set('setting.welcome', $welcome);
+        Setting::set('setting.welcome', $welcome);
+        Setting::set('setting.keywords', $keywords);
+        Setting::set('setting.description', $description);
+        Setting::set('setting.icp', $icp);
+        Setting::set('setting.copyright', $copyright);
         Setting::save();
 
         Session::flash('flash_message', '保存成功！');

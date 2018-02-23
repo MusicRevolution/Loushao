@@ -1,4 +1,4 @@
-@extends('layouts/master')
+@extends('layouts/common')
 
 @section('content')
 <section class="hiver-breadcrumb">
@@ -19,11 +19,11 @@
             <section class="auth-main">
                 <div class="auth-main-body login register">
                     <h1 class="auth-main-title">登录</h1>
-                    <div class="main-body-header">
+                    <!--<div class="main-body-header">
                         <p>
                             <span>即刻加入游戏狂热者行列</span>
                         </p>
-                    </div>
+                    </div>-->
                     <div class="main-body-login">
                         <div class="phone-register">
                             <form method="POST" action="{{ url('/auth/login' ) }}">

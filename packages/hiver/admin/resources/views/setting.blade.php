@@ -41,6 +41,26 @@
                         </div>
                         {!! $errors->first('welcome', '<p class="help-block">:message</p>') !!}
                     </div>
+                    <div class="form-group form-material {{ $errors->has('keywords') ? 'has-error' : ''}}">
+                        {!! Form::label('keywords', 'Meta Keywords', ['class' => 'control-label']) !!}
+                        {!! Form::text('keywords', Setting::get('setting.keywords', 'hiver,hiver官网,loushao,营销,产品,海文科技,漏勺网,通用后台管理系统,后台框架,ui框架'), ['class' => 'form-control', 'required' => 'required']) !!}
+                        {!! $errors->first('keywords', '<p class="help-block">:message</p>') !!}
+                    </div>
+                    <div class="form-group form-material {{ $errors->has('description') ? 'has-error' : ''}}">
+                        {!! Form::label('description', 'Meta Description', ['class' => 'control-label']) !!}
+                        {!! Form::text('description', Setting::get('setting.description', '基于Laravel5.1框架开发后台插件'), ['class' => 'form-control', 'required' => 'required']) !!}
+                        {!! $errors->first('description', '<p class="help-block">:message</p>') !!}
+                    </div>
+                    <div class="form-group form-material {{ $errors->has('icp') ? 'has-error' : ''}}">
+                        {!! Form::label('icp', 'ICP', ['class' => 'control-label']) !!}
+                        {!! Form::text('icp', Setting::get('setting.icp', '互联网ICP备案：闽ICP备12004074号-8 闽网文（2015）1788-036号'), ['class' => 'form-control', 'required' => 'required']) !!}
+                        {!! $errors->first('icp', '<p class="help-block">:message</p>') !!}
+                    </div>
+                    <div class="form-group form-material {{ $errors->has('copyright') ? 'has-error' : ''}}">
+                        {!! Form::label('copyright', '版权信息', ['class' => 'control-label']) !!}
+                        {!! Form::text('copyright', Setting::get('setting.copyright', '© 2018 漏勺网 本站不提供任何视听上传服务，所有内容均来自视频分享站点所提供的公开引用资源'), ['class' => 'form-control', 'required' => 'required']) !!}
+                        {!! $errors->first('copyright', '<p class="help-block">:message</p>') !!}
+                    </div>
                     <div class="form-group">
                         {!! Form::submit(isset($submitButtonText) ? $submitButtonText : '保存', ['class' => 'btn btn-primary']) !!}
                     </div>

@@ -3,8 +3,8 @@
 <head>
     <title>{{ Setting::get('setting.title', '天津海文科技有限公司') }}</title>
     <meta charset="utf-8">
-    <meta name="keywords" content="hiver,hiver官网,loushao,营销,产品,海文科技,漏勺网,通用后台管理系统,后台框架,ui框架" />
-    <meta name="description" content="基于Laravel5.1框架开发后台插件" />
+    <meta name="keywords" content="{{ Setting::get('setting.keywords', '天津海文科技有限公司') }}" />
+    <meta name="description" content="{{ Setting::get('setting.description', '天津海文科技有限公司') }}" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- 移动设备 viewport -->
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
@@ -41,185 +41,130 @@
     <![endif]-->
 </head>
 <body>
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarSlide" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://www.loushao.net">
-                <img src="{{ asset('images/logo.png') }}" alt="Loushao" title="Loushao">
-            </a>
-            <a href="https://www.loushao.net/mobile" class="navbar-header-download">
-                <i class="taptap-icon icon-mobile"></i>
-                <i class="taptap-icon icon-mobile-download"></i>
-                <span>客户端</span>
-            </a>
-        </div>
-        <div class="navbar-collapse" id="navbarSlide">
-            <div class="narbar-collapse-btn">
-                <button class="btn btn-default" data-toggle="collapse" data-target="#navbarSlide" type="button">
-                    <i class="taptap-icon icon-arrow-left"></i>
-                </button>
-            </div>
-            <ul class="nav navbar-nav navbar-left">
-                <li @if(Request::getPathInfo() == '/')class="active"@endif>
-                    <a href="{{ url('/') }}">首页</a>
-                </li>
-                <li>
-                    <a href="#">排行榜</a>
-                </li>
-                <li>
-                    <a href="#">安利墙</a>
-                </li>
-                <li>
-                    <a href="#">发现</a>
-                </li>
-                <li>
-                    <a href="#">论坛</a>
-                </li>
-            </ul>
-        </div>
-        <div class="navbar-mask" data-toggle="collapse" data-target="#navbarSlide"></div>
-        <form class="navbar-form" id="search" role="search" method="get" action="#">
-            <button type="submit" class="btn btn-default">
-                <i class="taptap-icon icon-search"></i>
-            </button>
-            <div class="form-group">
-                <input type="text" class="form-control js-emit" autocomplete="off" id="search-kw" name="kw" value="" placeholder="搜索...">
-            </div>
-        </form>
-        <button class="navbar-search btn btn-default js-emit" tap-event="search.show" type="button">
-            <i class="taptap-icon icon-search-white"></i>
-        </button>
-        @if(Auth::check())
-        <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown navbar-notice">
-                <button id="taptap-notification" class="btn btn-default taptap-notice-bell" data-message-total="条新消息" data-toggle="dropdown" type="button" data-unread="0" data-get-unread-total-url="https://www.taptap.com/ajax/notification/un-read-total" data-url="https://www.taptap.com/ajax/notification">
-                    <i></i>
-                </button>
-            </li>
-            <li class="dropdown navbar-user">
-                <a href="javascript:;" id="dLabel" class="img-circle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="{{ asset('images/default_avatar.jpg') }}" alt="">
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dLabel">
-                    <li><a href="javascript:;">个人中心</a></li>
-                    <li><a href="javascript:;">我的收藏</a></li>
-                    <li><a href="javascript:;">我的订单</a></li>
-                    <li><a href="{{ url('auth/logout') }}">登出</a></li>
-                </ul>
-            </li>
-        </ul>
-        @else
-        <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown navbar-user">
-                <a href="{{ url('auth/login') }}" class="img-circle" rel="nofollow" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img src="{{ asset('images/avator.png') }}" alt="">
-                </a>
-            </li>
-        </ul>
-        @endif
-    </div>
-</nav>
-@yield('content')
-<footer class="footer">
+<div class="nav_top">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 clearfix">
-                <div class="pull-right">
-                    <p>Contact Us</p>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#" target="_blank" title="Facebook" rel="nofollow"></a>
-                        </li>
-                        <li>
-                            <button class="btn" type="button" title="微信"></button>
-                            <div>
-                                <span class="thumbnail">
-                                    <img src="https://img.taptapdada.com/market/images/c4bf2701e3ee9993e1ee0b8222480a35.jpg" alt="">
-                                </span>
-                            </div>
-                        </li>
-                        <li>
-                            <button class="btn" type="button" title="QQ"></button>
-                            <div>
-                                <span class="thumbnail">官方QQ群: </span>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank" title="知乎" rel="nofollow"></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank" title="微博" rel="nofollow"></a>
-                        </li>
-                        <li>
-                            <button class="btn" type="button" title="邮箱"></button>
-                            <div>
-                                <span class="thumbnail">
-                                    合作邮箱: <a href="mailto:delicacylee@vip.sina.com" rel="nofollow">delicacylee@vip.sina.com</a>
-                                </span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="pull-left">
-                    <div class="footer-left-header">
-                        <span class="left-header-logo"></span>
-                        <div class="dropdown">
-                            <button id="languageSelect" type="button" class="btn btn-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                简体中文
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="languageSelect">
-                                <li>
-                                    <a href="#" rel="nofollow">English</a>
-                                </li>
-                                <li>
-                                    <a href="#" rel="nofollow">日本語</a>
-                                </li>
-                                <li>
-                                    <a href="#" rel="nofollow">한국어</a>
-                                </li>
-                                <li>
-                                    <a href="#" rel="nofollow">繁體中文</a>
-                                </li>
-                                <li class="active">
-                                    <a href="#" rel="nofollow">简体中文</a>
-                                </li>
-                            </ul>
-                            <span class="link">
-                                <a href="#" rel="nofollow">开发者中心</a>
-                            </span>
-                            <span class="link">
-                                <a href="#" rel="nofollow">广告投放</a>
-                            </span>
-                            <span class="link">
-                                <a href="#" rel="nofollow">关于我们</a>
-                            </span>
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
+                <ul class="auth pull-right">
+                    <li>
+                        <a href="{{ url('/auth/login' ) }}" target="_blank">注册</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/auth/login' ) }}" target="_blank">登录</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="banner">
+
+</div>
+<div class="nav_menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="{{ url('/') }}" class="active">资源下载</a><a href="http://www.dandanplay.com" target="_blank">弹弹play播放器</a>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="index-header">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="{{ asset('images/banner/banner1.jpg') }}" class="img-responsive" alt="Fate Zero">
+                            <div class="carousel-caption"></div>
+                        </div>
+                        <div class="item">
+                            <img src="{{ asset('images/banner/banner2.jpg') }}" class="img-responsive" alt="Fate Zero">
+                            <div class="carousel-caption"></div>
+                        </div>
+                        <div class="item">
+                            <img src="{{ asset('images/banner/banner3.jpg') }}" class="img-responsive" alt="Fate Zero">
+                            <div class="carousel-caption"></div>
                         </div>
                     </div>
-                    <p>Discover superb animations.</p>
-                    <span>
-                        <span>Copyright © 2017 <a href="https://www.loushao.net">Loushao</a>. All rights Reserved.</span>
-                        <br>
-                        <span>适龄提示：本公司产品适合10周岁以上玩家使用</span>
-                        <span>&nbsp;&nbsp;<a href="#" target="_blank" rel="nofollow">未成年人家长监护</a>&nbsp;&nbsp;<a href="#" rel="nofollow">隐私权和条款</a></span>
-                        <br>
-                        <span><a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">XXX</a>&nbsp;&nbsp;XXX&nbsp;&nbsp;</span>
-                        天津海文科技有限公司
-                    </span>
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-</footer>
-<section class="taptap-button-top" data-taptap-widgets="container" data-taptap-go="top" style="display: block;">
-    <i></i>
-</section>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                fsdafsddsfa
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        sffsaf
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card-title">
+                        <h3>推广</h3>
+                    </div>
+                    <div class="card">
+                        adafsdfsa
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+@yield('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 footer clearfix">
+            <div class="footleft pull-left">
+                <div class="footlink">
+                    <a href="http://www.loushao.net">漏勺网</a>
+                    <span>|</span>
+                    <a href="http://www.dandanplay.com">弹弹play</a>
+                    <span>|</span>
+                    <a href="#">官方微博</a>
+                    <span>|</span>
+                    <a href="http://www.hiver.cc">海文科技</a>
+                    <span>|</span>
+                    <a href="http://www.musicalnova.com">音乐革命</a>
+                </div>
+                <div class="copyright">
+                    <p>{{ Setting::get('setting.icp', '天津海文科技有限公司') }}</p>
+                    <p>{{ Setting::get('setting.copyright', '天津海文科技有限公司') }}</p>
+                </div>
+            </div>
+            <div class="wechat pull-right">
+
+            </div>
+        </div>
+    </div>
+</div>
 <script src="{{ asset('vendor/jquery/jquery.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/bootstrap.js') }}"></script>
 </body>

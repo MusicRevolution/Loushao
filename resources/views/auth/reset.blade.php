@@ -1,4 +1,4 @@
-@extends('layouts/master')
+@extends('layouts/common')
 
 @section('content')
 <section class="hiver-breadcrumb">
