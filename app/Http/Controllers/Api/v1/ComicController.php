@@ -15,7 +15,7 @@ class ComicController extends Controller
 
     public function getComics()
     {
-        $perPage = 1;
+        $perPage = 6;
         return Comic::paginate($perPage);
     }
 }

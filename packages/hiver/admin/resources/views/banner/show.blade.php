@@ -51,8 +51,8 @@
                     <tr>
                         <th>图片</th>
                         <td>
-                            <a href="{{ url('/uploads/img/'.date('Y-m-d', strtotime($banner->created_at)).'/'.$banner->img) }}" class="image-link">
-                                <img width="200px" height="200px" src="{{ url('/uploads/img/'.date('Y-m-d', strtotime($banner->created_at)).'/'.$banner->img) }}" class="img-thumbnail">
+                            <a href="{{ url($banner->img) }}" class="image-link">
+                                <img width="200px" height="200px" src="{{ url($banner->img) }}" class="img-thumbnail">
                             </a>
                         </td>
                     </tr>

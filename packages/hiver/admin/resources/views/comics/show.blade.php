@@ -51,16 +51,16 @@
                     <tr>
                         <th>图片（小）</th>
                         <td>
-                            <a href="{{ url('/uploads/img/'.date('Y-m-d', strtotime($comic->created_at)).'/'.$comic->small_img) }}" class="image-link">
-                                <img width="200px" height="200px" src="{{ url('/uploads/img/'.date('Y-m-d', strtotime($comic->created_at)).'/'.$comic->small_img) }}" class="img-thumbnail">
+                            <a href="{{ url($comic->small_img) }}" class="image-link">
+                                <img width="200px" height="200px" src="{{ url($comic->small_img) }}" class="img-thumbnail">
                             </a>
                         </td>
                     </tr>
                     <tr>
                         <th>图片（大）</th>
                         <td>
-                            <a href="{{ url('/uploads/img/'.date('Y-m-d', strtotime($comic->created_at)).'/'.$comic->big_img) }}" class="image-link">
-                                <img width="200px" height="200px" src="{{ url('/uploads/img/'.date('Y-m-d', strtotime($comic->created_at)).'/'.$comic->big_img) }}" class="img-thumbnail">
+                            <a href="{{ url($comic->big_img) }}" class="image-link">
+                                <img width="200px" height="200px" src="{{ url($comic->big_img) }}" class="img-thumbnail">
                             </a>
                         </td>
                     </tr>

@@ -6,23 +6,17 @@
                 <div class="index-header">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            @foreach($banner as $key => $item)
+                                <li data-target="#carousel-example-generic" data-slide-to="{{ $key }}" @if($key == 0) class="active" @endif></li>
+                            @endforeach
                         </ol>
                         <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img src="{{ asset('images/banner/banner1.jpg') }}" class="img-responsive" alt="Fate Zero">
-                                <div class="carousel-caption"></div>
-                            </div>
-                            <div class="item">
-                                <img src="{{ asset('images/banner/banner2.jpg') }}" class="img-responsive" alt="Fate Zero">
-                                <div class="carousel-caption"></div>
-                            </div>
-                            <div class="item">
-                                <img src="{{ asset('images/banner/banner3.jpg') }}" class="img-responsive" alt="Fate Zero">
-                                <div class="carousel-caption"></div>
-                            </div>
+                            @foreach($banner as $key => $item)
+                                <div class="item @if($key == 0)active @endif">
+                                    <img src="{{ $item->img }}" class="img-responsive" alt="{{ $item->title }}">
+                                    <div class="carousel-caption"></div>
+                                </div>
+                            @endforeach
                         </div>
                         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
                             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -39,9 +33,19 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="main-content">
-
+                    @foreach($comics as $item)
+                        <div class="card">
+                            <a href="" class="card-title">
+                                <h2>{{ $item->title }}</h2>
+                            </a>
+                            <a href="" class="card-image"><img src="{{ $item->small_img }}" /></a>
+                            <p class="card-index">{{ $item->content }}</p>
+                        </div>
+                    @endforeach
                 </div>
-                <a id="more" href="javascript:void(0);">加载更多</a>
+                <div style="text-align: center">
+                    <a id="more" class="btn btn-primary" href="javascript:void(0);" data-page="2">加载更多</a>
+                </div>
             </div>
             <div class="col-md-4">
                 <div class="row">
@@ -73,18 +77,23 @@
             <a href="" class="card-title">
                 <h2>@{{= title }}</h2>
             </a>
-            <a href="" class="card-image"><img src="http://localhost/uploads/img/2018-03-11/@{{= small_img }}" /></a>
+            <a href="" class="card-image"><img src="@{{= small_img }}" /></a>
             <p class="card-index">@{{= content }}</p>
         </div>
     </script>
     <script type="text/javascript">
         $(function () {
             $("#more").click(function () {
+                var page = $(this).data("page");
                 $.ajax({
-                    url : "{{ url('/api/comics') }}",
+                    url : "{{ url('/api/comics') }}?page="+page,
                     dataType: 'json',
                     success: function (data) {
                         $("#comics_list").tmpl(data.data).appendTo('.main-content');
+                        if(data.data == "" || data.data == undefined)
+                            $("#more").hide();
+                        else
+                            $("#more").data("page", data.current_page + 1);
                     }
                 })
             })
