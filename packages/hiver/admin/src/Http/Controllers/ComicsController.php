@@ -81,7 +81,7 @@ class ComicsController extends Controller
             $extension = $file->getClientOriginalExtension();
             $fileName = 'small_'.date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
-            $requestData['small_img'] = $fileName;
+            $requestData['small_img'] =  'uploads/img/'.date('Y-m-d').'/'.$fileName;
         } else {
             $requestData['small_img'] = '';
         }
@@ -92,7 +92,7 @@ class ComicsController extends Controller
             $extension = $file->getClientOriginalExtension();
             $fileName = 'big_'.date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
-            $requestData['big_img'] = $fileName;
+            $requestData['big_img'] =  'uploads/img/'.date('Y-m-d').'/'.$fileName;
         } else {
             $requestData['big_img'] = '';
         }
@@ -133,9 +133,9 @@ class ComicsController extends Controller
         $small_img = '';
         $big_img = '';
         if(!empty($comic->small_img))
-            $small_img = url('/uploads/img/'.date('Y-m-d', strtotime($comic->created_at)).'/'.$comic->small_img);
+            $small_img = url($comic->small_img);
         if(!empty($comic->big_img))
-            $big_img = url('/uploads/img/'.date('Y-m-d', strtotime($comic->created_at)).'/'.$comic->big_img);
+            $big_img = url($comic->big_img);
         return view('admin::comics.edit', compact('comic', 'small_img', 'big_img'));
     }
 
@@ -164,7 +164,7 @@ class ComicsController extends Controller
             $extension = $file->getClientOriginalExtension();
             $fileName = 'small_'.date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
-            $requestData['small_img'] = $fileName;
+            $requestData['small_img'] =  'uploads/img/'.date('Y-m-d').'/'.$fileName;
         }
 
         if ($request->hasFile('big_img')) {
@@ -173,7 +173,7 @@ class ComicsController extends Controller
             $extension = $file->getClientOriginalExtension();
             $fileName = 'big_'.date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
-            $requestData['big_img'] = $fileName;
+            $requestData['big_img'] =  'uploads/img/'.date('Y-m-d').'/'.$fileName;
         }
 
         $requestData['user_id'] = \Auth::id();

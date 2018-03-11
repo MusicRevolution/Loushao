@@ -18,6 +18,8 @@ Route::get('/welcome', function () {
 Route::group(['middleware' => 'welcome'], function() {
     // 首页
     Route::get('/', 'WebController@home');
+    // PAJX动态页
+    // Route::get('/home/comics', 'WebController@comics');
     // 用户登录
     Route::get('auth/login', 'Auth\AuthController@getLogin');
     Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -45,4 +47,5 @@ $api->version('v1', ['namespace' => 'App\Http\Controllers\Api\v1', 'middleware' 
 $api->version('v1', ['namespace' => 'App\Http\Controllers\Api\v1'], function($api) {
     $api->get('downloadByID/{id}', 'ComicController@getDownloadByID');
     $api->post('feedback', 'FeedbackController@feedback');
+    $api->get('comics', 'ComicController@getComics');
 });

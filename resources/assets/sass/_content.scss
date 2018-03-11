@@ -260,30 +260,51 @@ nav.navbar .navbar-right>li.navbar-user .dropdown-menu {
     }
 }
 
-.card-title {
+.card {
+    position: relative;
     margin: 0 0 15px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    > h3 {
-        line-height: 28px;
-        font-size: 24px;
-        border-left: 4px solid #e25656;
-        float: left;
-        margin: 0 0 10px;
-        padding: 0 0 0 8px;
-    }
+    padding: 0 15px 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.15);
 }
 
 .card {
-    padding: 10px;
-    background: #fff;
-    box-shadow: 0 2px 3px 0 rgba(0,0,0,.15);
-    margin-bottom: 20px;
-}
+    a.card-title {
+        display: inline-block;
+        margin: 6px 0 6px;
+        line-height: 30px;
+        text-decoration: none;
+        > h2 {
+            margin: 0;
+            font-size: 18px;
+            line-height: 30px;
+            vertical-align: middle;
+        }
+    }
 
-.card::after,
-.card-title::after {
-    content: "";
-    display: table;
-    clear: both;
+    a.card-title:hover {
+        text-decoration: underline;
+    }
+
+    .card-image {
+        display: block;
+        position: relative;
+        margin: 0 -15px 4px;
+        max-height: 273px;
+        overflow: hidden;
+        > img {
+            display: block!important;
+            width: 100%;
+            transition: all .5s ease-in-out .3s;
+        }
+    }
+
+    .card-index {
+        margin: 15px 0 0;
+        max-height: 40px;
+        color: #999;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }

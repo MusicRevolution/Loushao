@@ -12,4 +12,10 @@ class ComicController extends Controller
     {
         return Download::find($id);
     }
+
+    public function getComics()
+    {
+        $perPage = 1;
+        return Comic::paginate($perPage);
+    }
 }

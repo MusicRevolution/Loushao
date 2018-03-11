@@ -71,13 +71,12 @@ class AdController extends Controller
             $extension = $file->getClientOriginalExtension();
             $fileName = date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
-            $requestData['img'] = $fileName;
+            $requestData['img'] = 'uploads/img/'.date('Y-m-d').'/'.$fileName;
         } else {
             $requestData['img'] = '';
         }
 
         $requestData['user_id'] = \Auth::id();
-
         Ad::create($requestData);
 
         Session::flash('flash_message', '添加成功！');
@@ -111,7 +110,7 @@ class AdController extends Controller
         $ad = Ad::findOrFail($id);
         $img = '';
         if(!empty($ad->img))
-            $img = url('/uploads/img/'.date('Y-m-d', strtotime($ad->created_at)).'/'.$ad->img);
+            $img = url($ad->img);
         return view('admin::ad.edit', compact('ad', 'img'));
     }
 
@@ -138,7 +137,7 @@ class AdController extends Controller
             $extension = $file->getClientOriginalExtension();
             $fileName = date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
-            $requestData['img'] = $fileName;
+            $requestData['img'] = 'uploads/img/'.date('Y-m-d').'/'.$fileName;
         }
 
         $requestData['user_id'] = \Auth::id();

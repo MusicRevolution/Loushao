@@ -8,4 +8,9 @@ class WebController extends Controller
     {
         return view('home');
     }
+
+    public function comics()
+    {
+        return view('content.index');
+    }
 }

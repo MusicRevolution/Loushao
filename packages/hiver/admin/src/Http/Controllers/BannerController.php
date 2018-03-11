@@ -70,7 +70,7 @@ class BannerController extends Controller
             $extension = $file->getClientOriginalExtension();
             $fileName = date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
-            $requestData['img'] = $fileName;
+            $requestData['img'] =  'uploads/img/'.date('Y-m-d').'/'.$fileName;
         } else {
             $requestData['img'] = '';
         }
@@ -110,7 +110,7 @@ class BannerController extends Controller
         $banner = Banner::findOrFail($id);
         $img = '';
         if(!empty($banner->img))
-            $img = url('/uploads/img/'.date('Y-m-d', strtotime($banner->created_at)).'/'.$banner->img);
+            $img = url($banner->img);
         return view('admin::banner.edit', compact('banner', 'img'));
     }
 
@@ -137,7 +137,7 @@ class BannerController extends Controller
             $extension = $file->getClientOriginalExtension();
             $fileName = date('Ymdhis').'.'.$extension;
             $file->move($uploadPath, $fileName);
-            $requestData['img'] = $fileName;
+            $requestData['img'] =  'uploads/img/'.date('Y-m-d').'/'.$fileName;
         }
 
         $requestData['user_id'] = \Auth::id();
