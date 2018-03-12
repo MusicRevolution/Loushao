@@ -64,6 +64,10 @@
                             </a>
                         </td>
                     </tr>
+                    <tr>
+                        <th>动漫简介</th>
+                        <td>{{ $comic->intro }}</td>
+                    </tr>
                     </tbody>
                     </table>
                 </div>

@@ -18,6 +18,10 @@
     {!! Form::label('hits', '点击率', ['class' => 'control-label']) !!}
     {!! Form::number('hits', 0, ['class' => 'form-control', 'required' => 'required']) !!}
     {!! $errors->first('hits', '<p class="help-block">:message</p>') !!}
+</div><div class="form-group form-material {{ $errors->has('intro') ? 'has-error' : ''}}">
+    {!! Form::label('intro', '动漫简介', ['class' => 'control-label']) !!}
+    {!! Form::textarea('intro', null, ['class' => 'form-control', 'maxlength' => 255]) !!}
+    {!! $errors->first('intro', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('content') ? 'has-error' : ''}}">
     {!! Form::label('content', '详细说明', ['class' => 'control-label']) !!}
     {!! Form::textarea('content', null, ['class' => 'form-control editor']) !!}

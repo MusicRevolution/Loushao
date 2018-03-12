@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Hiver\Admin\Models\Profile;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -44,7 +45,7 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'name' => 'required|max:20|min:6',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
@@ -58,10 +59,24 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+        $profile = array(
+            'avatar' => '',
+            'status' => 1,
+            'follows' => 0,
+            'logins' => 0,
+            'times' => 0,
+            'fans' => 0,
+            'user_id' => $user->id
+        );
+
+        Profile::create($profile);
+
+        return $user;
     }
 }

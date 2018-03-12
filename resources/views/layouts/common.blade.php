@@ -39,6 +39,7 @@
     <!--[if lte IE 9]>
     <meta http-equiv="refresh" content="0; url='http://www.loushao.net/ie.html'" />
     <![endif]-->
+    {!! Setting::get('setting.tongji', '') !!}
 </head>
 <body>
 <div class="top">

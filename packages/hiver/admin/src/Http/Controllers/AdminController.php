@@ -59,12 +59,14 @@ class AdminController extends Controller
         $description = $request->get('description');
         $icp = $request->get('icp');
         $copyright = $request->get('copyright');
+        $tongji = $request->get('tongji');
         Setting::set('setting.title', $title);
         Setting::set('setting.welcome', $welcome);
         Setting::set('setting.keywords', $keywords);
         Setting::set('setting.description', $description);
         Setting::set('setting.icp', $icp);
         Setting::set('setting.copyright', $copyright);
+        Setting::set('setting.tongji', $tongji);
         Setting::save();
 
         Session::flash('flash_message', '保存成功！');

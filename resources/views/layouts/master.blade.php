@@ -39,6 +39,7 @@
     <!--[if lte IE 9]>
     <meta http-equiv="refresh" content="0; url='http://www.loushao.net/ie.html'" />
     <![endif]-->
+    {!! Setting::get('setting.tongji', '') !!}
 </head>
 <body>
 <div class="nav_top">
@@ -50,7 +51,7 @@
             <div class="col-md-6">
                 <ul class="auth pull-right">
                     <li>
-                        <a href="{{ url('/auth/login' ) }}" target="_blank">注册</a>
+                        <a href="{{ url('/auth/register' ) }}" target="_blank">注册</a>
                     </li>
                     <li>
                         <a href="{{ url('/auth/login' ) }}" target="_blank">登录</a>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Hiver\Admin\Models\Ad;
 use Hiver\Admin\Models\Banner;
 use Hiver\Admin\Models\Comic;
 
@@ -12,7 +13,8 @@ class WebController extends Controller
         $perPage = 6;
         $comics = Comic::paginate($perPage);
         $banner = Banner::paginate(5);
-        return view('home', compact('banner'), compact('comics'));
+        $ads = Ad::all()->first();
+        return view('home', ['banner' => $banner, 'comics' => $comics, 'ads' => $ads]);
     }
 
     public function comics()

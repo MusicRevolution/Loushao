@@ -25,7 +25,7 @@ class Comic extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'small_img', 'big_img', 'score', 'hits', 'content', 'comment', 'topic', 'tags', 'country', 'source', 'barcode', 'user_id'];
+    protected $fillable = ['title', 'small_img', 'big_img', 'score', 'hits', 'intro', 'content', 'comment', 'topic', 'tags', 'country', 'source', 'barcode', 'user_id'];
 
     public function user()
 	{
