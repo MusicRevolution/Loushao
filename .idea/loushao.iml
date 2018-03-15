@@ -50,6 +50,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/overtrue/socialite" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/patchwork/utf8" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pherum/laravel-bbcode" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/type-resolver" />

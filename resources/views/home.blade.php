@@ -35,10 +35,10 @@
                 <div class="main-content">
                     @foreach($comics as $item)
                         <div class="card">
-                            <a href="" class="card-title">
+                            <a href="{{ url('/show_comic_'.$item->id.'.html') }}" target="_blank" class="card-title">
                                 <h2>{{ $item->title }}</h2>
                             </a>
-                            <a href="" class="card-image"><img src="{{ $item->small_img }}" /></a>
+                            <a href="{{ url('/show_comic_'.$item->id.'.html') }}" target="_blank" class="card-image"><img src="{{ $item->small_img }}" /></a>
                             <p class="card-index">{{ $item->intro }}</p>
                         </div>
                     @endforeach

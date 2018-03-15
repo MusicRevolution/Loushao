@@ -18,6 +18,8 @@ Route::get('/welcome', function () {
 Route::group(['middleware' => 'welcome'], function() {
     // 首页
     Route::get('/', 'WebController@home');
+    // 动漫子页
+    Route::get('show_comic_{id}.html', 'WebController@show');
     // PAJX动态页
     // Route::get('/home/comics', 'WebController@comics');
     // 用户登录
