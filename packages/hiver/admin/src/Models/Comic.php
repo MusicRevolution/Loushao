@@ -2,10 +2,17 @@
 
 namespace Hiver\Admin\Models;
 
+use Actuallymab\LaravelComment\Commentable;
 use Illuminate\Database\Eloquent\Model;
 
 class Comic extends Model
 {
+    use Commentable;
+
+    protected $canBeRated = true;
+
+    protected $mustBeApproved = true;
+
     /**
      * The database table used by the model.
      *

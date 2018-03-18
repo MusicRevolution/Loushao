@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Hiver\Admin\Models\Ad;
 use Hiver\Admin\Models\Banner;
 use Hiver\Admin\Models\Comic;
@@ -21,6 +22,8 @@ class WebController extends Controller
     public function show($id)
     {
         $comic = Comic::findOrFail($id);
+        $comic->hits = $comic->hits + 1;
+        $comic->save();
         $bbcode = new BBCodeParser;
         $comic->content = $bbcode->parse($comic->content);
         return view('show', compact('comic'));

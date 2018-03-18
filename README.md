@@ -42,3 +42,10 @@ php artisan vendor:publish --force</code></pre>
 <pre><code>php artisan backup:run --only-db</code></pre>
 ### 备份文件
 <pre><code>php artisan backup:run --only-files</code></pre>
+
+### 关于评论部分
+[actuallymab/laravel-comment](https://github.com/actuallymab/laravel-comment)
+需要修改默认表名
+
+### 关于BBCODE部分
+vendor中有BUG，需要手动修正，陆续还会支持更多标签，具体见今后的gist文件

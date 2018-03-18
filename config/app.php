@@ -168,6 +168,10 @@ return [
 
         Hiver\Admin\AdminServiceProvider::class,
 
+        /*
+         * 评论插件
+         */
+        Actuallymab\LaravelComment\LaravelCommentServiceProvider::class,
     ],
 
     /*

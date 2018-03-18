@@ -18,4 +18,11 @@ class ComicController extends Controller
         $perPage = 6;
         return Comic::paginate($perPage);
     }
+
+    public function hits($id)
+    {
+        $comic = Comic::findOrFail($id);
+        $comic->hits = $comic->hits + 1;
+        $comic->save();
+    }
 }

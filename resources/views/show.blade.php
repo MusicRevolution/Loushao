@@ -1,4 +1,7 @@
 @extends('layouts/master')
+@section('header')
+    <link rel="stylesheet" href="{{ asset('js/plugins/magnific-popup/magnific-popup.css') }}">
+@endsection
 @section('content')
     <section class="hiver-breadcrumb">
         <div class="container">
@@ -54,5 +57,10 @@
 @stop
 
 @section('footer')
-
+    <script src="{{ asset('js/plugins/magnific-popup/jquery.magnific-popup.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.image-link').magnificPopup({type:'image'});
+        });
+    </script>
 @endsection

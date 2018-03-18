@@ -30,7 +30,8 @@
         "felixkiss/uniquewith-validator": "^3.1",
         "thomaswelton/laravel-gravatar": "~1.0",
         "gloudemans/shoppingcart": "2.0.0",
-        "pherum/laravel-bbcode": "^1.0"
+        "pherum/laravel-bbcode": "^1.0",
+        "actuallymab/laravel-comment": "0.1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

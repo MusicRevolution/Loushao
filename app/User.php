@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Actuallymab\LaravelComment\CanComment;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -19,6 +20,11 @@ class User extends Model implements AuthenticatableContract,
         EntrustUserTrait::can as may;
         Authorizable::can insteadof EntrustUserTrait;
     }
+
+    use CanComment;
+
+    protected $isAdmin = true;
+
     /**
      * The database table used by the model.
      *

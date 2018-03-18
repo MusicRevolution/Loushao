@@ -50,4 +50,5 @@ $api->version('v1', ['namespace' => 'App\Http\Controllers\Api\v1'], function($ap
     $api->get('downloadByID/{id}', 'ComicController@getDownloadByID');
     $api->post('feedback', 'FeedbackController@feedback');
     $api->get('comics', 'ComicController@getComics');
+    $api->get('hits/{id}', 'ComicController@hits');
 });
