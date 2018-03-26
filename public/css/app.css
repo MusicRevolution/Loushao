@@ -518,4 +518,85 @@ nav.navbar .navbar-right > li.navbar-user .dropdown-menu {
   .myquote img {
     width: 100%; }
 
+.review-list-title {
+  padding: 15px 10px 5px 10px;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+  margin-bottom: 15px; }
+  .review-list-title h3 {
+    float: left;
+    padding: 0 0 0 8px;
+    line-height: 20px;
+    font-size: 18px;
+    border-left: 4px solid #14B9C8;
+    margin-top: 0px; }
+
+.review-list-title::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.review {
+  position: relative;
+  margin-top: 15px;
+  background: #fff;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15); }
+  .review .review-list {
+    margin: 0;
+    padding-top: 0 !important; }
+    .review .review-list .review-rating {
+      padding: 20px 30px; }
+      .review .review-list .review-rating .review-list-container {
+        padding: 2px; }
+        .review .review-list .review-rating .review-list-container .review-other {
+          float: left;
+          width: 50%;
+          padding-top: 20px; }
+        .review .review-list .review-rating .review-list-container .review-rating-total {
+          float: left;
+          width: 50%; }
+      .review .review-list .review-rating .review-list-container::after {
+        content: "";
+        display: table;
+        clear: both; }
+    .review .review-list .review-add {
+      position: relative;
+      padding: 25px;
+      background: #fafafa;
+      border-top: 1px solid #eee; }
+      .review .review-list .review-add .review-add-login {
+        text-align: center; }
+        .review .review-list .review-add .review-add-login img {
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          vertical-align: middle;
+          border: 2px solid #fff;
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12); }
+        .review .review-list .review-add .review-add-login > p {
+          font-size: 18px; }
+          .review .review-list .review-add .review-add-login > p a {
+            color: #14B9C8; }
+      .review .review-list .review-add button {
+        border-color: #12A7B4;
+        background: #12A7B4; }
+    .review .review-list .review-list-title {
+      padding-left: 25px; }
+    .review .review-list .reviewList {
+      margin: 0;
+      padding-left: 0;
+      list-style: none; }
+      .review .review-list .reviewList .review-list-item {
+        padding: 15px 25px;
+        border-bottom: 1px solid #eee;
+        display: block;
+        list-style: none; }
+
+.download-list {
+  padding: 0px 8px;
+  list-style: none; }
+  .download-list li {
+    list-style: none;
+    padding: 5px 0; }
+
 /*# sourceMappingURL=app.css.map */

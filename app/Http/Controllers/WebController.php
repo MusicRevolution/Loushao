@@ -6,6 +6,7 @@ use App\User;
 use Hiver\Admin\Models\Ad;
 use Hiver\Admin\Models\Banner;
 use Hiver\Admin\Models\Comic;
+use Hiver\Admin\Models\Download;
 use PheRum\BBCode\BBCodeParser;
 
 class WebController extends Controller
@@ -26,7 +27,8 @@ class WebController extends Controller
         $comic->save();
         $bbcode = new BBCodeParser;
         $comic->content = $bbcode->parse($comic->content);
-        return view('show', compact('comic'));
+        $downloads = Download::whereRaw('comic_id = ?', [$id])->get();
+        return view('show', ['comic' => $comic, 'downloads' => $downloads]);
     }
 
     public function comics()

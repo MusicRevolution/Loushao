@@ -51,12 +51,21 @@
             </div>
             <div class="col-md-6">
                 <ul class="auth pull-right">
+                    @if(Auth::check())
                     <li>
-                        <a href="{{ url('/auth/register' ) }}" target="_blank">注册</a>
+                        <a href="javascript:void(0)">{{ @Auth::user()->name }}</a>
                     </li>
                     <li>
-                        <a href="{{ url('/auth/login' ) }}" target="_blank">登录</a>
+                        <a href="{{ url('auth/logout') }}">退出</a>
                     </li>
+                    @else
+                    <li>
+                        <a href="{{ url('/auth/register') }}" target="_blank">注册</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/auth/login') }}" target="_blank">登录</a>
+                    </li>
+                    @endif
                 </ul>
             </div>
         </div>
