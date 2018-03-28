@@ -45,7 +45,7 @@
 
 .nav_menu {
     margin: 0 auto;
-    background: #f07b7c;
+    background: #14B9C8;
     a {
         display: inline-block;
         height: 60px;
@@ -55,9 +55,11 @@
         color: #fff;
         padding: 0px 20px;
     }
-    a:hover,
+    a:hover {
+        background: #34C3D2;
+    }
     a.active {
-        background-color: rgb(226, 86, 86);
+        background-color: #12A7B4;
     }
     a.active {
         box-shadow: rgba(0,0,0,.1) 0 1px 2px!important;

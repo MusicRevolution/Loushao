@@ -28,7 +28,8 @@ class WebController extends Controller
         $bbcode = new BBCodeParser;
         $comic->content = $bbcode->parse($comic->content);
         $downloads = Download::whereRaw('comic_id = ?', [$id])->get();
-        return view('show', ['comic' => $comic, 'downloads' => $downloads]);
+        $ads = Ad::all()->first();
+        return view('show', ['comic' => $comic, 'downloads' => $downloads, 'ads' => $ads]);
     }
 
     public function comics()

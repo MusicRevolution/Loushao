@@ -171,7 +171,7 @@ footer.footer .pull-left > span a {
 
 .nav_menu {
   margin: 0 auto;
-  background: #f07b7c; }
+  background: #14B9C8; }
   .nav_menu a {
     display: inline-block;
     height: 60px;
@@ -180,9 +180,10 @@ footer.footer .pull-left > span a {
     text-decoration: none;
     color: #fff;
     padding: 0px 20px; }
-  .nav_menu a:hover,
+  .nav_menu a:hover {
+    background: #34C3D2; }
   .nav_menu a.active {
-    background-color: #e25656; }
+    background-color: #12A7B4; }
   .nav_menu a.active {
     box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px !important; }
 
@@ -598,5 +599,8 @@ nav.navbar .navbar-right > li.navbar-user .dropdown-menu {
   .download-list li {
     list-style: none;
     padding: 5px 0; }
+
+.card-ad img {
+  width: 100%; }
 
 /*# sourceMappingURL=app.css.map */
