@@ -136,6 +136,11 @@ footer.footer .pull-left > span a {
   height: 170px;
   background: url(../images/home_banner.jpg) no-repeat center;
   background-size: cover; }
+  .banner .logo {
+    margin-top: 55px; }
+    .banner .logo img {
+      width: 227px;
+      height: 74px; }
 
 .nav_top {
   width: 100%;

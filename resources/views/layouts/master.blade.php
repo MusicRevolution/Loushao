@@ -72,7 +72,15 @@
     </div>
 </div>
 <div class="banner">
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="logo">
+                    <img src="{{ asset('images/logo.png') }}" title="漏勺网" />
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="nav_menu">
     <div class="container">
