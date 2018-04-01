@@ -278,6 +278,11 @@
                                             <span class="site-menu-title">日志管理</span>
                                         </a>
                                     </li>
+                                    <li class="site-menu-item">
+                                        <a href="{{ url('admin/dandanplay') }}">
+                                            <span class="site-menu-title">弹弹Play关联</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>

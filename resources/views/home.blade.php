@@ -62,7 +62,8 @@
                         </div>
                         <div class="card-item">
                             @if($ads != null)
-                                <a href="{{ $ads->url }}" target="_blank">
+                                {!! $ads->adcontent !!}
+                                <a href="{{ $ads->url }}" target="_blank" style="display: none">
                                     <img src="{{ $ads->img }}" alt="{{ $ads->title }}" />
                                 </a>
                             @endif

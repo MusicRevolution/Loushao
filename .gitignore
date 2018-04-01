@@ -36,3 +36,4 @@ resources/grud-generator/
 .idea/workspace.xml
 !resources/views/vendor/
 !resources/lang/vendor/
+storage/settings.json

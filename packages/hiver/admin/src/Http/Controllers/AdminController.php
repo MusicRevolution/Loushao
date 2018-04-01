@@ -75,4 +75,28 @@ class AdminController extends Controller
 
         return redirect('admin/setting');
     }
+
+    public function dandanplay()
+    {
+        return view('admin::dandanplay');
+    }
+
+    public function updateDDP(Request $request)
+    {
+        $username = $request->get('username');
+        $password = $request->get('password');
+        $appid = $request->get('appid');
+        $appsecret = $request->get('appsecret');
+        $auth = $request->get('auth');
+        Setting::set('dandanplay.username', $username);
+        Setting::set('dandanplay.password', $password);
+        Setting::set('dandanplay.appid', $appid);
+        Setting::set('dandanplay.appsecret', $appsecret);
+        Setting::set('dandanplay.auth', $auth);
+        Setting::save();
+
+        Session::flash('flash_message', '保存成功！');
+
+        return redirect('admin/dandanplay');
+    }
 }

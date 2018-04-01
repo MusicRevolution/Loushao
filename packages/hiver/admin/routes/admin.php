@@ -51,4 +51,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::get('/logout', '\App\Http\Controllers\Auth\AuthController@getLogout');
     // 权限管理
     Route::get('/manage', ['middleware' => ['permission:manage-admins'], 'uses' => 'AdminController@manageAdmins']);
+    // 弹弹play关联
+    Route::get('/dandanplay', 'AdminController@dandanplay');
+    Route::post('/dandanplay', 'AdminController@updateDDP');
 });
