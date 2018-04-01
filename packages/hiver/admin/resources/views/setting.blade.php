@@ -66,6 +66,11 @@
                         {!! Form::textarea('tongji', Setting::get('setting.tongji', ''), ['class' => 'form-control']) !!}
                         {!! $errors->first('tongji', '<p class="help-block">:message</p>') !!}
                     </div>
+                    <div class="form-group form-material {{ $errors->has('dandanplay') ? 'has-error' : ''}}">
+                        {!! Form::label('dandanplay', '播放器下载代码', ['class' => 'control-label']) !!}
+                        {!! Form::textarea('dandanplay', Setting::get('setting.dandanplay', ''), ['class' => 'form-control']) !!}
+                        {!! $errors->first('dandanplay', '<p class="help-block">:message</p>') !!}
+                    </div>
                     <div class="form-group">
                         {!! Form::submit(isset($submitButtonText) ? $submitButtonText : '保存', ['class' => 'btn btn-primary']) !!}
                     </div>

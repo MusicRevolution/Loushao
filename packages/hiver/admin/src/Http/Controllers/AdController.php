@@ -58,8 +58,6 @@ class AdController extends Controller
     {
         $this->validate($request, [
 			'title' => 'required|max:255',
-			'img' => 'required',
-			'url' => 'required|max:255',
 			'hits' => 'required|min:0'
 		]);
         $requestData = $request->all();
@@ -126,7 +124,6 @@ class AdController extends Controller
     {
         $this->validate($request, [
 			'title' => 'required|max:255',
-			'url' => 'required|max:255',
 			'hits' => 'required|min:0'
 		]);
         $requestData = $request->all();

@@ -8,12 +8,16 @@
     {!! $errors->first('img', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('url') ? 'has-error' : ''}}">
     {!! Form::label('url', 'URL地址', ['class' => 'control-label']) !!}
-    {!! Form::text('url', null, ['class' => 'form-control', 'required' => 'required']) !!}
+    {!! Form::text('url', null, ['class' => 'form-control']) !!}
     {!! $errors->first('url', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('hits') ? 'has-error' : ''}}">
     {!! Form::label('hits', '点击数', ['class' => 'control-label']) !!}
     {!! Form::number('hits', 0, ['class' => 'form-control', 'required' => 'required']) !!}
     {!! $errors->first('hits', '<p class="help-block">:message</p>') !!}
+</div><div class="form-group form-material {{ $errors->has('adcontent') ? 'has-error' : ''}}">
+    {!! Form::label('adcontent', '脚本', ['class' => 'control-label']) !!}
+    {!! Form::textarea('adcontent', null, ['class' => 'form-control']) !!}
+    {!! $errors->first('adcontent', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('status') ? 'has-error' : ''}}">
     {!! Form::label('status', '状态', ['class' => 'control-label']) !!}
     <div class="radio-list">

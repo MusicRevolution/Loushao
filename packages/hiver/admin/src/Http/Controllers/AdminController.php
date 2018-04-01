@@ -60,6 +60,7 @@ class AdminController extends Controller
         $icp = $request->get('icp');
         $copyright = $request->get('copyright');
         $tongji = $request->get('tongji');
+        $dandanplay = $request->get('dandanplay');
         Setting::set('setting.title', $title);
         Setting::set('setting.welcome', $welcome);
         Setting::set('setting.keywords', $keywords);
@@ -67,6 +68,7 @@ class AdminController extends Controller
         Setting::set('setting.icp', $icp);
         Setting::set('setting.copyright', $copyright);
         Setting::set('setting.tongji', $tongji);
+        Setting::set('setting.dandanplay', $dandanplay);
         Setting::save();
 
         Session::flash('flash_message', '保存成功！');

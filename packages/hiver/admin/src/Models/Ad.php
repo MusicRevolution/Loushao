@@ -25,7 +25,7 @@ class Ad extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'img', 'url', 'hits', 'status', 'user_id'];
+    protected $fillable = ['title', 'img', 'url', 'hits', 'status', 'user_id', 'adcontent'];
 
     public function user()
 	{
