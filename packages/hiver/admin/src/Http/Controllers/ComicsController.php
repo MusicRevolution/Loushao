@@ -98,6 +98,7 @@ class ComicsController extends Controller
         }
 
         $requestData['user_id'] = \Auth::id();
+        $requestData['anidbid'] = 0;
 
         Comic::create($requestData);
 

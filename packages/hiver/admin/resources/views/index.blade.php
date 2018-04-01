@@ -142,6 +142,11 @@
                                 </a>
                                 <ul class="site-menu-sub">
                                     <li class="site-menu-item">
+                                        <a href="{{ url('/admin/quick/comic') }}">
+                                            <span class="site-menu-title">发布资源（快捷）</span>
+                                        </a>
+                                    </li>
+                                    <li class="site-menu-item">
                                         <a href="{{ url('/admin/comics') }}">
                                             <span class="site-menu-title">动漫资源管理</span>
                                         </a>

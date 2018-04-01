@@ -14,7 +14,7 @@ class WebController extends Controller
     public function home()
     {
         $perPage = 6;
-        $comics = Comic::paginate($perPage);
+        $comics = Comic::orderBy('updated_at', 'desc')->paginate($perPage);
         $banner = Banner::paginate(5);
         $ads = Ad::all()->first();
         return view('home', ['banner' => $banner, 'comics' => $comics, 'ads' => $ads]);

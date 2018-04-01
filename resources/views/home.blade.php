@@ -93,10 +93,10 @@
 @section('footer')
     <script id="comics_list" type="text/tmpl">
         <div class="card">
-            <a href="" class="card-title">
+            <a href="/show_comic_@{{= id }}.html" target="_blank" class="card-title">
                 <h2>@{{= title }}</h2>
             </a>
-            <a href="" class="card-image"><img src="@{{= small_img }}" /></a>
+            <a href="/show_comic_@{{= id }}.html" target="_blank" class="card-image"><img src="@{{= small_img }}" /></a>
             <p class="card-index">@{{= intro }}</p>
         </div>
     </script>

@@ -37,6 +37,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::resource('ad', 'AdController');
     // 动漫管理
     Route::resource('comics', 'ComicsController');
+    // 动漫快捷发布
+    Route::get('/quick/comic', 'QuickController@comic');
+    Route::post('/quick/saveComic', 'QuickController@saveComic');
     // 下载管理
     Route::get('/download/index', 'DownloadController@index');
     Route::post('/download', 'DownloadController@store');

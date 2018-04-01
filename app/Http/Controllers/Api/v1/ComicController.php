@@ -16,7 +16,7 @@ class ComicController extends Controller
     public function getComics()
     {
         $perPage = 6;
-        return Comic::paginate($perPage);
+        return Comic::orderBy('updated_at', 'desc')->paginate($perPage);
     }
 
     public function hits($id)
