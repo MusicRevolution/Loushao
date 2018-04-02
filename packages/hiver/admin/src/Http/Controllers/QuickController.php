@@ -74,14 +74,17 @@ class QuickController extends Controller
             $dowloads = explode("\r\n", $download_content);
             foreach ($dowloads as $d) {
                 if(!empty($d) && strlen($d) > 20) {
-                    $download = new Download();
-                    $download->title = $d;
-                    $download->url = $d;
-                    $download->filesize = 0;
-                    $download->download = 0;
-                    $download->comic_id = $comic->id;
-                    $download->user_id = \Auth::id();
-                    $download->save();
+                    $result = $this->request_get("https://loushaomaster.chinacloudsites.cn/file/metadata/".$d);
+                    if($result['exist']) {
+                        $download = new Download();
+                        $download->title = $result['name'];
+                        $download->url = $d;
+                        $download->filesize = $result['size'];
+                        $download->download = 0;
+                        $download->comic_id = $comic->id;
+                        $download->user_id = \Auth::id();
+                        $download->save();
+                    }
                 }
             }
         }
@@ -89,5 +92,25 @@ class QuickController extends Controller
         Session::flash('flash_message', '添加成功！');
 
         return redirect('admin/quick/comic');
+    }
+
+    /**
+     * Get请求
+     *
+     * @param string $url
+     * @return bool|mixed
+     */
+    private function request_get($url = '') {
+        if (empty($url)) {
+            return false;
+        }
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+        $result = curl_exec($ch);
+        curl_close($ch);
+        return $arr = json_decode($result,true);
     }
 }

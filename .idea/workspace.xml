@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdec23db-cded-48a2-ada7-5a2df65967ea" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/DandanplayController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/DandanplayController.php" />
+      <change beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change beforePath="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/create.blade.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/create.blade.php" />
+      <change beforePath="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/edit.blade.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/edit.blade.php" />
+      <change beforePath="$PROJECT_DIR$/packages/hiver/admin/resources/views/quick/comic.blade.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/resources/views/quick/comic.blade.php" />
+      <change beforePath="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/QuickController.php" afterPath="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/QuickController.php" />
     </list>
     <ignored path="loushao.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,6 +36,7 @@
     <findStrings>
       <find>editor</find>
       <find>review-list-item</find>
+      <find>formatRepo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -41,8 +47,6 @@
       <list>
         <option value="$PROJECT_DIR$/resources/assets/sass/app.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/_footer.scss" />
-        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/create.blade.php" />
-        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/vendor/laravel-log-viewer/log.blade.php" />
         <option value="$PROJECT_DIR$/app/Exceptions/Handler.php" />
         <option value="$PROJECT_DIR$/resources/views/content/index.blade.php" />
@@ -69,11 +73,9 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/_nav.scss" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/quick.blade.php" />
-        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/quick/comic.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WebController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/v1/ComicController.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/src/Models/Comic.php" />
-        <option value="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/QuickController.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/ComicsController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_08_25_013821_create_comics_table.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/src/Models/Ad.php" />
@@ -84,12 +86,16 @@
         <option value="$PROJECT_DIR$/packages/hiver/admin/routes/admin.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/index.blade.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/AdminController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/v1/DandanplayController.php" />
         <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/dandanplay.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/show.blade.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/QuickController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/v1/DandanplayController.php" />
+        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/create.blade.php" />
+        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/quick/comic.blade.php" />
+        <option value="$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/edit.blade.php" />
       </list>
     </option>
   </component>
@@ -238,6 +244,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -246,11 +253,143 @@
               <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
               <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="v1" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="hiver" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="hiver" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="hiver" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="hiver" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="hiver" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="comics" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="hiver" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="quick" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="hiver" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="hiver" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="hiver" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Loushao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loushao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -415,11 +554,12 @@
       <workItem from="1522329302393" duration="1027000" />
       <workItem from="1522570929072" duration="18404000" />
       <workItem from="1522590995815" duration="232000" />
+      <workItem from="1522676364828" duration="9463000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206069000" />
+    <option name="totallyTimeSpent" value="215532000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -467,20 +607,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/common.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="41" column="46" lean-forward="false" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/content/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/users/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -556,13 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="181" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -626,45 +745,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/QuickController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="64" column="36" lean-forward="true" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/quick/comic.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1045">
-          <caret line="35" column="68" lean-forward="false" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/packages/hiver/admin/src/Models/Comic.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="34" column="176" lean-forward="false" selection-start-line="34" selection-start-column="169" selection-end-line="34" selection-end-column="176" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/ComicsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-722">
-          <caret line="100" column="36" lean-forward="false" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="22" column="90" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="60" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -752,27 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1311">
-          <caret line="95" column="24" lean-forward="true" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/v1/DandanplayController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="53" column="73" lean-forward="false" selection-start-line="53" selection-start-column="73" selection-end-line="53" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/packages/hiver/admin/routes/admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="893">
@@ -801,19 +864,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="141" lean-forward="false" selection-start-line="0" selection-start-column="93" selection-end-line="0" selection-end-column="141" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/settings.json" />
     <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -821,7 +876,254 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-703">
+          <caret line="5" column="50" lean-forward="false" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="50" />
+          <folding>
+            <marker date="1519195534000" expanded="true" signature="56:101" ph="..." />
+            <marker date="1519195534000" expanded="true" signature="176:224" ph="..." />
+            <marker date="1519195534000" expanded="true" signature="271:322" ph="..." />
+            <marker date="1519195534000" expanded="true" signature="839:861" ph="..." />
+            <marker date="1519195534000" expanded="true" signature="1000:1039" ph="..." />
+            <marker date="1519195534000" expanded="true" signature="1319:1356" ph="..." />
+            <marker date="1519195534000" expanded="true" signature="1413:1452" ph="..." />
+            <marker date="1519195534000" expanded="true" signature="1568:1596" ph="..." />
+            <marker date="1519195534000" expanded="true" signature="1636:1674" ph="..." />
+            <marker date="1519195534000" expanded="true" signature="1731:1754" ph="..." />
+            <marker date="1519195534000" expanded="true" signature="1845:1874" ph="..." />
+            <marker date="1519195534000" expanded="true" signature="2526:2564" ph="..." />
+            <marker date="1519195534000" expanded="true" signature="4113:4147" ph="..." />
+            <marker date="1519195534000" expanded="true" signature="4176:4216" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="94" column="37" lean-forward="true" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="37" />
+          <folding>
+            <element signature="e#243#279#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/ComicsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-893">
+          <caret line="100" column="36" lean-forward="false" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-141">
+          <caret line="22" column="90" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/v1/FeedbackController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/quick/comic.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="130" column="4" lean-forward="false" selection-start-line="130" selection-start-column="4" selection-end-line="239" selection-end-column="13" />
+          <folding>
+            <element signature="e#9367#14688#0#HTML" expanded="false" />
+            <marker date="1522685169064" expanded="true" signature="9:24" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="36:43" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="92:143" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="183:240" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="280:335" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="375:442" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="482:548" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="575:584" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="811:826" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="911:933" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="1185:1199" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="1295:1319" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="1359:1367" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="1495:1576" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="1643:1684" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="1720:1780" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="1815:1897" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="1932:1995" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="2068:2113" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="2149:2214" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="2249:2375" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="2410:2477" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="2550:2593" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="2629:2692" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="2727:2849" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="2884:2949" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="3022:3063" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="3099:3158" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="3193:3274" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="3309:3372" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="3445:3485" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="3521:3579" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="3614:3694" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="3729:3791" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="3864:3905" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="3941:4001" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="4036:4116" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="4151:4214" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="4287:4330" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="4366:4428" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="4463:4532" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="4567:4632" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="4705:4746" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="4782:4850" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="4885:4953" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="4988:5059" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="5132:5175" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="5211:5273" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="5308:5391" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="5426:5491" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="5564:5605" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="5641:5703" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="5738:5819" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="5854:5917" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="5990:6030" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="6066:6125" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="6160:6251" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="6286:6348" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="6421:6464" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="6500:6562" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="6597:6655" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="6690:6755" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="6828:6870" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="6906:6965" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="7000:7093" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="7128:7192" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="7307:7408" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="7492:7514" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="7607:7622" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="8905:8913" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="8946:8995" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="9028:9079" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="9112:9153" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="9186:9252" ph="..." />
+            <marker date="1522685169064" expanded="true" signature="9285:9349" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="63" column="6" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="63" selection-end-column="6" />
+          <folding>
+            <marker date="1522685165371" expanded="true" signature="9:24" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="36:43" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="88:139" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="179:236" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="276:331" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="371:438" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="478:544" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="571:580" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="781:796" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="869:891" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="1109:1123" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="1211:1235" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="1271:1279" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="1391:1463" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="1493:1513" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="1534:1549" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="2728:2736" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="2765:2814" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="2847:2898" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="2931:2972" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="3005:3071" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="3104:3168" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="3628:3660" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="5873:5919" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="7733:7766" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="8062:8072" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="8094:8104" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="8162:8172" ph="..." />
+            <marker date="1522685165371" expanded="true" signature="8257:8267" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="55" column="3" lean-forward="true" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/v1/DandanplayController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="38" column="41" lean-forward="false" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+          <folding>
+            <element signature="e#47#93#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/resources/views/comics/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="69" column="6" lean-forward="false" selection-start-line="69" selection-start-column="6" selection-end-line="69" selection-end-column="6" />
+          <folding>
+            <marker date="1522685565946" expanded="true" signature="9:24" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="36:43" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="88:139" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="179:236" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="276:331" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="371:438" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="478:544" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="571:580" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="781:796" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="869:891" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="1109:1123" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="1211:1235" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="1271:1279" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="1391:1605" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="1404:1603" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="1413:1602" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="1635:1685" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="1706:1721" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="2923:2931" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="2960:3009" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="3042:3093" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="3126:3167" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="3200:3266" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="3299:3363" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="3823:3855" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="6068:6114" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="7928:7961" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="8257:8267" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="8289:8299" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="8357:8367" ph="..." />
+            <marker date="1522685565946" expanded="true" signature="8452:8462" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/hiver/admin/src/Http/Controllers/QuickController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="99" column="25" lean-forward="false" selection-start-line="99" selection-start-column="25" selection-end-line="99" selection-end-column="25" />
+          <folding>
+            <element signature="e#48#84#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

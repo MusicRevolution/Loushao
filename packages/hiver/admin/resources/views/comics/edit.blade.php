@@ -46,6 +46,28 @@
         </div>
     </div>
 </div>
+<!-- Modal -->
+<div class="modal fade hiver-modal" data="0" id="insertAnimationModal" role="dialog" aria-labelledby="insertAnimationModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="insertAnimationModalLabel">添加动画</h4>
+            </div>
+            <div class="modal-body">
+                <select class="form-control" id="animation_select2" style="width: 100%;">
+                    <option value="0" selected="selected"></option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('script')
@@ -58,23 +80,24 @@
     <script>
         function formatRepo (repo) {
             if (repo.loading) return repo.text;
-            var markup = repo.full_name ;
+            var markup = repo.title ;
             return markup;
         }
 
         function formatRepoSelection (repo) {
-            return repo.full_name || repo.text;
+            return repo.title || repo.text;
         }
 
         $(document).ready(function() {
             $("#animation_select2").select2({
                 ajax: {
-                    url: "https://api.github.com/search/repositories",
+                    type: 'post',
+                    url: "{{ url('/api/dandanplay/search/') }}",
                     dataType: 'json',
                     delay: 250,
                     data: function (params) {
                         return {
-                            q: params.term, // search term
+                            q: params.term,
                             page: params.page
                         };
                     },
@@ -85,7 +108,7 @@
                         // scrolling can be used
                         params.page = params.page || 1;
                         return {
-                            results: data.items,
+                            results: data,
                             pagination: {
                                 more: (params.page * 30) < data.total_count
                             }};
@@ -100,9 +123,10 @@
             // 点击确定
             $(".btn-primary").click(function(){
                 var id = $("#animation_select2").val();
-                var title = $("#animation_select2").select2("data")[0].full_name;
+                var title = $("#animation_select2").select2("data")[0].title;
+                var img = $("#animation_select2").select2("data")[0].img;
                 if(id > 0) {
-                    var data = '<img data-app-id="'+id+'" data-app-title="'+title.trim()+'" src="1.jpg">';
+                    var data = '<img data-app-id="'+id+'" data-app-title="'+title.trim()+'" src="'+img.trim()+'">';
                     $(".editor").insertAtCursor(data);
                 }
             });
@@ -124,7 +148,7 @@
                         buttonText: "animation",
                         modal: mymodal,
                         transform: {
-                            '<img data-app-id="{ID}" data-app-title="{TITLE}" src="1.jpg" />':'[animation={ID}]{TITLE}[/animation]'
+                            '<img data-app-id="{ID}" data-app-title="{TITLE}" src="{IMG}" />':'[animation={ID} img={IMG}]{TITLE}[/animation]'
                         }
                     },
                     img: {
