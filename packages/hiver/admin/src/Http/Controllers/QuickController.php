@@ -60,12 +60,8 @@ class QuickController extends Controller
         } else {
             $requestData['big_img'] = '';
         }
-
         $requestData['user_id'] = \Auth::id();
-        $requestData['anidbid'] = 0;
-
         $download_content = $request->download_list;
-
         $comic = Comic::create($requestData);
 
         if(!empty($download_content))

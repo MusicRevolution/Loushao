@@ -19,7 +19,7 @@ class ComicsController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 25;
+        $perPage = 10;
 
         if (!empty($keyword)) {
             $comics = Comic::where('title', 'LIKE', "%$keyword%")
@@ -35,9 +35,9 @@ class ComicsController extends Controller
 				->orWhere('source', 'LIKE', "%$keyword%")
 				->orWhere('barcode', 'LIKE', "%$keyword%")
 				->orWhere('user_id', 'LIKE', "%$keyword%")
-				->paginate($perPage);
+				->orderBy('created_at', 'desc')->paginate($perPage);
         } else {
-            $comics = Comic::paginate($perPage);
+            $comics = Comic::orderBy('created_at', 'desc')->paginate($perPage);
         }
 
         return view('admin::comics.index', compact('comics'));
@@ -98,7 +98,6 @@ class ComicsController extends Controller
         }
 
         $requestData['user_id'] = \Auth::id();
-        $requestData['anidbid'] = 0;
 
         Comic::create($requestData);
 

@@ -26,6 +26,10 @@
     {!! Form::label('content', '详细说明', ['class' => 'control-label']) !!}
     {!! Form::textarea('content', null, ['class' => 'form-control editor']) !!}
     {!! $errors->first('content', '<p class="help-block">:message</p>') !!}
+</div><div class="form-group form-material {{ $errors->has('anidbid') ? 'has-error' : ''}}">
+    {!! Form::label('anidbid', '弹弹Play关联', ['class' => 'control-label']) !!}
+    {!! Form::select('anidbid', array(), null, ['class' => 'form-control']) !!}
+    {!! $errors->first('anidbid', '<p class="help-block">:message</p>') !!}
 </div><div class="form-group form-material {{ $errors->has('comment') ? 'has-error' : ''}}">
     {!! Form::label('comment', '评论总数', ['class' => 'control-label']) !!}
     {!! Form::number('comment', 0, ['class' => 'form-control', 'required' => 'required']) !!}

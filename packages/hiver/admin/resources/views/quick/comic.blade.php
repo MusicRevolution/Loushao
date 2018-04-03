@@ -66,6 +66,10 @@
                             {!! Form::label('download_list', '资源下载', ['class' => 'control-label']) !!}
                             {!! Form::textarea('download_list', null, ['class' => 'form-control']) !!}
                             {!! $errors->first('download_list', '<p class="help-block">:message</p>') !!}
+                        </div><div class="form-group form-material {{ $errors->has('anidbid') ? 'has-error' : ''}}">
+                            {!! Form::label('anidbid', '弹弹Play关联', ['class' => 'control-label']) !!}
+                            {!! Form::select('anidbid', array(), null, ['class' => 'form-control']) !!}
+                            {!! $errors->first('anidbid', '<p class="help-block">:message</p>') !!}
                         </div><div class="form-group form-material {{ $errors->has('comment') ? 'has-error' : ''}}">
                             {!! Form::label('comment', '评论总数', ['class' => 'control-label']) !!}
                             {!! Form::number('comment', 0, ['class' => 'form-control', 'required' => 'required']) !!}
@@ -236,6 +240,38 @@
             $(".editor").wysibb(wbbOpt);
             $('.dropify').dropify();
             $('.tagsinput').tagsinput();
+
+            $("#anidbid").select2({
+                ajax: {
+                    type: 'post',
+                    url: "{{ url('/api/dandanplay/search/') }}",
+                    dataType: 'json',
+                    delay: 250,
+                    data: function (params) {
+                        return {
+                            q: params.term,
+                            page: params.page
+                        };
+                    },
+                    processResults: function (data, params) {
+                        // parse the results into the format expected by Select2
+                        // since we are using custom formatting functions we do not need to
+                        // alter the remote JSON data, except to indicate that infinite
+                        // scrolling can be used
+                        params.page = params.page || 1;
+                        return {
+                            results: data,
+                            pagination: {
+                                more: (params.page * 30) < data.total_count
+                            }};
+                    },
+                    cache: true
+                },
+                escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+                minimumInputLength: 1,
+                templateResult: formatRepo, // omitted for brevity, see the source of this page
+                templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+            });
         });
     </script>
 @endsection
