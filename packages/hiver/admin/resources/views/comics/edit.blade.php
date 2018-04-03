@@ -186,6 +186,8 @@
             $('.dropify').dropify();
             $('.tagsinput').tagsinput();
 
+            // 默认初始值
+            // $('#anidbid').html('<option value="22">新世纪福音战士</option>').trigger("change");
             $("#anidbid").select2({
                 ajax: {
                     type: 'post',

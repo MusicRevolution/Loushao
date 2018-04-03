@@ -53,4 +53,5 @@ $api->version('v1', ['namespace' => 'App\Http\Controllers\Api\v1'], function($ap
     $api->get('hits/{id}', 'ComicController@hits');
     $api->get('dandanplay/login/{username}/{password}/{appid}/{appsecret}', 'DandanplayController@login');
     $api->post('dandanplay/search', 'DandanplayController@request_list');
+    $api->post('comics/updateImage', 'ComicController@updateImage');
 });

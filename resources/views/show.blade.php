@@ -34,8 +34,8 @@
                     <ul class="download-list">
                         @if($downloads != null && count($downloads) > 0)
                             @foreach($downloads as $d)
-                                <li><a href="magnet:{{ $d->url }}">[迅雷下载]{{ $d->title }}</a></li>
-                                <li><a class="ddplay" href="ddplay:magnet:{{ $d->url }}">[弹弹play]{{ $d->title }}</a></li>
+                                <li><a href="magnet:?xt=urn:btih:{{ $d->url }}">[迅雷下载]{{ $d->title }}</a></li>
+                                <li><a class="ddplay" href="ddplay:magnet:?xt=urn:btih:{{ $d->url }}">[弹弹play]{{ $d->title }}</a></li>
                             @endforeach
                         @else
                             <li>暂无动画资源</li>
