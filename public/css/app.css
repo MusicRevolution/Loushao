@@ -10,17 +10,15 @@
   position: relative; }
 
 a {
-  color: #f07b7c; }
-
-a {
-  color: #b0b0b0;
+  color: #333333;
   text-decoration: none; }
 
 body {
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
   line-height: 20px;
   background-color: #f2f2f2;
-  transition: all .3s ease-in-out 0s; }
+  transition: all .3s ease-in-out 0s;
+  font-color: 14px; }
 
 body, h1, h2, h3, h4, h5, h6 {
   font-family: Tahoma,"Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif important;
@@ -124,6 +122,32 @@ footer.footer .pull-left > span {
 footer.footer .pull-left > span a {
   color: #838383; }
 
+.button-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid #14B9C8;
+  border-radius: 4px;
+  cursor: pointer; }
+  .button-top i {
+    display: block;
+    height: 100%;
+    width: 100%;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    color: #14B9C8;
+    transform: scale(0.5) rotate(90deg); }
+
+.button-top:hover {
+  background-color: #14B9C8; }
+  .button-top:hover i {
+    color: #FFFFFF; }
+
 @media screen and (min-width: 1360px) {
   .top {
     background: url(../images/top_banner.jpg) repeat center top;
@@ -204,7 +228,7 @@ footer.footer .pull-left > span a {
       padding: 0 10px;
       color: #dcdcdc; }
     .footer .footlink a:hover {
-      color: #f07b7c; }
+      color: #14B9C8; }
   .footer .copyright {
     color: #999;
     padding: 10px; }
@@ -447,6 +471,7 @@ nav.navbar .navbar-right > li.navbar-user .dropdown-menu {
     vertical-align: middle; }
 
 .card a.card-title:hover {
+  color: #333333;
   text-decoration: underline; }
 
 .card .card-image {
@@ -474,6 +499,11 @@ nav.navbar .navbar-right > li.navbar-user .dropdown-menu {
   border-color: #12A7B4;
   background: #12A7B4;
   color: #fff; }
+
+#more:hover {
+  color: #12A7B4;
+  background-color: #b4ebfa !important;
+  border-color: #b4ebfa !important; }
 
 .breadcrumb li a {
   color: #14B9C8; }
@@ -518,7 +548,7 @@ nav.navbar .navbar-right > li.navbar-user .dropdown-menu {
     padding-bottom: 10px; }
 
 .myquote {
-  line-height: 20px;
+  line-height: 22px;
   font-size: 14px;
   color: #333; }
   .myquote img {

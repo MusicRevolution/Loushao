@@ -8,11 +8,7 @@
 }
 
 a {
-    color: #f07b7c;
-}
-
-a {
-    color: #b0b0b0;
+    color: #333333;
     text-decoration: none;
 }
 
@@ -21,6 +17,7 @@ body {
     line-height: 20px;
     background-color: #f2f2f2;
     transition: all .3s ease-in-out 0s;
+    font-color: 14px;
 }
 
 body, h1, h2, h3, h4, h5, h6 {
@@ -144,4 +141,37 @@ footer.footer .pull-left>span {
 
 footer.footer .pull-left>span a {
     color: #838383;
+}
+
+.button-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #14B9C8;
+    border-radius: 4px;
+    cursor: pointer;
+
+    i {
+        display: block;
+        height: 100%;
+        width: 100%;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 40px;
+        color: #14B9C8;
+        -webkit-transform: scale(.5) rotate(90deg);
+        transform: scale(.5) rotate(90deg);
+    }
+}
+
+.button-top:hover {
+    background-color: #14B9C8;
+
+    i {
+        color: #FFFFFF;
+    }
 }

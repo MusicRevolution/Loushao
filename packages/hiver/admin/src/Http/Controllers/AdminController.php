@@ -61,6 +61,7 @@ class AdminController extends Controller
         $copyright = $request->get('copyright');
         $tongji = $request->get('tongji');
         $dandanplay = $request->get('dandanplay');
+        $download = $request->get('download');
         Setting::set('setting.title', $title);
         Setting::set('setting.welcome', $welcome);
         Setting::set('setting.keywords', $keywords);
@@ -69,6 +70,7 @@ class AdminController extends Controller
         Setting::set('setting.copyright', $copyright);
         Setting::set('setting.tongji', $tongji);
         Setting::set('setting.dandanplay', $dandanplay);
+        Setting::set('setting.download', $download);
         Setting::save();
 
         Session::flash('flash_message', '保存成功！');

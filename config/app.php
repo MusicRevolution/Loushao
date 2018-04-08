@@ -172,6 +172,7 @@ return [
          * 评论插件
          */
         Actuallymab\LaravelComment\LaravelCommentServiceProvider::class,
+        Overtrue\LaravelWechat\ServiceProvider::class,
     ],
 
     /*
@@ -233,6 +234,8 @@ return [
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+
+        'EasyWeChat' => Overtrue\LaravelWechat\Facade::class,
     ],
 
 ];

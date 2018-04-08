@@ -14,7 +14,7 @@ class WebController extends Controller
     public function home()
     {
         $perPage = 6;
-        $comics = Comic::orderBy('updated_at', 'desc')->paginate($perPage);
+        $comics = Comic::orderBy('created_at', 'desc')->paginate($perPage);
         $banner = Banner::paginate(5);
         $ads = Ad::all()->first();
         return view('home', ['banner' => $banner, 'comics' => $comics, 'ads' => $ads]);
@@ -27,7 +27,7 @@ class WebController extends Controller
         $comic->save();
         $bbcode = new BBCodeParser;
         $comic->content = $bbcode->parse($comic->content);
-        $downloads = Download::whereRaw('comic_id = ?', [$id])->get();
+        $downloads = Download::whereRaw('comic_id = ?', [$id])->orderBy('title', 'asc')->get();
         $ads = Ad::all()->first();
         return view('show', ['comic' => $comic, 'downloads' => $downloads, 'ads' => $ads]);
     }

@@ -120,11 +120,15 @@
         </div>
     </div>
 </div>
+<div class="button-top" style="display: block;">
+    <i class="glyphicon glyphicon-chevron-left"></i>
+</div>
 <script src="{{ asset('vendor/jquery/jquery.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/bootstrap.js') }}"></script>
 <script src="{{ asset('vendor/wysibb/jquery.wysibb.js') }}"></script>
 <script src="{{ asset('js/plugins/jquery-tmpl/jquery.tmpl.min.js') }}"></script>
 <script src="{{ asset('js/plugins/jquery-tmpl/jquery.tmplPlus.min.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 @yield('footer')
 </body>
 </html>

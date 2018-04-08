@@ -61,6 +61,24 @@
                         {!! Form::text('copyright', Setting::get('setting.copyright', '© 2018 漏勺网 本站不提供任何视听上传服务，所有内容均来自视频分享站点所提供的公开引用资源'), ['class' => 'form-control', 'required' => 'required']) !!}
                         {!! $errors->first('copyright', '<p class="help-block">:message</p>') !!}
                     </div>
+                    <div class="form-group form-material {{ $errors->has('download') ? 'has-error' : ''}}">
+                        {!! Form::label('download', '允许下载', ['class' => 'control-label']) !!}
+                        <div class="radio-list">
+                            <div class="radio">
+                                {!! Form::radio('download', '1', Setting::get('setting.download', '1') == '1', ['id' => 'radio1']) !!}
+                                <label for="radio1">
+                                    允许
+                                </label>
+                            </div>
+                            <div class="radio">
+                                {!! Form::radio('download', '0', Setting::get('setting.download', '0') == '0', ['id' => 'radio2']) !!}
+                                <label for="radio2">
+                                    屏蔽
+                                </label>
+                            </div>
+                        </div>
+                        {!! $errors->first('download', '<p class="help-block">:message</p>') !!}
+                    </div>
                     <div class="form-group form-material {{ $errors->has('tongji') ? 'has-error' : ''}}">
                         {!! Form::label('tongji', '统计代码', ['class' => 'control-label']) !!}
                         {!! Form::textarea('tongji', Setting::get('setting.tongji', ''), ['class' => 'form-control']) !!}

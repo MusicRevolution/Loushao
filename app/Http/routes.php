@@ -38,6 +38,8 @@ Route::group(['middleware' => 'welcome'], function() {
     // OAuth
     Route::get('oauth/{name}', 'Auth\OAuthController@index');
     Route::get('oauth/{name}/callback', 'Auth\OAuthController@callback');
+    // Wechat
+    Route::any('/wechat', 'WechatController@serve');
 });
 
 $api = app('Dingo\Api\Routing\Router');

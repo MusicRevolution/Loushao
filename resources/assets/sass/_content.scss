@@ -284,6 +284,7 @@ nav.navbar .navbar-right>li.navbar-user .dropdown-menu {
     }
 
     a.card-title:hover {
+        color: #333333;
         text-decoration: underline;
     }
 
@@ -316,6 +317,12 @@ nav.navbar .navbar-right>li.navbar-user .dropdown-menu {
     border-color: #12A7B4;
     background: #12A7B4;
     color: #fff;
+}
+
+#more:hover {
+    color: #12A7B4;
+    background-color: #b4ebfa !important;
+    border-color: #b4ebfa !important;
 }
 
 .breadcrumb li a {
@@ -378,7 +385,7 @@ nav.navbar .navbar-right>li.navbar-user .dropdown-menu {
 }
 
 .myquote {
-    line-height: 20px;
+    line-height: 22px;
     font-size: 14px;
     color: #333;
     img {

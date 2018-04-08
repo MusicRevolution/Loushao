@@ -31,7 +31,7 @@ class QuickController extends Controller
         $this->validate($request, [
             'title' => 'required|max:255',
             'small_img' => 'required',
-            'big_img' => 'required',
+            // 'big_img' => 'required',
             'score' => 'required|min:0',
             'hits' => 'required|min:0',
             'comment' => 'required|min:0',

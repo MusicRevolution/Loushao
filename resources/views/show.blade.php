@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <div class="card-item">
+                <div class="card-item" style="display: none">
                     <img src="{{ $comic->big_img }}"  />
                 </div>
                 <div class="card">
@@ -31,16 +31,25 @@
                     <div class="review-list-title">
                         <h3>资源下载</h3>
                     </div>
-                    <ul class="download-list">
+                    @if(Setting::get('setting.download', '0') == 1)
+                    <ul class="download-list" id="copy-content">
                         @if($downloads != null && count($downloads) > 0)
                             @foreach($downloads as $d)
-                                <li><a href="magnet:?xt=urn:btih:{{ $d->url }}">[迅雷下载]{{ $d->title }}</a></li>
-                                <li><a class="ddplay" href="ddplay:magnet:?xt=urn:btih:{{ $d->url }}">[弹弹play]{{ $d->title }}</a></li>
+                                <!--<li><a href="magnet:?xt=urn:btih:{{ $d->url }}">[迅雷下载]{{ $d->title }}</a></li>-->
+                                <li><a class="ddplay" href="ddplay:magnet:?xt=urn:btih:{{ $d->url }}">{{ $d->title }}</a></li>
                             @endforeach
+                            <li>
+                                <button class="btn btn-primary" id="copy">批量复制</button>
+                            </li>
                         @else
                             <li>暂无动画资源</li>
                         @endif
                     </ul>
+                    @else
+                    <ul class="download-list">
+                        <li>由于版权问题，暂不支持下载，如果有问题请联系管理员</li>
+                    </ul>
+                    @endif
                 </div>
                 <div class="card">
                     <div class="review-list-title">
@@ -151,87 +160,5 @@
                 }
             });
         });
-
-        //Handle IE
-        function launchIE(ev){
-            var url = getUrl(),
-                aLink = $('#hiddenLink')[0];
-            isSupported = false;
-            aLink.href = url;
-            //Case 1: protcolLong
-            console.log("Case 1");
-            if(navigator.appName=="Microsoft Internet Explorer"
-                && (aLink.protocolLong=="Unknown Protocol" || aLink.protocolLong == "未知协议" || aLink.protocolLong == "未知协议")){
-                isSupported = false;
-                result(ev);
-                return;
-            }
-
-            //IE10+
-            if(navigator.msLaunchUri){
-                navigator.msLaunchUri(url,
-                    function(){ isSupported = true; result(ev); }, //success
-                    function(){ isSupported=false; result(ev);  }  //failure
-                );
-                return;
-            }
-
-            //Case2: Open New Window, set iframe src, and access the location.href
-            console.log("Case 2");
-            var myWindow = window.open('','','width=0,height=0');
-            myWindow.document.write("<iframe src='"+ url + "></iframe>");
-            setTimeout(function(){
-                try{
-                    myWindow.location.href;
-                    isSupported = true;
-                }catch(e){
-                    //Handle Exception
-                }
-                if(isSupported){
-                    myWindow.setTimeout('window.close()', 100);
-                }else{
-                    myWindow.close();
-                }
-                result(ev);
-            }, 100)
-        };
-
-        //Handle Firefox
-        function launchMozilla(ev){
-            var url = getUrl(),
-                iFrame = $('#hiddenIframe')[0];
-            isSupported = false;
-            //Set iframe.src and handle exception
-            try{
-                iFrame.contentWindow.location.href = url;
-                isSupported = true;
-                result(ev);
-            }catch(e){
-                //FireFox
-                if (e.name == "NS_ERROR_UNKNOWN_PROTOCOL"){
-                    isSupported = false;
-                    result(ev);
-                }
-            }
-        }
-
-        //Handle Chrome
-        function launchChrome(ev){
-            var url = getUrl(),
-                protcolEl = $('.ddplay')[0];
-            isSupported = false;
-            protcolEl.focus();
-            protcolEl.onblur = function(){
-                isSupported = true;
-                console.log("Text Field onblur called");
-            };
-            //will trigger onblur
-            location.href = url;
-            //Note: timeout could vary as per the browser version, have a higher value
-            setTimeout(function(){
-                protcolEl.onblur = null;
-                result(ev)
-            }, 500);
-        }
     </script>
 @endsection
